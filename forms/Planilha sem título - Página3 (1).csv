@@ -1,0 +1,13 @@
+Artigo,Fator,Descrição,Categoria
+o,Orçamento Disponível,Recursos financeiros alocados,Fator Externo
+a,Documentação de Projeto,Grau de detalhamento e organização dos registros dos projetos atuais e histórico de projetos passados.,Fator Externo
+a,Temperatura Ambiente,Influência da temperatura ambiente durante o momento de execução do teste ,Fator Externo
+o,Volume da Câmara,"Definição do comprimemto e diâmetro da câmara de combustão e, consequentemente, definição do volume disponível para o propelente",Projeto
+a,Razão de mistura O/F e controle de vazão do oxigênio,Definição da razão de mistura do oxidante e do propelente (razão O/F) e controle de estabilidade da pressão do tanque ao longo da queima,Projeto
+a,Temperatura do Oxigênio,Definição da temperatura inicial do tanque de oxigênio,Projeto
+a,Massa de Parafina,Massa de propelente colocada na câmara de combustão,Propelente
+o,Acabamento Superficial do Grão e pureza da parafina,Controle do grau de rugosidade e impureza do combustível sólido (parafina),Propelente
+a,Experiência da Equipe,Fator relacionado ao grau de conhecimento prático e teórico dos membros no desenvolvimento de foguetes híbridos,Qualitativo
+a,Disponibilidade de Tempo,Tempo efetivo que os membros podem dedicar ao projeto ,Qualitativo
+a,Qualidade da Comunicação,Clareza e eficiência na troca de informações entre os integrantes.,Qualitativo
+o,Sucesso do Lançamento,"Fator relacionado ao resultado final de um voo estável (ou teste estático estável), desempenho próximo ao previsto e ausência de falhas críticas.",Sucesso

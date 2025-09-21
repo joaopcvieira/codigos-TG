@@ -1,0 +1,33 @@
+# Arquivos de ambiente e credenciais
+.env
+*.env
+.env.local
+.env.development
+.env.production
+
+# Arquivos do sistema macOS
+.DS_Store
+
+# Arquivos Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

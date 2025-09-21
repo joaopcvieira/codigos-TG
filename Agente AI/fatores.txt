@@ -1,0 +1,29 @@
+Experiência da Equipe
+
+
+Disponibilidade de Tempo
+Orçamento Disponível
+Qualidade da Comunicação
+Documentação de Projeto
+
+
+Comprimento da Câmara
+Diâmetro da Câmara
+Margem Estrutural da Câmara
+Massa de Parafina
+Razão de Mistura (O/F)
+Vazão de Oxigênio
+Diâmetro do Injetor
+Pressão do Tanque
+Estabilidade da Pressão de Câmara
+Energia de Ignição
+
+
+Acabamento Superficial do Grão
+Pureza da Parafina
+
+
+Temperatura Ambiente
+Temperatura do Oxigênio
+
+Sucesso do Lançamento
