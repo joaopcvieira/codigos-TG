@@ -37,9 +37,23 @@ GEMINI_MODEL    = "gemini-pro"                          # mude se quiser
 DEFAULT_PROVIDER= os.getenv("LLM_PROVIDER", "openai").lower()  # "openai" ou "gemini"
 SCALE_DESC      = "0 = sem influência nenhuma, 1 = muito baixa ... 9 = muito alta"
 PROMPT_TMPL = (
-    "Considere o par de fatores abaixo no contexto do projeto de desenvolvimento de um motor foguete híbrido, cujo requisito principal de sucesso é o empuxo gerado pelo motor.\n"
-    "Em uma escala de 0 a 9 ({scale}), qual o nível em que **{src}** "
-    "influencia **{tgt}**? Entenda que o resultado deve ser interpretado no contexto do projeto e a influência é uma relação unidirecional. Associe com o contexto de causalidade de A em B. Responda apenas com o número."
+    "Você é um engenheiro Aeroespacial, especialista em propulsão de foguetes, com vasto conhecimento teórico, mas também prático. Você foi colocado em um projeto de construção de um motor foguete a propelente híbrido e está realizando um teste no modelo DEMATEL para categorizar a influencia entre fatores e sua causalidade.\n"
+    
+    "Considere o par de fatores abaixo no contexto do projeto de desenvolvimento de um motor foguete híbrido, cujo requisito principal de sucesso é o empuxo gerado pelo motor. Julgue conforme a pergunta a seguir:\n"
+    
+    "Em uma escala de 0 a 9 ({scale}), qual o nível em que **{src}** influencia **{tgt}**? \n\n"
+    
+    "Considere que muitos fatores podem não ter influência direta, então sinta-se à vontade para responder 0 se achar que não há influência significativa.\n\n"
+
+    "\nEntenda\n -{src} como: {description_src};\n -{tgt} como: {description_tgt}\n\n"
+
+    "Avalie diferentes cenários em que é possível se ter {src} e como variações (pequenas ou grandes) em {src} pode influenciar {tgt}. Atente-se à magnitude dessa influência, e não à sua direção (positiva ou negativa).\n"
+    
+    "Para a definição de influência, considere também, se {tgt} é um fator que pode ser afetado por {src} considerando a lógica do projeto e a sua participação. Antes de responder, pense na origem dos fatores (por exemplo, se são aspectos externos, se são aspectos de projetos, se referem apenas a atributos de propelente ou atributos estruturais) para definir se o aspecto target é realmente passível de ser alterado. É possível que {tgt} possa ter influência direta, mas que não possam ser alterados diretamente, no contexto de um projeto, por {src}.\n\n"
+    
+    "Entenda que o resultado deve ser interpretado no contexto do projeto e a influência é uma relação unidirecional. Associe com o contexto de causalidade de A em B.\n\n"
+
+    "A resposta deve ser apenas o número."
 )
 
 # ---------- DETECÇÃO DA VERSÃO DO openai ----------------------------------
@@ -64,12 +78,13 @@ class DematelLLM:
     def __init__(
         self,
         factors: list[str],
+        descriptions: list[str],
         provider: str = DEFAULT_PROVIDER,
         api_key: str | None = None,
         model: str | None = None,
         prompt_tmpl: str = PROMPT_TMPL,
         cache: dict[tuple[str, str], int] | None = None,
-    ):
+     ):
         """
         Parameters
         ----------
@@ -100,6 +115,7 @@ class DematelLLM:
 
         # Atributos de domínio DEMATEL -------------------
         self.factors = factors
+        self.descriptions = descriptions
         self.n = len(factors)
         self.A = np.zeros((self.n, self.n), dtype=float)
 
@@ -149,11 +165,15 @@ class DematelLLM:
         self.model = model or GEMINI_MODEL
 
     # ---------- PASSO 1: conversa com a LLM para preencher A -----------------
-    def _ask_llm(self, src: str, tgt: str) -> int:
+    def _ask_llm(self, src: str, tgt: str, description_src: str, description_tgt: str) -> int:
         if (src, tgt) in self.cache:
             return self.cache[(src, tgt)]
 
-        prompt = self.prompt_tmpl.format(src=src, tgt=tgt, scale=SCALE_DESC)
+        prompt = self.prompt_tmpl.format(
+                src=src, tgt=tgt, 
+                description_src=description_src, description_tgt=description_tgt, 
+                scale=SCALE_DESC
+            )
 
         if self.provider == "openai":
             if _OPENAI_V0:
@@ -189,54 +209,34 @@ class DematelLLM:
         return score
 
     def _build_direct_matrix(self) -> None:
-        self.A = np.array([[0, 7, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 5, 2, 3, 8],
-                [7, 0, 7, 7, 7, 6, 7, 6, 5, 6, 3, 6, 5, 4, 5, 5, 3, 0, 3, 7],
-                [4, 7, 0, 3, 7, 7, 7, 5, 7, 7, 5, 7, 7, 4, 4, 5, 4, 0, 3, 7],
-                [7, 7, 4, 0, 7, 7, 7, 7, 3, 7, 7, 7, 7, 7, 7, 7, 3, 0, 3, 7],
-                [7, 7, 5, 7, 0, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 3, 2, 3, 7],
-                [3, 4, 3, 0, 5, 0, 6, 7, 6, 5, 3, 7, 3, 7, 4, 3, 3, 0, 3, 7],
-                [3, 4, 4, 2, 5, 7, 0, 7, 7, 7, 7, 7, 4, 7, 3, 3, 3, 0, 3, 7],
-                [3, 5, 4, 3, 7, 7, 7, 0, 5, 6, 5, 7, 5, 7, 3, 5, 3, 0, 3, 7],
-                [3, 4, 4, 0, 3, 7, 7, 6, 0, 7, 3, 7, 3, 4, 4, 3, 3, 0, 3, 7],
-                [3, 4, 3, 3, 4, 7, 7, 4, 7, 0, 7, 7, 4, 7, 7, 3, 3, 0, 7, 9],
-                [3, 4, 3, 0, 3, 7, 7, 6, 7, 7, 0, 7, 3, 7, 7, 3, 3, 0, 7, 9],
-                [3, 3, 3, 2, 3, 7, 7, 6, 4, 7, 7, 0, 3, 7, 5, 3, 2, 0, 3, 7],
-                [3, 5, 3, 0, 7, 7, 7, 7, 6, 7, 7, 7, 0, 8, 5, 3, 3, 0, 3, 8],
-                [3, 6, 3, 3, 7, 7, 7, 7, 6, 7, 7, 7, 7, 0, 7, 4, 3, 0, 3, 8],
-                [3, 4, 3, 2, 3, 5, 5, 3, 5, 6, 3, 7, 3, 7, 0, 3, 3, 0, 3, 8],
-                [3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 3, 3, 3, 6, 6, 0, 3, 0, 3, 7],
-                [3, 3, 3, 0, 3, 6, 5, 4, 7, 7, 3, 7, 3, 7, 7, 7, 0, 0, 3, 7],
-                [3, 4, 3, 0, 3, 5, 5, 5, 5, 6, 5, 5, 5, 6, 6, 3, 5, 0, 7, 6],
-                [3, 3, 3, 0, 3, 7, 7, 6, 6, 7, 7, 7, 4, 7, 7, 3, 3, 3, 0, 7],
-                [7, 7, 7, 3, 7, 7, 7, 7, 5, 7, 5, 7, 7, 7, 3, 3, 3, 0, 3, 0]]
-        )
-
-        # self.A = np.array([[0, 7, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 5, 2, 2],
-        #     [7, 0, 7, 7, 7, 7, 7, 5, 5, 5, 5, 6, 5, 4, 5, 5, 3, 0, 3],
-        #     [4, 7, 0, 3, 7, 7, 7, 5, 7, 7, 5, 7, 7, 5, 4, 5, 4, 0, 3],
-        #     [7, 7, 7, 0, 7, 7, 7, 7, 3, 7, 7, 7, 7, 7, 7, 7, 3, 0, 3],
-        #     [7, 7, 6, 7, 0, 7, 7, 7, 3, 7, 7, 7, 7, 7, 7, 7, 3, 3, 3],
-        #     [3, 4, 3, 0, 7, 0, 6, 7, 5, 6, 4, 6, 3, 7, 4, 3, 3, 0, 3],
-        #     [3, 4, 4, 0, 3, 7, 0, 7, 7, 7, 7, 7, 4, 7, 3, 3, 3, 0, 3],
-        #     [3, 5, 4, 3, 6, 7, 7, 0, 5, 6, 5, 7, 5, 7, 4, 5, 3, 0, 3],
-        #     [3, 4, 3, 0, 3, 7, 7, 6, 0, 7, 3, 7, 3, 4, 4, 3, 3, 0, 3],
-        #     [3, 4, 3, 3, 5, 7, 7, 5, 7, 0, 7, 7, 3, 7, 7, 3, 3, 0, 7],
-        #     [3, 4, 3, 0, 3, 7, 7, 7, 7, 7, 0, 7, 3, 7, 7, 3, 3, 0, 7],
-        #     [3, 3, 3, 2, 3, 7, 7, 6, 5, 7, 7, 0, 3, 7, 5, 3, 3, 0, 3],
-        #     [3, 5, 3, 2, 5, 7, 7, 7, 6, 7, 7, 7, 0, 8, 5, 3, 3, 0, 3],
-        #     [3, 6, 3, 3, 7, 7, 7, 7, 6, 7, 7, 7, 7, 0, 7, 4, 3, 0, 3],
-        #     [3, 5, 3, 0, 5, 5, 5, 3, 5, 5, 3, 7, 3, 7, 0, 3, 3, 0, 3],
-        #     [3, 3, 3, 3, 3, 3, 3, 6, 3, 5, 3, 4, 3, 6, 6, 0, 3, 0, 2],
-        #     [3, 3, 3, 0, 3, 7, 4, 4, 7, 7, 3, 7, 3, 7, 7, 7, 0, 0, 3],
-        #     [3, 4, 3, 0, 3, 5, 5, 5, 5, 6, 5, 5, 4, 6, 6, 3, 3, 0, 7],
-        #     [3, 3, 3, 0, 3, 7, 7, 7, 5, 7, 7, 7, 5, 7, 7, 3, 3, 3, 0]]
+        # self.A = np.array([[0, 4, 7, 4, 3, 4, 5, 0, 3, 3, 0, 7.],
+        #     [6, 0, 7, 3, 3, 6, 7, 3, 5, 7, 0, 7.],
+        #     [7, 7, 0, 5, 3, 5, 5, 0, 3, 4, 0, 7.],
+        #     [5, 3, 5, 0, 2, 3, 5, 0, 3, 4, 0, 7.],
+        #     [5, 4, 3, 6, 0, 7, 6, 3, 5, 6, 0, 7.],
+        #     [2, 0, 0, 2, 3, 0, 5, 0, 6, 3, 0, 7.],
+        #     [3, 3, 0, 3, 3, 5, 0, 3, 4, 2, 0, 7.],
+        #     [0, 0, 0, 0, 0, 3, 5, 0, 0, 0, 0, 7.],
+        #     [3, 2, 0, 0, 2, 3, 5, 0, 0, 3, 0, 7.],
+        #     [0, 0, 0, 0, 2, 2, 3, 0, 0, 0, 0, 6.],
+        #     [0, 0, 0, 0, 0, 0, 3, 3, 0, 3, 0, 5.],
+        #     [3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0.],]
         # )
-        # for i, src in enumerate(self.factors):
-        #     for j, tgt in enumerate(self.factors):
-        #         if i == j: continue
-        #         self.A[i, j] = self._ask_llm(src, tgt)
+
+        
+        for i, src in enumerate(self.factors):
+            for j, tgt in enumerate(self.factors):
+                if i == j: continue
+               
+                if check_pergunta_valida(src, tgt):
+                    self.A[i, j] = self._ask_llm(src, tgt, self.descriptions[i], self.descriptions[j])
+                else:
+                    self.A[i, j] = 0  # Impõe zero se há restrição externa
         
         print('Matriz formada:', self.A)
+        
+        # salva num txt
+        np.savetxt('Agente AI/matriz_dematel.txt', self.A, fmt='%d', delimiter=', ')
 
     # ---------- PASSO 2: normalização (M) e matriz de relação total (T) -----
     def _dematel(self) -> None:
@@ -349,7 +349,7 @@ class DematelLLM:
         edge_width_scale: float = 3.0,
         title: str | None = None,
         hierarchical: bool = True,
-    ):
+     ):
         if hierarchical:
             pos = self._hierarchical_pos(self.G)
         else:
@@ -551,6 +551,19 @@ def plot_influence_diagram(self, title="Diagrama de influências DEMATEL"):
 
 # --- use dentro da classe ---
 DematelLLM.plot_influence_diagram = plot_influence_diagram
+
+
+def check_pergunta_valida(fator1, fator2):
+        df_check = df_relacao_fatores.loc[
+            (df_relacao_fatores['Fator1'] == fator1) & (df_relacao_fatores['Fator2'] == fator2)
+        ]
+        if not df_check.empty:
+            return False
+        else:
+            return True
+    
+
+
 # ------------------ EXEMPLO DE USO ------------------------------------------
 
 if __name__ == "__main__":
@@ -562,12 +575,28 @@ if __name__ == "__main__":
     print("SCALE_DESC:", SCALE_DESC)
 
 
-    with open("Agente AI/fatores.txt", "r", encoding="utf-8") as f:
-        fatores = [line.strip() for line in f if line.strip()]
+    # Lê quais os fatores e descrições
+    df_fatores = pd.read_csv('Agente AI/Fatores.csv')
+
+    fatores = df_fatores['fator'].tolist()
+    descricoes = df_fatores['descricao'].tolist()
+    
+    # Lê as restrições de não influência implementadas externamente
+    df_relacao_fatores = pd.read_csv("Agente AI/relacao_fatores.csv", sep=",", header=0)
+    df_relacao_fatores = df_relacao_fatores.melt(id_vars=["Fatores"], var_name="Fator2", value_name="Relacao")
+    df_relacao_fatores = df_relacao_fatores.loc[df_relacao_fatores["Relacao"] == 'não']
+    df_relacao_fatores.columns = ['Fator1', 'Fator2', 'Relacao']
+    df_relacao_fatores = pd.concat([
+        df_relacao_fatores[['Fator1', 'Fator2']],
+        df_relacao_fatores[['Fator2', 'Fator1']].rename(columns={'Fator2': 'Fator1', 'Fator1': 'Fator2'})
+    ], ignore_index=True)
+
+    
+
 
 
     # mude para "openai" ou "gemini" conforme necessário
-    project = DematelLLM(fatores, provider="openai")  
+    project = DematelLLM(fatores, descricoes, provider="openai")
 
 
     project.plot(title="Influência entre fatores no projeto de Propulsão de Foguete Híbrido")
