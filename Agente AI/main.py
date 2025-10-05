@@ -209,29 +209,29 @@ class DematelLLM:
         return score
 
     def _build_direct_matrix(self) -> None:
-        # self.A = np.array([[0, 4, 7, 4, 3, 4, 5, 0, 3, 3, 0, 7.],
-        #     [6, 0, 7, 3, 3, 6, 7, 3, 5, 7, 0, 7.],
-        #     [7, 7, 0, 5, 3, 5, 5, 0, 3, 4, 0, 7.],
-        #     [5, 3, 5, 0, 2, 3, 5, 0, 3, 4, 0, 7.],
-        #     [5, 4, 3, 6, 0, 7, 6, 3, 5, 6, 0, 7.],
-        #     [2, 0, 0, 2, 3, 0, 5, 0, 6, 3, 0, 7.],
-        #     [3, 3, 0, 3, 3, 5, 0, 3, 4, 2, 0, 7.],
-        #     [0, 0, 0, 0, 0, 3, 5, 0, 0, 0, 0, 7.],
-        #     [3, 2, 0, 0, 2, 3, 5, 0, 0, 3, 0, 7.],
-        #     [0, 0, 0, 0, 2, 2, 3, 0, 0, 0, 0, 6.],
-        #     [0, 0, 0, 0, 0, 0, 3, 3, 0, 3, 0, 5.],
-        #     [3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0.],]
-        # )
+        self.A = np.array([[0, 6, 7, 4, 3, 6, 7, 2, 5, 3, 0, 7.],
+        [7, 0, 7, 3, 3, 7, 7, 0, 7, 7, 0, 8.],
+        [7, 7, 0, 6, 4, 6, 7, 3, 6, 4, 0, 7.],
+        [7, 6, 7, 0, 4, 4, 6, 0, 5, 6, 0, 7.],
+        [7, 5, 4, 6, 0, 7, 7, 3, 6, 7, 0, 7.],
+        [3, 2, 0, 3, 5, 0, 7, 0, 7, 0, 0, 7.],
+        [5, 4, 0, 3, 3, 6, 0, 3, 7, 0, 0, 9.],
+        [0, 0, 0, 0, 0, 0, 7, 0, 3, 3, 0, 7.],
+        [3, 2, 0, 2, 3, 3, 7, 0, 0, 3, 0, 8.],
+        [2, 2, 0, 3, 3, 0, 6, 0, 3, 0, 0, 7.],
+        [2, 2, 0, 2, 0, 0, 4, 3, 3, 4, 0, 5.],
+        [6, 5, 3, 4, 7, 3, 7, 0, 3, 2, 0, 0.],]
+        )
 
         
-        for i, src in enumerate(self.factors):
-            for j, tgt in enumerate(self.factors):
-                if i == j: continue
+        # for i, src in enumerate(self.factors):
+        #     for j, tgt in enumerate(self.factors):
+        #         if i == j: continue
                
-                if check_pergunta_valida(src, tgt):
-                    self.A[i, j] = self._ask_llm(src, tgt, self.descriptions[i], self.descriptions[j])
-                else:
-                    self.A[i, j] = 0  # Impõe zero se há restrição externa
+        #         if check_pergunta_valida(src, tgt):
+        #             self.A[i, j] = self._ask_llm(src, tgt, self.descriptions[i], self.descriptions[j])
+        #         else:
+        #             self.A[i, j] = 0  # Impõe zero se há restrição externa
         
         print('Matriz formada:', self.A)
         
@@ -280,7 +280,7 @@ class DematelLLM:
     def _hierarchical_pos(self, G: nx.DiGraph, layer_gap: float = 0.25) -> dict:
         """
         Retorna um dicionário {nó: (x, y)} onde y decresce de 0 para -1
-        conforme a profundidade no DAG. Usado para plotar pais acima dos filhos.
+        conforme a profundidade no DAG, Usado para plotar pais acima dos filhos.
         """
         # nível (profundidade) de cada nó = distância máxima até uma raiz
         roots = [n for n, d in G.in_degree() if d == 0] or list(G.nodes())
