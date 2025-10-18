@@ -1,0 +1,13 @@
+Fatores,Orçamento Disponível,Documentação de Projeto,Temperatura Ambiente,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,Disponibilidade de Tempo,Qualidade da Comunicação,Sucesso do Lançamento
+Orçamento Disponível,,,,,,,,,,,,
+Documentação de Projeto,não,,,,,,,,,,,
+Temperatura Ambiente,não,não,,,,,,,,,,
+Volume da Câmara,não,sim,sim,,,,,,,,,
+Razão de mistura O/F e controle de vazão do oxigênio,sim,sim,sim,sim,,,,,,,,
+Temperatura do Oxigênio,sim,sim,sim,não,sim,,,,,,,
+Massa de Parafina,sim,sim,sim,sim,sim,sim,,,,,,
+Acabamento Superficial do Grão e pureza da parafina,sim,sim,sim,não,sim,sim,sim,,,,,
+Experiência da Equipe,sim,sim,sim,sim,sim,sim,sim,sim,,,,
+Disponibilidade de Tempo,não,não,sim,sim,não,não,não,sim,sim,,,
+Qualidade da Comunicação,não,sim,sim,sim,não,não,não,sim,sim,sim,,
+Sucesso do Lançamento,sim,sim,sim,sim,sim,sim,sim,sim,sim,sim,sim,
