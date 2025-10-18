@@ -18,11 +18,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 import openai
 from dotenv import load_dotenv
+import textwrap
 
 try:
     import google.generativeai as genai
 except ImportError:
     genai = None  # Biblioteca opcional, usada apenas se provider == "gemini"
+    
+
+from functions.main import plot_network, plot_influence_diagram
 
 
 # ---------- CONFIGURAÇÃO BÁSICA ---------------------------------------------
@@ -342,214 +346,9 @@ class DematelLLM:
             G = self._ensure_dag(G)
         return G
 
-    # ---------- PASSO 4: plota em plotly express ----------------------------
-    def plot(
-        self,
-        node_size_scale: float = 50.0,
-        edge_width_scale: float = 3.0,
-        title: str | None = None,
-        hierarchical: bool = True,
-     ):
-        if hierarchical:
-            pos = self._hierarchical_pos(self.G)
-        else:
-            pos = nx.spring_layout(self.G, seed=42)
-        nx.set_node_attributes(self.G, pos, "pos")
-
-        # -----------------------------------------
-        # DataFrame de nós
-        node_df = pd.DataFrame(
-            {
-                "factor": list(self.G.nodes()),
-                "x": [pos[n][0] for n in self.G.nodes()],
-                "y": [pos[n][1] for n in self.G.nodes()],
-                "RC_sum": self.rc_sum,
-                "RC_diff": self.rc_diff,
-            }
-        )
-
-        fig = go.Figure()
-
-        # -----------------------------------------
-        # 1) Relações bidirecionais → linha vermelha sem seta
-        drawn_pairs = set()
-        for u, v in self.G.edges():
-            if (v, u) in self.G.edges() and (v, u) not in drawn_pairs:
-                fig.add_trace(
-                    go.Scatter(
-                        x=[pos[u][0], pos[v][0]],
-                        y=[pos[u][1], pos[v][1]],
-                        mode="lines",
-                        line=dict(width=edge_width_scale, color="red"),
-                        hoverinfo="none",
-                        showlegend=False,
-                    )
-                )
-                drawn_pairs.add((u, v))
-                drawn_pairs.add((v, u))
-
-        # -----------------------------------------
-        # 2) Relações unilaterais → seta preta
-        bbox = {}  # guarda meio-largura e meio-altura de cada nó
-        # shapes e textos também usam bbox, então preenche junto com shapes/textos
-        shapes = []
-        text_traces = []
-        for _, row in node_df.iterrows():
-            txt = row["factor"]
-            x, y = row["x"], row["y"]
-
-            # --- dimensões com padding generoso ---
-            txt_len = len(txt)
-            pad = 0.02
-            w = 0.01 + txt_len * 0.008 + pad   # largura
-            h = 0.1 + pad                     # altura
-            bbox[txt] = (w / 2, h / 2)
-
-            shapes.append(
-                dict(
-                    type="rect",
-                    x0=x - w / 2,
-                    x1=x + w / 2,
-                    y0=y - h / 2,
-                    y1=y + h / 2,
-                    line=dict(color="rgba(60,60,60,0.9)", width=1.5),
-                    fillcolor="rgba(52,152,219,0.85)",  # azul mais vibrante
-                    layer="below",
-                )
-            )
-
-            text_traces.append(
-                go.Scatter(
-                    x=[x],
-                    y=[y],
-                    text=[txt],
-                    mode="text",
-                    textfont=dict(color="white", size=14, family="Arial"),
-                    hoverinfo="skip",
-                    showlegend=False,
-                )
-            )
-
-        for u, v, d in self.G.edges(data=True):
-            if (v, u) in self.G.edges():  # já tratada como bidirecional
-                continue
-            w = d.get("weight", 1)
-            # vetores direção
-            ux, uy = pos[u]
-            vx, vy = pos[v]
-            dx, dy = vx - ux, vy - uy
-            # desloca saída até borda do retângulo de origem
-            hw_u, hh_u = bbox[u]
-            sx = hw_u / abs(dx) if dx else float("inf")
-            sy = hh_u / abs(dy) if dy else float("inf")
-            t_u = min(sx, sy, 1)  # escalonamento máximo 1
-            ox = ux + dx * t_u
-            oy = uy + dy * t_u
-            # desloca ponto de chegada até borda do retângulo de destino
-            hw_v, hh_v = bbox[v]
-            scale_x = hw_v / abs(dx) if dx else float("inf")
-            scale_y = hh_v / abs(dy) if dy else float("inf")
-            t_v = min(scale_x, scale_y) - 0.01  # -0.01 para garantir fora
-            tx = vx - dx * t_v
-            ty = vy - dy * t_v
-
-            fig.add_trace(
-                go.Scatter(
-                    x=[ox, tx],
-                    y=[oy, ty],
-                    mode="lines",
-                    line=dict(width=w * edge_width_scale, color="black"),
-                    hoverinfo="none",
-                    showlegend=False,
-                )
-            )
-            fig.add_annotation(
-                x=tx,
-                y=ty,
-                ax=ox,
-                ay=oy,
-                xref="x",
-                yref="y",
-                axref="x",
-                ayref="y",
-                showarrow=True,
-                arrowhead=3,
-                arrowsize=2.5,
-                arrowwidth=w * edge_width_scale,
-                arrowcolor="black",
-            )
-
-        # -----------------------------------------
-        # 3) Nós como retângulos azuis (shapes/texts já preenchidos acima)
-        # adiciona os textos ao gráfico
-        for tr in text_traces:
-            fig.add_trace(tr)
-        # adicionar os shapes
-        fig.update_layout(shapes=shapes)
-
-        fig.update_layout(
-            showlegend=False,
-            title=title or "Topologia DEMATEL‑LLM (DAG)",
-            plot_bgcolor="#f7f9fc",
-        )
-        fig.update_xaxes(visible=False)
-        fig.update_yaxes(visible=False)
-        fig.show()
-
-
-
-def plot_influence_diagram(self, title="Diagrama de influências DEMATEL"):
-    """
-    Scatter (R+C  vs  R−C) com tamanho proporcional a R+C.
-    R + C  → importância/prominence
-    R − C  → tipo:
-        positivo  → fator mais causador
-        negativo → fator mais resultante
-    """
-
-    x = self.rc_sum            # Prominence
-    y = self.rc_diff           # Net effect
-    sizes = (x - x.min()) / (x.max() - x.min() + 1e-9) * 2000 + 300
-
-    # Prepara os dados para o plot
-    df = pd.DataFrame({
-        "R_plus_C": x,
-        "R_minus_C": y,
-        "Factor": self.factors,
-        "Size": sizes
-    })
-
-    # Formata o texto dos rótulos para múltiplas linhas se necessário
-    def format_label(label):
-        max_char = 1000
-        return label if len(label) < max_char else "\n".join([label[i:i+max_char] for i in range(0, len(label), max_char)])
-    df["Formatted_Factor"] = df["Factor"].apply(format_label)
-
-    fig = px.scatter(
-        df,
-        x="R_plus_C",
-        y="R_minus_C",
-        size="Size",
-        text="Formatted_Factor",
-        title=title,
-        labels={"R_plus_C": "R + C  (importância)", "R_minus_C": "R − C  (efeito líquido)"},
-        size_max=60
-    )
-    fig.update_traces(textposition="middle center")
-    
-    # Adiciona linhas de referência em x=0 e y=0
-    fig.add_vline(x=0, line_width=1, line_color="gray")
-    fig.add_hline(y=0, line_width=1, line_color="gray")
-    
-    fig.update_traces(textposition='middle center')
-    fig.update_layout(
-        xaxis=dict(showgrid=True),
-        yaxis=dict(showgrid=True)
-    )
-    
-    fig.show()
 
 # --- use dentro da classe ---
+DematelLLM.plot_network = plot_network
 DematelLLM.plot_influence_diagram = plot_influence_diagram
 
 
@@ -576,13 +375,13 @@ if __name__ == "__main__":
 
 
     # Lê quais os fatores e descrições
-    df_fatores = pd.read_csv('Agente AI/Fatores.csv')
+    df_fatores = pd.read_csv('Agente AI/inputs/Fatores.csv')
 
     fatores = df_fatores['fator'].tolist()
     descricoes = df_fatores['descricao'].tolist()
     
     # Lê as restrições de não influência implementadas externamente
-    df_relacao_fatores = pd.read_csv("Agente AI/relacao_fatores.csv", sep=",", header=0)
+    df_relacao_fatores = pd.read_csv("Agente AI/inputs/relacao_fatores.csv", sep=",", header=0)
     df_relacao_fatores = df_relacao_fatores.melt(id_vars=["Fatores"], var_name="Fator2", value_name="Relacao")
     df_relacao_fatores = df_relacao_fatores.loc[df_relacao_fatores["Relacao"] == 'não']
     df_relacao_fatores.columns = ['Fator1', 'Fator2', 'Relacao']
@@ -599,6 +398,6 @@ if __name__ == "__main__":
     project = DematelLLM(fatores, descricoes, provider="openai")
 
 
-    project.plot(title="Influência entre fatores no projeto de Propulsão de Foguete Híbrido")
+    project.plot_network(title="Influência entre fatores no projeto de Propulsão de Foguete Híbrido")
 
-    project.plot_influence_diagram()
+    # project.plot_influence_diagram()
