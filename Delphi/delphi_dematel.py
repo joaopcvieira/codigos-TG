@@ -859,6 +859,10 @@ class DelphiDematel:
                     expert_std=expert_stats.std
                 )
                 
+                # Se a resposta do LLM já está alinhada com especialistas, pula reavaliação
+                if abs(previous_response.score - expert_stats.median) <=  expert_stats.std:
+                    continue
+
                 # Chama LLM para reavaliação
                 audit_response = self._call_llm_for_audit(audit_prompt)
                 
