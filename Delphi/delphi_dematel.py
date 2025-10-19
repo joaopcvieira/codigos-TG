@@ -860,14 +860,19 @@ class DelphiDematel:
                 )
                 
                 # Se a resposta do LLM já está alinhada com especialistas, pula reavaliação
-                if abs(previous_response.score - expert_stats.median) <=  expert_stats.std:
+                if abs(previous_response.score - expert_stats.median) <=  expert_stats.std + 1:
+                    # informa que não houve mudança
+                    logger.info(f"Sem mudança necessária (LLM alinhado com especialistas): '{src}' -> '{tgt}' ")
                     continue
 
+                print('-' * 50)
                 # Chama LLM para reavaliação
+                logger.info(f'Chamando para revisão da avaliação: "{src}" -> "{tgt}"\n\tResposta anterior LLM: {previous_response.score}\n\tEspecialistas: {expert_stats.median:.1f} ± {expert_stats.std:.1f}')
                 audit_response = self._call_llm_for_audit(audit_prompt)
                 
                 # Adiciona resposta à memória
                 self.memory.add_response(src, tgt, audit_response)
+                print('-' * 50)
                 
                 # Atualiza matriz
                 new_matrix[i, j] = audit_response.score
@@ -877,7 +882,7 @@ class DelphiDematel:
                     changes_made += 1
                 
                 # Registra desacordos significativos com especialistas
-                if abs(audit_response.score - expert_stats.median) > 2:
+                if abs(audit_response.score - expert_stats.median) > expert_stats.std + 1:
                     disagreements.append({
                         'pair': f"{src} -> {tgt}",
                         'llm_score': audit_response.score,
@@ -935,7 +940,6 @@ class DelphiDematel:
         print(f'AUDITORIA - Rodada {self.current_round}')
         print('Resposta LLM:', txt)
         print(f'')
-        print('-' * 50)
         
         return self._parse_audit_response(txt)
     
@@ -1153,7 +1157,7 @@ class DelphiDematel:
             self.G = self._build_graph(numeric_filter=True)
             
             results['rounds'].append({
-                'round_number': round_num + 2,  # +2 porque rodada 1 é inicial
+                'round_number': round_num + 1,
                 'matrix': matrix.copy(),
                 'statistics': round_stats
             })
