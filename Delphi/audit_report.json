@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-18T20:44:31.376243",
+    "factors": [
+      "Documentação de Projeto",
+      "Experiência da Equipe",
+      "Qualidade da Comunicação",
+      "Disponibilidade de Tempo",
+      "Orçamento Disponível",
+      "Volume da Câmara",
+      "Razão de mistura O/F e controle de vazão do oxigênio",
+      "Temperatura do Oxigênio",
+      "Massa de Parafina",
+      "Acabamento Superficial do Grão e pureza da parafina",
+      "Temperatura Ambiente",
+      "Sucesso do Lançamento"
+    ],
+    "total_rounds": 3,
+    "provider": "openai",
+    "model": "gpt-4o-mini"
+  },
+  "agreement_metrics": {
+    "mean_absolute_difference": 2.15,
+    "spearman_correlation": 0.2597578163807777,
+    "spearman_p_value": 0.2687291239203946,
+    "kendall_tau": 0.2256354947537551,
+    "kendall_p_value": 0.21768401241519242,
+    "exact_agreement_rate": 0.05,
+    "close_agreement_rate": 0.6,
+    "total_comparisons": 20
+  },
+  "round_summary": [],
+  "factor_analysis": {
+    "Documentação de Projeto": {
+      "as_source": {
+        "total_influence": 38.0,
+        "avg_confidence": 4.0,
+        "changes_made": 1
+      },
+      "as_target": {
+        "total_influence_received": 11.0,
+        "avg_confidence": 4.0,
+        "changes_made": 2
+      }
+    },
+    "Experiência da Equipe": {
+      "as_source": {
+        "total_influence": 45.0,
+        "avg_confidence": 4.25,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 27.0,
+        "avg_confidence": 4.2,
+        "changes_made": 0
+      }
+    },
+    "Qualidade da Comunicação": {
+      "as_source": {
+        "total_influence": 25.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 22.0,
+        "avg_confidence": 4.5,
+        "changes_made": 0
+      }
+    },
+    "Disponibilidade de Tempo": {
+      "as_source": {
+        "total_influence": 26.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 14.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      }
+    },
+    "Orçamento Disponível": {
+      "as_source": {
+        "total_influence": 33.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 0.0,
+        "avg_confidence": 0,
+        "changes_made": 0
+      }
+    },
+    "Volume da Câmara": {
+      "as_source": {
+        "total_influence": 27.0,
+        "avg_confidence": 4.25,
+        "changes_made": 2
+      },
+      "as_target": {
+        "total_influence_received": 33.0,
+        "avg_confidence": 4.125,
+        "changes_made": 1
+      }
+    },
+    "Razão de mistura O/F e controle de vazão do oxigênio": {
+      "as_source": {
+        "total_influence": 26.0,
+        "avg_confidence": 4.125,
+        "changes_made": 1
+      },
+      "as_target": {
+        "total_influence_received": 54.0,
+        "avg_confidence": 4.111111111111111,
+        "changes_made": 3
+      }
+    },
+    "Temperatura do Oxigênio": {
+      "as_source": {
+        "total_influence": 17.0,
+        "avg_confidence": 4.4,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 15.0,
+        "avg_confidence": 4.142857142857143,
+        "changes_made": 0
+      }
+    },
+    "Massa de Parafina": {
+      "as_source": {
+        "total_influence": 20.0,
+        "avg_confidence": 4.333333333333333,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 31.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      }
+    },
+    "Acabamento Superficial do Grão e pureza da parafina": {
+      "as_source": {
+        "total_influence": 19.0,
+        "avg_confidence": 4.142857142857143,
+        "changes_made": 0
+      },
+      "as_target": {
+        "total_influence_received": 36.0,
+        "avg_confidence": 4.0,
+        "changes_made": 0
+      }
+    },
+    "Temperatura Ambiente": {
+      "as_source": {
+        "total_influence": 25.0,
+        "avg_confidence": 4.111111111111111,
+        "changes_made": 2
+      },
+      "as_target": {
+        "total_influence_received": 2.0,
+        "avg_confidence": 4.666666666666667,
+        "changes_made": 1
+      }
+    },
+    "Sucesso do Lançamento": {
+      "as_source": {
+        "total_influence": 21.0,
+        "avg_confidence": 4.75,
+        "changes_made": 3
+      },
+      "as_target": {
+        "total_influence_received": 77.0,
+        "avg_confidence": 4.363636363636363,
+        "changes_made": 2
+      }
+    }
+  }
+}
