@@ -6,7 +6,7 @@ Permite comparar e revisar as avaliações do LLM com base no consenso de especi
 Funcionalidades principais:
 - Armazenamento de justificativas e níveis de confiança
 - Agregação de respostas de especialistas
-- Processo de auditoria Delphi com múltiplas rondas
+- Processo de auditoria Delphi com múltiplas rodadas
 - Métricas de concordância e análise de viés
 """
 
@@ -66,7 +66,7 @@ class ExpertStatistics:
 class DelphiMemory:
     """
     Gerencia a memória e histórico das avaliações do processo Delphi.
-    Armazena justificativas, confiança e múltiplas rondas de avaliação.
+    Armazena justificativas, confiança e múltiplas rodadas de avaliação.
     """
     
     def __init__(self):
@@ -449,7 +449,7 @@ class DelphiDematel:
     Funcionalidades:
     - Memória persistente de justificativas e confiança
     - Comparação com consenso de especialistas
-    - Múltiplas rondas de reavaliação
+    - Múltiplas rodadas de reavaliação
     - Métricas de concordância
     """
     
@@ -1108,12 +1108,12 @@ class DelphiDematel:
     def run_full_delphi_process(self, max_rounds: int = 2) -> Dict[str, Any]:
         
         """
-        Executa o processo completo Delphi: matriz inicial + rondas de auditoria.
+        Executa o processo completo Delphi: matriz inicial + rodadas de auditoria.
         
         Parameters
         ----------
         max_rounds : int
-            Número máximo de rondas de auditoria
+            Número máximo de rodadas de auditoria
         
         Returns
         -------
@@ -1137,7 +1137,7 @@ class DelphiDematel:
             'final_metrics': None
         }
         
-        # Rondas de auditoria
+        # rodadas de auditoria
         for round_num in range(max_rounds):
             if not any(self.memory.expert_stats.values()):
                 logger.warning("Sem dados de especialistas disponíveis. Pulando auditoria.")
