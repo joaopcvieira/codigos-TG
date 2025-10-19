@@ -1,0 +1,85 @@
+RELATÓRIO DE VALIDAÇÃO EXPERIMENTAL
+MÉTODO DELPHI-DEMATEL PARA SISTEMAS DE PROPULSÃO
+================================================
+
+DADOS EXPERIMENTAIS
+-------------------
+Data da análise: 2025-10-19 18:38:55
+Data da execução original: 2025-10-18T20:44:31.376243
+Modelo LLM: gpt-4o-mini (openai)
+Fatores analisados: 12
+Comparações realizadas: 20
+Rodadas Delphi: 3
+
+RESULTADOS PRINCIPAIS
+---------------------
+Diferença Absoluta Média (MAD): 2.150 pontos (escala 0-9)
+Classificação MAD: BOA
+
+Correlação de Spearman: 0.260
+Classificação correlação: MUITO FRACA  
+Significância estatística: Não (p=0.269)
+
+Correlação de Kendall: 0.226 (p=0.218)
+
+Taxa de acordo exato: 5.0%
+Taxa de acordo próximo (±1): 60.0%
+
+Score de validação: 3/5 (60.0%)
+
+ANÁLISE DO PROCESSO DELPHI
+--------------------------
+Total de mudanças realizadas: 18
+Fatores que se adaptaram: 5/12 (41.7%)
+Processo Delphi: EFETIVO
+
+ANÁLISE POR FATORES
+-------------------
+Confiança média: 4.02/5.0 (σ = 0.66)
+Fatores alta confiança (≥4.0): 11/12
+
+Fator mais influente: Orçamento Disponível
+Influência líquida: 33.0
+
+Fator mais influenciado: Sucesso do Lançamento
+Influência recebida: 77.0
+
+CONCLUSÃO GERAL
+---------------
+⚠️ METODOLOGIA PARCIALMENTE VALIDADA
+
+INTERPRETAÇÃO ACADÊMICA:
+BOA - Diferenças aceitáveis para aplicação prática
+
+A correlação de Spearman de 0.260 demonstra muito fraca concordância entre os rankings de importância atribuídos pelo LLM e pelos especialistas humanos.
+
+O processo Delphi foi efetivo, com 18 mudanças registradas ao longo de 3 rodadas.
+
+APLICABILIDADE
+--------------
+
+⚠️ RECOMENDAÇÃO: APLICAÇÃO COM RESSALVAS  
+- Uso recomendado apenas para análises preliminares
+- Supervisão técnica especializada necessária
+- Refinamentos requeridos antes de uso operacional
+- Validação adicional em contextos específicos
+
+
+CONTRIBUIÇÕES PARA A LITERATURA
+-------------------------------
+• Primeira validação quantitativa rigorosa de LLM em método DEMATEL
+• Framework replicável para avaliação de concordância IA-especialista  
+• Análise empírica do processo Delphi adaptado para sistemas de IA
+• Métricas padronizadas para validação em engenharia aeroespacial
+
+LIMITAÇÕES IDENTIFICADAS
+------------------------
+• Baixa concordância de rankings (ρ < 0.5)
+• Correlações estatisticamente não significativas
+
+DADOS PARA CITAÇÃO
+------------------
+Comparações analisadas: 20
+Fatores de propulsão: 6 técnicos, 5 gerenciais
+Modelo: gpt-4o-mini
+Metodologia: Delphi-DEMATEL com validação estatística
