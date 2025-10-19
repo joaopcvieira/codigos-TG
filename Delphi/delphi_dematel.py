@@ -686,27 +686,24 @@ class DelphiDematel:
         Faz pergunta ao LLM e armazena resposta completa com justificativa e confiança.
         Estende o método _ask_llm original para capturar informações adicionais.
         """
-        # # Verifica cache primeiro
-        # cached_response = self.memory.get_latest_response(src, tgt)
-        # if use_initial_cache and cached_response and self.current_round == 1:
-        #     return cached_response
         
         # Monta prompt estendido para capturar justificativa e confiança
         from config import SCALE_DESC
         extended_prompt = f"""{self.prompt_tmpl.format(
-            src=src, tgt=tgt, 
-            description_src=description_src, description_tgt=description_tgt, 
-            scale=SCALE_DESC
-        )}
+                src=src, tgt=tgt, 
+                description_src=description_src, description_tgt=description_tgt, 
+                scale=SCALE_DESC
+            )}
 
-        Além da nota, forneça também:
-        1. Uma justificativa técnica detalhada para sua avaliação
-        2. Seu nível de confiança nesta avaliação (1=muito baixa, 5=muito alta)
+            Além da nota, forneça também:
+            1. Uma justificativa técnica detalhada para sua avaliação
+            2. Seu nível de confiança nesta avaliação (1=muito baixa, 5=muito alta)
 
-        FORMATO DA RESPOSTA:
-        NOTA: [0-9]
-        JUSTIFICATIVA: [Explique detalhadamente o raciocínio técnico]
-        CONFIANÇA: [1-5]"""
+            FORMATO DA RESPOSTA:
+            NOTA: [0-9]
+            JUSTIFICATIVA: [Explique detalhadamente o raciocínio técnico]
+            CONFIANÇA: [1-5]
+        """
         
         # Chama LLM
         from config import _OPENAI_V0
