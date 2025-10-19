@@ -1,61 +1,2449 @@
-expert_id,Documentação de Projeto,Experiência da Equipe,Qualidade da Comunicação,Disponibilidade de Tempo,Orçamento Disponível,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,Sucesso do Lançamento
-expert_0,0,2,2,4,1,4,2,2,4,0,1,4
-expert_0,1,0,4,2,2,4,4,1,3,2,0,4
-expert_0,2,3,0,0,4,2,2,0,2,0,3,2
-expert_0,2,0,0,0,1,4,0,4,2,2,4,4
-expert_0,3,3,4,3,0,2,4,2,4,0,1,2
-expert_0,1,4,2,0,4,0,2,0,2,3,0,0
-expert_0,0,0,2,0,2,2,0,2,4,2,2,4
-expert_0,4,1,3,0,2,0,4,0,0,3,3,3
-expert_0,0,2,3,2,4,0,0,2,0,0,3,2
-expert_0,3,4,4,4,4,3,4,2,0,0,4,2
-expert_0,4,2,0,4,2,4,0,0,2,2,0,2
-expert_0,0,2,4,2,0,0,4,0,4,0,2,0
-expert_1,0,6,2,2,0,7,2,2,0,2,4,1
-expert_1,6,0,0,3,6,0,7,3,1,0,7,6
-expert_1,6,5,0,4,2,3,7,5,2,2,0,2
-expert_1,4,6,5,0,0,4,1,6,6,5,6,2
-expert_1,0,6,6,1,0,3,4,2,6,7,6,0
-expert_1,3,4,7,3,5,0,6,6,4,6,2,4
-expert_1,3,4,7,6,2,2,0,3,1,1,4,5
-expert_1,0,4,5,3,3,3,3,0,5,5,2,7
-expert_1,1,6,3,0,6,5,0,0,0,2,5,0
-expert_1,3,4,0,2,6,5,7,2,0,0,4,0
-expert_1,2,1,3,7,6,2,5,7,7,7,0,3
-expert_1,0,5,0,1,3,3,5,6,1,2,0,0
-expert_2,0,7,0,2,0,1,1,3,5,6,4,7
-expert_2,0,0,2,5,1,4,3,1,7,5,7,6
-expert_2,3,6,0,7,2,0,6,5,7,4,3,1
-expert_2,5,5,2,0,7,7,0,0,3,2,5,7
-expert_2,4,2,3,3,0,3,2,1,2,6,2,3
-expert_2,7,6,3,0,0,0,7,6,1,7,0,2
-expert_2,3,0,0,1,6,6,0,1,2,6,3,7
-expert_2,1,7,0,3,3,0,1,0,7,5,3,4
-expert_2,4,7,2,6,0,0,2,2,0,7,2,3
-expert_2,7,5,7,0,7,3,2,0,7,0,5,7
-expert_2,3,5,2,7,5,0,2,0,4,1,0,5
-expert_2,1,1,5,2,7,4,0,3,0,3,0,0
-expert_3,0,7,3,7,7,7,6,2,0,7,0,7
-expert_3,3,0,2,5,6,5,5,5,5,5,4,2
-expert_3,5,7,0,2,1,4,5,0,3,6,7,0
-expert_3,4,3,4,0,2,3,2,7,0,7,0,3
-expert_3,3,5,4,5,0,5,2,3,0,4,7,4
-expert_3,0,5,4,6,2,0,0,3,6,4,4,7
-expert_3,6,0,7,2,7,1,0,1,6,5,1,2
-expert_3,7,5,7,1,7,6,5,0,1,6,2,1
-expert_3,1,1,0,7,0,0,2,5,0,6,4,1
-expert_3,6,1,2,1,0,7,4,3,1,0,0,3
-expert_3,4,3,0,7,7,5,7,5,3,2,0,6
-expert_3,3,1,1,7,6,6,5,2,0,1,6,0
-expert_4,1,6,2,2,6,1,4,2,6,7,6,3
-expert_4,4,1,1,8,5,4,4,4,5,7,4,6
-expert_4,5,8,1,6,7,3,7,8,4,8,5,2
-expert_4,4,2,6,1,1,8,7,3,4,2,7,2
-expert_4,5,2,5,6,1,7,1,4,5,1,2,2
-expert_4,1,7,2,8,6,1,8,1,8,5,5,1
-expert_4,8,5,7,8,7,5,1,5,7,3,4,2
-expert_4,8,3,5,6,1,5,6,1,5,7,1,6
-expert_4,6,6,4,5,4,8,2,2,1,5,7,4
-expert_4,1,6,6,5,7,2,2,6,5,1,2,4
-expert_4,7,2,2,3,2,8,1,8,5,5,1,8
-expert_4,8,8,7,2,1,4,8,8,3,4,8,1
+expert_id,factor_source,factor_target,influence_score
+0,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,1.0
+0,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+0,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,4.0
+0,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+0,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+0,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+0,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+0,Disponibilidade de Tempo,Documentação de Projeto,0.0
+0,Disponibilidade de Tempo,Experiência da Equipe,0.0
+0,Disponibilidade de Tempo,Massa de Parafina,0.0
+0,Disponibilidade de Tempo,Orçamento Disponível,0.0
+0,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+0,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Disponibilidade de Tempo,Sucesso do Lançamento,2.0
+0,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+0,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+0,Disponibilidade de Tempo,Volume da Câmara,1.0
+0,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,2.0
+0,Documentação de Projeto,Disponibilidade de Tempo,0.0
+0,Documentação de Projeto,Documentação de Projeto,0.0
+0,Documentação de Projeto,Experiência da Equipe,0.0
+0,Documentação de Projeto,Massa de Parafina,3.0
+0,Documentação de Projeto,Orçamento Disponível,0.0
+0,Documentação de Projeto,Qualidade da Comunicação,0.0
+0,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+0,Documentação de Projeto,Sucesso do Lançamento,4.0
+0,Documentação de Projeto,Temperatura Ambiente,0.0
+0,Documentação de Projeto,Temperatura do Oxigênio,3.0
+0,Documentação de Projeto,Volume da Câmara,2.0
+0,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+0,Experiência da Equipe,Disponibilidade de Tempo,0.0
+0,Experiência da Equipe,Documentação de Projeto,0.0
+0,Experiência da Equipe,Experiência da Equipe,0.0
+0,Experiência da Equipe,Massa de Parafina,1.0
+0,Experiência da Equipe,Orçamento Disponível,0.0
+0,Experiência da Equipe,Qualidade da Comunicação,0.0
+0,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Experiência da Equipe,Sucesso do Lançamento,4.0
+0,Experiência da Equipe,Temperatura Ambiente,0.0
+0,Experiência da Equipe,Temperatura do Oxigênio,0.0
+0,Experiência da Equipe,Volume da Câmara,0.0
+0,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,2.0
+0,Massa de Parafina,Disponibilidade de Tempo,0.0
+0,Massa de Parafina,Documentação de Projeto,0.0
+0,Massa de Parafina,Experiência da Equipe,0.0
+0,Massa de Parafina,Massa de Parafina,0.0
+0,Massa de Parafina,Orçamento Disponível,0.0
+0,Massa de Parafina,Qualidade da Comunicação,0.0
+0,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+0,Massa de Parafina,Sucesso do Lançamento,2.0
+0,Massa de Parafina,Temperatura Ambiente,0.0
+0,Massa de Parafina,Temperatura do Oxigênio,0.0
+0,Massa de Parafina,Volume da Câmara,1.0
+0,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+0,Orçamento Disponível,Disponibilidade de Tempo,0.0
+0,Orçamento Disponível,Documentação de Projeto,0.0
+0,Orçamento Disponível,Experiência da Equipe,0.0
+0,Orçamento Disponível,Massa de Parafina,4.0
+0,Orçamento Disponível,Orçamento Disponível,0.0
+0,Orçamento Disponível,Qualidade da Comunicação,0.0
+0,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+0,Orçamento Disponível,Sucesso do Lançamento,4.0
+0,Orçamento Disponível,Temperatura Ambiente,0.0
+0,Orçamento Disponível,Temperatura do Oxigênio,4.0
+0,Orçamento Disponível,Volume da Câmara,0.0
+0,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+0,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+0,Qualidade da Comunicação,Documentação de Projeto,0.0
+0,Qualidade da Comunicação,Experiência da Equipe,0.0
+0,Qualidade da Comunicação,Massa de Parafina,0.0
+0,Qualidade da Comunicação,Orçamento Disponível,0.0
+0,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+0,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+0,Qualidade da Comunicação,Temperatura Ambiente,0.0
+0,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+0,Qualidade da Comunicação,Volume da Câmara,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,0.0
+0,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,1.0
+0,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+0,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+0,Sucesso do Lançamento,Documentação de Projeto,0.0
+0,Sucesso do Lançamento,Experiência da Equipe,0.0
+0,Sucesso do Lançamento,Massa de Parafina,0.0
+0,Sucesso do Lançamento,Orçamento Disponível,0.0
+0,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+0,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+0,Sucesso do Lançamento,Temperatura Ambiente,0.0
+0,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+0,Sucesso do Lançamento,Volume da Câmara,0.0
+0,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+0,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+0,Temperatura Ambiente,Documentação de Projeto,0.0
+0,Temperatura Ambiente,Experiência da Equipe,0.0
+0,Temperatura Ambiente,Massa de Parafina,0.0
+0,Temperatura Ambiente,Orçamento Disponível,0.0
+0,Temperatura Ambiente,Qualidade da Comunicação,0.0
+0,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+0,Temperatura Ambiente,Sucesso do Lançamento,1.0
+0,Temperatura Ambiente,Temperatura Ambiente,0.0
+0,Temperatura Ambiente,Temperatura do Oxigênio,4.0
+0,Temperatura Ambiente,Volume da Câmara,0.0
+0,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,1.0
+0,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+0,Temperatura do Oxigênio,Documentação de Projeto,0.0
+0,Temperatura do Oxigênio,Experiência da Equipe,0.0
+0,Temperatura do Oxigênio,Massa de Parafina,0.0
+0,Temperatura do Oxigênio,Orçamento Disponível,0.0
+0,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+0,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+0,Temperatura do Oxigênio,Sucesso do Lançamento,0.0
+0,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+0,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+0,Temperatura do Oxigênio,Volume da Câmara,0.0
+0,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+0,Volume da Câmara,Disponibilidade de Tempo,0.0
+0,Volume da Câmara,Documentação de Projeto,0.0
+0,Volume da Câmara,Experiência da Equipe,0.0
+0,Volume da Câmara,Massa de Parafina,3.0
+0,Volume da Câmara,Orçamento Disponível,0.0
+0,Volume da Câmara,Qualidade da Comunicação,0.0
+0,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+0,Volume da Câmara,Sucesso do Lançamento,
+0,Volume da Câmara,Temperatura Ambiente,0.0
+0,Volume da Câmara,Temperatura do Oxigênio,0.0
+0,Volume da Câmara,Volume da Câmara,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,2.0
+1,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+1,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+1,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+1,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+1,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,2.0
+1,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+1,Disponibilidade de Tempo,Documentação de Projeto,0.0
+1,Disponibilidade de Tempo,Experiência da Equipe,0.0
+1,Disponibilidade de Tempo,Massa de Parafina,0.0
+1,Disponibilidade de Tempo,Orçamento Disponível,0.0
+1,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+1,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+1,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+1,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+1,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+1,Disponibilidade de Tempo,Volume da Câmara,1.0
+1,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,2.0
+1,Documentação de Projeto,Disponibilidade de Tempo,0.0
+1,Documentação de Projeto,Documentação de Projeto,0.0
+1,Documentação de Projeto,Experiência da Equipe,0.0
+1,Documentação de Projeto,Massa de Parafina,3.0
+1,Documentação de Projeto,Orçamento Disponível,0.0
+1,Documentação de Projeto,Qualidade da Comunicação,0.0
+1,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+1,Documentação de Projeto,Sucesso do Lançamento,4.0
+1,Documentação de Projeto,Temperatura Ambiente,0.0
+1,Documentação de Projeto,Temperatura do Oxigênio,3.0
+1,Documentação de Projeto,Volume da Câmara,3.0
+1,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,2.0
+1,Experiência da Equipe,Disponibilidade de Tempo,0.0
+1,Experiência da Equipe,Documentação de Projeto,0.0
+1,Experiência da Equipe,Experiência da Equipe,0.0
+1,Experiência da Equipe,Massa de Parafina,2.0
+1,Experiência da Equipe,Orçamento Disponível,0.0
+1,Experiência da Equipe,Qualidade da Comunicação,0.0
+1,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+1,Experiência da Equipe,Sucesso do Lançamento,3.0
+1,Experiência da Equipe,Temperatura Ambiente,0.0
+1,Experiência da Equipe,Temperatura do Oxigênio,3.0
+1,Experiência da Equipe,Volume da Câmara,2.0
+1,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,1.0
+1,Massa de Parafina,Disponibilidade de Tempo,0.0
+1,Massa de Parafina,Documentação de Projeto,0.0
+1,Massa de Parafina,Experiência da Equipe,0.0
+1,Massa de Parafina,Massa de Parafina,0.0
+1,Massa de Parafina,Orçamento Disponível,0.0
+1,Massa de Parafina,Qualidade da Comunicação,0.0
+1,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+1,Massa de Parafina,Sucesso do Lançamento,3.0
+1,Massa de Parafina,Temperatura Ambiente,0.0
+1,Massa de Parafina,Temperatura do Oxigênio,1.0
+1,Massa de Parafina,Volume da Câmara,4.0
+1,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+1,Orçamento Disponível,Disponibilidade de Tempo,0.0
+1,Orçamento Disponível,Documentação de Projeto,0.0
+1,Orçamento Disponível,Experiência da Equipe,0.0
+1,Orçamento Disponível,Massa de Parafina,1.0
+1,Orçamento Disponível,Orçamento Disponível,0.0
+1,Orçamento Disponível,Qualidade da Comunicação,0.0
+1,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+1,Orçamento Disponível,Sucesso do Lançamento,3.0
+1,Orçamento Disponível,Temperatura Ambiente,0.0
+1,Orçamento Disponível,Temperatura do Oxigênio,4.0
+1,Orçamento Disponível,Volume da Câmara,0.0
+1,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+1,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+1,Qualidade da Comunicação,Documentação de Projeto,0.0
+1,Qualidade da Comunicação,Experiência da Equipe,0.0
+1,Qualidade da Comunicação,Massa de Parafina,0.0
+1,Qualidade da Comunicação,Orçamento Disponível,0.0
+1,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+1,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+1,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+1,Qualidade da Comunicação,Temperatura Ambiente,0.0
+1,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+1,Qualidade da Comunicação,Volume da Câmara,1.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,3.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,4.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,0.0
+1,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+1,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+1,Sucesso do Lançamento,Documentação de Projeto,0.0
+1,Sucesso do Lançamento,Experiência da Equipe,0.0
+1,Sucesso do Lançamento,Massa de Parafina,0.0
+1,Sucesso do Lançamento,Orçamento Disponível,0.0
+1,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+1,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+1,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+1,Sucesso do Lançamento,Temperatura Ambiente,0.0
+1,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+1,Sucesso do Lançamento,Volume da Câmara,0.0
+1,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+1,Temperatura Ambiente,Documentação de Projeto,0.0
+1,Temperatura Ambiente,Experiência da Equipe,0.0
+1,Temperatura Ambiente,Massa de Parafina,0.0
+1,Temperatura Ambiente,Orçamento Disponível,0.0
+1,Temperatura Ambiente,Qualidade da Comunicação,0.0
+1,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+1,Temperatura Ambiente,Sucesso do Lançamento,3.0
+1,Temperatura Ambiente,Temperatura Ambiente,0.0
+1,Temperatura Ambiente,Temperatura do Oxigênio,0.0
+1,Temperatura Ambiente,Volume da Câmara,3.0
+1,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+1,Temperatura do Oxigênio,Documentação de Projeto,0.0
+1,Temperatura do Oxigênio,Experiência da Equipe,0.0
+1,Temperatura do Oxigênio,Massa de Parafina,1.0
+1,Temperatura do Oxigênio,Orçamento Disponível,0.0
+1,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+1,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+1,Temperatura do Oxigênio,Sucesso do Lançamento,3.0
+1,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+1,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+1,Temperatura do Oxigênio,Volume da Câmara,0.0
+1,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+1,Volume da Câmara,Disponibilidade de Tempo,0.0
+1,Volume da Câmara,Documentação de Projeto,0.0
+1,Volume da Câmara,Experiência da Equipe,0.0
+1,Volume da Câmara,Massa de Parafina,3.0
+1,Volume da Câmara,Orçamento Disponível,0.0
+1,Volume da Câmara,Qualidade da Comunicação,0.0
+1,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+1,Volume da Câmara,Sucesso do Lançamento,2.0
+1,Volume da Câmara,Temperatura Ambiente,0.0
+1,Volume da Câmara,Temperatura do Oxigênio,0.0
+1,Volume da Câmara,Volume da Câmara,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+2,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+2,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+2,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,1.0
+2,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+2,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+2,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+2,Disponibilidade de Tempo,Documentação de Projeto,0.0
+2,Disponibilidade de Tempo,Experiência da Equipe,0.0
+2,Disponibilidade de Tempo,Massa de Parafina,0.0
+2,Disponibilidade de Tempo,Orçamento Disponível,0.0
+2,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+2,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+2,Disponibilidade de Tempo,Sucesso do Lançamento,2.0
+2,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+2,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+2,Disponibilidade de Tempo,Volume da Câmara,0.0
+2,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,2.0
+2,Documentação de Projeto,Disponibilidade de Tempo,0.0
+2,Documentação de Projeto,Documentação de Projeto,0.0
+2,Documentação de Projeto,Experiência da Equipe,0.0
+2,Documentação de Projeto,Massa de Parafina,3.0
+2,Documentação de Projeto,Orçamento Disponível,0.0
+2,Documentação de Projeto,Qualidade da Comunicação,0.0
+2,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+2,Documentação de Projeto,Sucesso do Lançamento,3.0
+2,Documentação de Projeto,Temperatura Ambiente,0.0
+2,Documentação de Projeto,Temperatura do Oxigênio,3.0
+2,Documentação de Projeto,Volume da Câmara,3.0
+2,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+2,Experiência da Equipe,Disponibilidade de Tempo,0.0
+2,Experiência da Equipe,Documentação de Projeto,0.0
+2,Experiência da Equipe,Experiência da Equipe,0.0
+2,Experiência da Equipe,Massa de Parafina,0.0
+2,Experiência da Equipe,Orçamento Disponível,0.0
+2,Experiência da Equipe,Qualidade da Comunicação,0.0
+2,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+2,Experiência da Equipe,Sucesso do Lançamento,
+2,Experiência da Equipe,Temperatura Ambiente,0.0
+2,Experiência da Equipe,Temperatura do Oxigênio,2.0
+2,Experiência da Equipe,Volume da Câmara,0.0
+2,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+2,Massa de Parafina,Disponibilidade de Tempo,0.0
+2,Massa de Parafina,Documentação de Projeto,0.0
+2,Massa de Parafina,Experiência da Equipe,0.0
+2,Massa de Parafina,Massa de Parafina,0.0
+2,Massa de Parafina,Orçamento Disponível,0.0
+2,Massa de Parafina,Qualidade da Comunicação,0.0
+2,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+2,Massa de Parafina,Sucesso do Lançamento,2.0
+2,Massa de Parafina,Temperatura Ambiente,0.0
+2,Massa de Parafina,Temperatura do Oxigênio,2.0
+2,Massa de Parafina,Volume da Câmara,4.0
+2,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+2,Orçamento Disponível,Disponibilidade de Tempo,0.0
+2,Orçamento Disponível,Documentação de Projeto,0.0
+2,Orçamento Disponível,Experiência da Equipe,0.0
+2,Orçamento Disponível,Massa de Parafina,2.0
+2,Orçamento Disponível,Orçamento Disponível,0.0
+2,Orçamento Disponível,Qualidade da Comunicação,0.0
+2,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+2,Orçamento Disponível,Sucesso do Lançamento,2.0
+2,Orçamento Disponível,Temperatura Ambiente,0.0
+2,Orçamento Disponível,Temperatura do Oxigênio,4.0
+2,Orçamento Disponível,Volume da Câmara,0.0
+2,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,3.0
+2,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+2,Qualidade da Comunicação,Documentação de Projeto,0.0
+2,Qualidade da Comunicação,Experiência da Equipe,0.0
+2,Qualidade da Comunicação,Massa de Parafina,0.0
+2,Qualidade da Comunicação,Orçamento Disponível,0.0
+2,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+2,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+2,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+2,Qualidade da Comunicação,Temperatura Ambiente,0.0
+2,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+2,Qualidade da Comunicação,Volume da Câmara,1.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,3.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,2.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,0.0
+2,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,1.0
+2,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+2,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+2,Sucesso do Lançamento,Documentação de Projeto,0.0
+2,Sucesso do Lançamento,Experiência da Equipe,0.0
+2,Sucesso do Lançamento,Massa de Parafina,0.0
+2,Sucesso do Lançamento,Orçamento Disponível,0.0
+2,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+2,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+2,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+2,Sucesso do Lançamento,Temperatura Ambiente,0.0
+2,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+2,Sucesso do Lançamento,Volume da Câmara,0.0
+2,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,1.0
+2,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+2,Temperatura Ambiente,Documentação de Projeto,0.0
+2,Temperatura Ambiente,Experiência da Equipe,0.0
+2,Temperatura Ambiente,Massa de Parafina,0.0
+2,Temperatura Ambiente,Orçamento Disponível,0.0
+2,Temperatura Ambiente,Qualidade da Comunicação,0.0
+2,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+2,Temperatura Ambiente,Sucesso do Lançamento,2.0
+2,Temperatura Ambiente,Temperatura Ambiente,0.0
+2,Temperatura Ambiente,Temperatura do Oxigênio,3.0
+2,Temperatura Ambiente,Volume da Câmara,1.0
+2,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,2.0
+2,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+2,Temperatura do Oxigênio,Documentação de Projeto,0.0
+2,Temperatura do Oxigênio,Experiência da Equipe,0.0
+2,Temperatura do Oxigênio,Massa de Parafina,1.0
+2,Temperatura do Oxigênio,Orçamento Disponível,0.0
+2,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+2,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+2,Temperatura do Oxigênio,Sucesso do Lançamento,2.0
+2,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+2,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+2,Temperatura do Oxigênio,Volume da Câmara,0.0
+2,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+2,Volume da Câmara,Disponibilidade de Tempo,0.0
+2,Volume da Câmara,Documentação de Projeto,0.0
+2,Volume da Câmara,Experiência da Equipe,0.0
+2,Volume da Câmara,Massa de Parafina,4.0
+2,Volume da Câmara,Orçamento Disponível,0.0
+2,Volume da Câmara,Qualidade da Comunicação,0.0
+2,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+2,Volume da Câmara,Sucesso do Lançamento,1.0
+2,Volume da Câmara,Temperatura Ambiente,0.0
+2,Volume da Câmara,Temperatura do Oxigênio,0.0
+2,Volume da Câmara,Volume da Câmara,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,1.0
+3,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+3,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+3,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,
+3,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+3,Disponibilidade de Tempo,Documentação de Projeto,0.0
+3,Disponibilidade de Tempo,Experiência da Equipe,0.0
+3,Disponibilidade de Tempo,Massa de Parafina,0.0
+3,Disponibilidade de Tempo,Orçamento Disponível,0.0
+3,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+3,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+3,Disponibilidade de Tempo,Sucesso do Lançamento,1.0
+3,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+3,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+3,Disponibilidade de Tempo,Volume da Câmara,1.0
+3,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,
+3,Documentação de Projeto,Disponibilidade de Tempo,0.0
+3,Documentação de Projeto,Documentação de Projeto,0.0
+3,Documentação de Projeto,Experiência da Equipe,0.0
+3,Documentação de Projeto,Massa de Parafina,3.0
+3,Documentação de Projeto,Orçamento Disponível,0.0
+3,Documentação de Projeto,Qualidade da Comunicação,0.0
+3,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+3,Documentação de Projeto,Sucesso do Lançamento,2.0
+3,Documentação de Projeto,Temperatura Ambiente,0.0
+3,Documentação de Projeto,Temperatura do Oxigênio,2.0
+3,Documentação de Projeto,Volume da Câmara,3.0
+3,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,
+3,Experiência da Equipe,Disponibilidade de Tempo,0.0
+3,Experiência da Equipe,Documentação de Projeto,0.0
+3,Experiência da Equipe,Experiência da Equipe,0.0
+3,Experiência da Equipe,Massa de Parafina,3.0
+3,Experiência da Equipe,Orçamento Disponível,0.0
+3,Experiência da Equipe,Qualidade da Comunicação,0.0
+3,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+3,Experiência da Equipe,Sucesso do Lançamento,4.0
+3,Experiência da Equipe,Temperatura Ambiente,0.0
+3,Experiência da Equipe,Temperatura do Oxigênio,1.0
+3,Experiência da Equipe,Volume da Câmara,1.0
+3,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,
+3,Massa de Parafina,Disponibilidade de Tempo,0.0
+3,Massa de Parafina,Documentação de Projeto,0.0
+3,Massa de Parafina,Experiência da Equipe,0.0
+3,Massa de Parafina,Massa de Parafina,0.0
+3,Massa de Parafina,Orçamento Disponível,0.0
+3,Massa de Parafina,Qualidade da Comunicação,0.0
+3,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+3,Massa de Parafina,Sucesso do Lançamento,3.0
+3,Massa de Parafina,Temperatura Ambiente,0.0
+3,Massa de Parafina,Temperatura do Oxigênio,1.0
+3,Massa de Parafina,Volume da Câmara,3.0
+3,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,
+3,Orçamento Disponível,Disponibilidade de Tempo,0.0
+3,Orçamento Disponível,Documentação de Projeto,0.0
+3,Orçamento Disponível,Experiência da Equipe,0.0
+3,Orçamento Disponível,Massa de Parafina,4.0
+3,Orçamento Disponível,Orçamento Disponível,0.0
+3,Orçamento Disponível,Qualidade da Comunicação,0.0
+3,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+3,Orçamento Disponível,Sucesso do Lançamento,3.0
+3,Orçamento Disponível,Temperatura Ambiente,0.0
+3,Orçamento Disponível,Temperatura do Oxigênio,3.0
+3,Orçamento Disponível,Volume da Câmara,0.0
+3,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,
+3,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+3,Qualidade da Comunicação,Documentação de Projeto,0.0
+3,Qualidade da Comunicação,Experiência da Equipe,0.0
+3,Qualidade da Comunicação,Massa de Parafina,0.0
+3,Qualidade da Comunicação,Orçamento Disponível,0.0
+3,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+3,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+3,Qualidade da Comunicação,Sucesso do Lançamento,2.0
+3,Qualidade da Comunicação,Temperatura Ambiente,0.0
+3,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+3,Qualidade da Comunicação,Volume da Câmara,2.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+3,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,4.0
+3,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+3,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+3,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+3,Sucesso do Lançamento,Documentação de Projeto,0.0
+3,Sucesso do Lançamento,Experiência da Equipe,0.0
+3,Sucesso do Lançamento,Massa de Parafina,0.0
+3,Sucesso do Lançamento,Orçamento Disponível,0.0
+3,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+3,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+3,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+3,Sucesso do Lançamento,Temperatura Ambiente,0.0
+3,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+3,Sucesso do Lançamento,Volume da Câmara,0.0
+3,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,1.0
+3,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+3,Temperatura Ambiente,Documentação de Projeto,0.0
+3,Temperatura Ambiente,Experiência da Equipe,0.0
+3,Temperatura Ambiente,Massa de Parafina,1.0
+3,Temperatura Ambiente,Orçamento Disponível,0.0
+3,Temperatura Ambiente,Qualidade da Comunicação,0.0
+3,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+3,Temperatura Ambiente,Sucesso do Lançamento,1.0
+3,Temperatura Ambiente,Temperatura Ambiente,0.0
+3,Temperatura Ambiente,Temperatura do Oxigênio,3.0
+3,Temperatura Ambiente,Volume da Câmara,1.0
+3,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+3,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+3,Temperatura do Oxigênio,Documentação de Projeto,0.0
+3,Temperatura do Oxigênio,Experiência da Equipe,0.0
+3,Temperatura do Oxigênio,Massa de Parafina,0.0
+3,Temperatura do Oxigênio,Orçamento Disponível,0.0
+3,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+3,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+3,Temperatura do Oxigênio,Sucesso do Lançamento,0.0
+3,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+3,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+3,Temperatura do Oxigênio,Volume da Câmara,0.0
+3,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+3,Volume da Câmara,Disponibilidade de Tempo,0.0
+3,Volume da Câmara,Documentação de Projeto,0.0
+3,Volume da Câmara,Experiência da Equipe,0.0
+3,Volume da Câmara,Massa de Parafina,4.0
+3,Volume da Câmara,Orçamento Disponível,0.0
+3,Volume da Câmara,Qualidade da Comunicação,0.0
+3,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+3,Volume da Câmara,Sucesso do Lançamento,0.0
+3,Volume da Câmara,Temperatura Ambiente,0.0
+3,Volume da Câmara,Temperatura do Oxigênio,0.0
+3,Volume da Câmara,Volume da Câmara,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,
+4,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,4.0
+4,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+4,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,
+4,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+4,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+4,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+4,Disponibilidade de Tempo,Documentação de Projeto,0.0
+4,Disponibilidade de Tempo,Experiência da Equipe,0.0
+4,Disponibilidade de Tempo,Massa de Parafina,0.0
+4,Disponibilidade de Tempo,Orçamento Disponível,0.0
+4,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+4,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+4,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+4,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+4,Disponibilidade de Tempo,Volume da Câmara,1.0
+4,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,
+4,Documentação de Projeto,Disponibilidade de Tempo,0.0
+4,Documentação de Projeto,Documentação de Projeto,0.0
+4,Documentação de Projeto,Experiência da Equipe,0.0
+4,Documentação de Projeto,Massa de Parafina,4.0
+4,Documentação de Projeto,Orçamento Disponível,0.0
+4,Documentação de Projeto,Qualidade da Comunicação,0.0
+4,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+4,Documentação de Projeto,Sucesso do Lançamento,4.0
+4,Documentação de Projeto,Temperatura Ambiente,0.0
+4,Documentação de Projeto,Temperatura do Oxigênio,1.0
+4,Documentação de Projeto,Volume da Câmara,4.0
+4,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,4.0
+4,Experiência da Equipe,Disponibilidade de Tempo,0.0
+4,Experiência da Equipe,Documentação de Projeto,0.0
+4,Experiência da Equipe,Experiência da Equipe,0.0
+4,Experiência da Equipe,Massa de Parafina,1.0
+4,Experiência da Equipe,Orçamento Disponível,0.0
+4,Experiência da Equipe,Qualidade da Comunicação,0.0
+4,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+4,Experiência da Equipe,Sucesso do Lançamento,4.0
+4,Experiência da Equipe,Temperatura Ambiente,0.0
+4,Experiência da Equipe,Temperatura do Oxigênio,2.0
+4,Experiência da Equipe,Volume da Câmara,2.0
+4,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,2.0
+4,Massa de Parafina,Disponibilidade de Tempo,0.0
+4,Massa de Parafina,Documentação de Projeto,0.0
+4,Massa de Parafina,Experiência da Equipe,0.0
+4,Massa de Parafina,Massa de Parafina,0.0
+4,Massa de Parafina,Orçamento Disponível,0.0
+4,Massa de Parafina,Qualidade da Comunicação,0.0
+4,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+4,Massa de Parafina,Sucesso do Lançamento,0.0
+4,Massa de Parafina,Temperatura Ambiente,0.0
+4,Massa de Parafina,Temperatura do Oxigênio,
+4,Massa de Parafina,Volume da Câmara,4.0
+4,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+4,Orçamento Disponível,Disponibilidade de Tempo,0.0
+4,Orçamento Disponível,Documentação de Projeto,0.0
+4,Orçamento Disponível,Experiência da Equipe,0.0
+4,Orçamento Disponível,Massa de Parafina,1.0
+4,Orçamento Disponível,Orçamento Disponível,0.0
+4,Orçamento Disponível,Qualidade da Comunicação,0.0
+4,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Orçamento Disponível,Sucesso do Lançamento,4.0
+4,Orçamento Disponível,Temperatura Ambiente,0.0
+4,Orçamento Disponível,Temperatura do Oxigênio,3.0
+4,Orçamento Disponível,Volume da Câmara,0.0
+4,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,4.0
+4,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+4,Qualidade da Comunicação,Documentação de Projeto,0.0
+4,Qualidade da Comunicação,Experiência da Equipe,0.0
+4,Qualidade da Comunicação,Massa de Parafina,0.0
+4,Qualidade da Comunicação,Orçamento Disponível,0.0
+4,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+4,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Qualidade da Comunicação,Sucesso do Lançamento,2.0
+4,Qualidade da Comunicação,Temperatura Ambiente,0.0
+4,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+4,Qualidade da Comunicação,Volume da Câmara,1.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+4,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,2.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,1.0
+4,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+4,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+4,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+4,Sucesso do Lançamento,Documentação de Projeto,0.0
+4,Sucesso do Lançamento,Experiência da Equipe,0.0
+4,Sucesso do Lançamento,Massa de Parafina,0.0
+4,Sucesso do Lançamento,Orçamento Disponível,0.0
+4,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+4,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+4,Sucesso do Lançamento,Temperatura Ambiente,0.0
+4,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+4,Sucesso do Lançamento,Volume da Câmara,0.0
+4,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+4,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+4,Temperatura Ambiente,Documentação de Projeto,0.0
+4,Temperatura Ambiente,Experiência da Equipe,0.0
+4,Temperatura Ambiente,Massa de Parafina,0.0
+4,Temperatura Ambiente,Orçamento Disponível,0.0
+4,Temperatura Ambiente,Qualidade da Comunicação,0.0
+4,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+4,Temperatura Ambiente,Sucesso do Lançamento,0.0
+4,Temperatura Ambiente,Temperatura Ambiente,0.0
+4,Temperatura Ambiente,Temperatura do Oxigênio,1.0
+4,Temperatura Ambiente,Volume da Câmara,0.0
+4,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+4,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+4,Temperatura do Oxigênio,Documentação de Projeto,0.0
+4,Temperatura do Oxigênio,Experiência da Equipe,0.0
+4,Temperatura do Oxigênio,Massa de Parafina,0.0
+4,Temperatura do Oxigênio,Orçamento Disponível,0.0
+4,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+4,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+4,Temperatura do Oxigênio,Sucesso do Lançamento,
+4,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+4,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+4,Temperatura do Oxigênio,Volume da Câmara,0.0
+4,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+4,Volume da Câmara,Disponibilidade de Tempo,0.0
+4,Volume da Câmara,Documentação de Projeto,0.0
+4,Volume da Câmara,Experiência da Equipe,0.0
+4,Volume da Câmara,Massa de Parafina,4.0
+4,Volume da Câmara,Orçamento Disponível,0.0
+4,Volume da Câmara,Qualidade da Comunicação,0.0
+4,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+4,Volume da Câmara,Sucesso do Lançamento,0.0
+4,Volume da Câmara,Temperatura Ambiente,0.0
+4,Volume da Câmara,Temperatura do Oxigênio,0.0
+4,Volume da Câmara,Volume da Câmara,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,3.0
+5,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+5,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+5,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+5,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,
+5,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+5,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,3.0
+5,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+5,Disponibilidade de Tempo,Documentação de Projeto,0.0
+5,Disponibilidade de Tempo,Experiência da Equipe,0.0
+5,Disponibilidade de Tempo,Massa de Parafina,0.0
+5,Disponibilidade de Tempo,Orçamento Disponível,0.0
+5,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+5,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+5,Disponibilidade de Tempo,Sucesso do Lançamento,4.0
+5,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+5,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+5,Disponibilidade de Tempo,Volume da Câmara,3.0
+5,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,
+5,Documentação de Projeto,Disponibilidade de Tempo,0.0
+5,Documentação de Projeto,Documentação de Projeto,0.0
+5,Documentação de Projeto,Experiência da Equipe,0.0
+5,Documentação de Projeto,Massa de Parafina,
+5,Documentação de Projeto,Orçamento Disponível,0.0
+5,Documentação de Projeto,Qualidade da Comunicação,0.0
+5,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,
+5,Documentação de Projeto,Sucesso do Lançamento,2.0
+5,Documentação de Projeto,Temperatura Ambiente,0.0
+5,Documentação de Projeto,Temperatura do Oxigênio,
+5,Documentação de Projeto,Volume da Câmara,
+5,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,
+5,Experiência da Equipe,Disponibilidade de Tempo,0.0
+5,Experiência da Equipe,Documentação de Projeto,0.0
+5,Experiência da Equipe,Experiência da Equipe,0.0
+5,Experiência da Equipe,Massa de Parafina,
+5,Experiência da Equipe,Orçamento Disponível,0.0
+5,Experiência da Equipe,Qualidade da Comunicação,0.0
+5,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,
+5,Experiência da Equipe,Sucesso do Lançamento,
+5,Experiência da Equipe,Temperatura Ambiente,0.0
+5,Experiência da Equipe,Temperatura do Oxigênio,
+5,Experiência da Equipe,Volume da Câmara,
+5,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,1.0
+5,Massa de Parafina,Disponibilidade de Tempo,0.0
+5,Massa de Parafina,Documentação de Projeto,0.0
+5,Massa de Parafina,Experiência da Equipe,0.0
+5,Massa de Parafina,Massa de Parafina,0.0
+5,Massa de Parafina,Orçamento Disponível,0.0
+5,Massa de Parafina,Qualidade da Comunicação,0.0
+5,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+5,Massa de Parafina,Sucesso do Lançamento,1.0
+5,Massa de Parafina,Temperatura Ambiente,0.0
+5,Massa de Parafina,Temperatura do Oxigênio,1.0
+5,Massa de Parafina,Volume da Câmara,1.0
+5,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+5,Orçamento Disponível,Disponibilidade de Tempo,0.0
+5,Orçamento Disponível,Documentação de Projeto,0.0
+5,Orçamento Disponível,Experiência da Equipe,0.0
+5,Orçamento Disponível,Massa de Parafina,4.0
+5,Orçamento Disponível,Orçamento Disponível,0.0
+5,Orçamento Disponível,Qualidade da Comunicação,0.0
+5,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+5,Orçamento Disponível,Sucesso do Lançamento,4.0
+5,Orçamento Disponível,Temperatura Ambiente,0.0
+5,Orçamento Disponível,Temperatura do Oxigênio,4.0
+5,Orçamento Disponível,Volume da Câmara,0.0
+5,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+5,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+5,Qualidade da Comunicação,Documentação de Projeto,0.0
+5,Qualidade da Comunicação,Experiência da Equipe,0.0
+5,Qualidade da Comunicação,Massa de Parafina,0.0
+5,Qualidade da Comunicação,Orçamento Disponível,0.0
+5,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+5,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+5,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+5,Qualidade da Comunicação,Temperatura Ambiente,0.0
+5,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+5,Qualidade da Comunicação,Volume da Câmara,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,1.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,1.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,2.0
+5,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,1.0
+5,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+5,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+5,Sucesso do Lançamento,Documentação de Projeto,0.0
+5,Sucesso do Lançamento,Experiência da Equipe,0.0
+5,Sucesso do Lançamento,Massa de Parafina,0.0
+5,Sucesso do Lançamento,Orçamento Disponível,0.0
+5,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+5,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+5,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+5,Sucesso do Lançamento,Temperatura Ambiente,0.0
+5,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+5,Sucesso do Lançamento,Volume da Câmara,0.0
+5,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,
+5,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+5,Temperatura Ambiente,Documentação de Projeto,0.0
+5,Temperatura Ambiente,Experiência da Equipe,0.0
+5,Temperatura Ambiente,Massa de Parafina,
+5,Temperatura Ambiente,Orçamento Disponível,0.0
+5,Temperatura Ambiente,Qualidade da Comunicação,0.0
+5,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,
+5,Temperatura Ambiente,Sucesso do Lançamento,
+5,Temperatura Ambiente,Temperatura Ambiente,0.0
+5,Temperatura Ambiente,Temperatura do Oxigênio,
+5,Temperatura Ambiente,Volume da Câmara,
+5,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+5,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+5,Temperatura do Oxigênio,Documentação de Projeto,0.0
+5,Temperatura do Oxigênio,Experiência da Equipe,0.0
+5,Temperatura do Oxigênio,Massa de Parafina,0.0
+5,Temperatura do Oxigênio,Orçamento Disponível,0.0
+5,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+5,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+5,Temperatura do Oxigênio,Sucesso do Lançamento,1.0
+5,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+5,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+5,Temperatura do Oxigênio,Volume da Câmara,0.0
+5,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+5,Volume da Câmara,Disponibilidade de Tempo,0.0
+5,Volume da Câmara,Documentação de Projeto,0.0
+5,Volume da Câmara,Experiência da Equipe,0.0
+5,Volume da Câmara,Massa de Parafina,4.0
+5,Volume da Câmara,Orçamento Disponível,0.0
+5,Volume da Câmara,Qualidade da Comunicação,0.0
+5,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+5,Volume da Câmara,Sucesso do Lançamento,2.0
+5,Volume da Câmara,Temperatura Ambiente,0.0
+5,Volume da Câmara,Temperatura do Oxigênio,0.0
+5,Volume da Câmara,Volume da Câmara,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,3.0
+6,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,4.0
+6,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+6,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+6,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,3.0
+6,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+6,Disponibilidade de Tempo,Documentação de Projeto,0.0
+6,Disponibilidade de Tempo,Experiência da Equipe,0.0
+6,Disponibilidade de Tempo,Massa de Parafina,0.0
+6,Disponibilidade de Tempo,Orçamento Disponível,0.0
+6,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+6,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+6,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+6,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+6,Disponibilidade de Tempo,Volume da Câmara,2.0
+6,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,3.0
+6,Documentação de Projeto,Disponibilidade de Tempo,0.0
+6,Documentação de Projeto,Documentação de Projeto,0.0
+6,Documentação de Projeto,Experiência da Equipe,0.0
+6,Documentação de Projeto,Massa de Parafina,4.0
+6,Documentação de Projeto,Orçamento Disponível,0.0
+6,Documentação de Projeto,Qualidade da Comunicação,0.0
+6,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+6,Documentação de Projeto,Sucesso do Lançamento,2.0
+6,Documentação de Projeto,Temperatura Ambiente,0.0
+6,Documentação de Projeto,Temperatura do Oxigênio,4.0
+6,Documentação de Projeto,Volume da Câmara,4.0
+6,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+6,Experiência da Equipe,Disponibilidade de Tempo,0.0
+6,Experiência da Equipe,Documentação de Projeto,0.0
+6,Experiência da Equipe,Experiência da Equipe,0.0
+6,Experiência da Equipe,Massa de Parafina,1.0
+6,Experiência da Equipe,Orçamento Disponível,0.0
+6,Experiência da Equipe,Qualidade da Comunicação,0.0
+6,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+6,Experiência da Equipe,Sucesso do Lançamento,3.0
+6,Experiência da Equipe,Temperatura Ambiente,0.0
+6,Experiência da Equipe,Temperatura do Oxigênio,3.0
+6,Experiência da Equipe,Volume da Câmara,2.0
+6,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Massa de Parafina,Disponibilidade de Tempo,0.0
+6,Massa de Parafina,Documentação de Projeto,0.0
+6,Massa de Parafina,Experiência da Equipe,0.0
+6,Massa de Parafina,Massa de Parafina,0.0
+6,Massa de Parafina,Orçamento Disponível,0.0
+6,Massa de Parafina,Qualidade da Comunicação,0.0
+6,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Massa de Parafina,Sucesso do Lançamento,2.0
+6,Massa de Parafina,Temperatura Ambiente,0.0
+6,Massa de Parafina,Temperatura do Oxigênio,0.0
+6,Massa de Parafina,Volume da Câmara,3.0
+6,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+6,Orçamento Disponível,Disponibilidade de Tempo,0.0
+6,Orçamento Disponível,Documentação de Projeto,0.0
+6,Orçamento Disponível,Experiência da Equipe,0.0
+6,Orçamento Disponível,Massa de Parafina,3.0
+6,Orçamento Disponível,Orçamento Disponível,0.0
+6,Orçamento Disponível,Qualidade da Comunicação,0.0
+6,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+6,Orçamento Disponível,Sucesso do Lançamento,2.0
+6,Orçamento Disponível,Temperatura Ambiente,0.0
+6,Orçamento Disponível,Temperatura do Oxigênio,4.0
+6,Orçamento Disponível,Volume da Câmara,0.0
+6,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+6,Qualidade da Comunicação,Documentação de Projeto,0.0
+6,Qualidade da Comunicação,Experiência da Equipe,0.0
+6,Qualidade da Comunicação,Massa de Parafina,0.0
+6,Qualidade da Comunicação,Orçamento Disponível,0.0
+6,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+6,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+6,Qualidade da Comunicação,Temperatura Ambiente,0.0
+6,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+6,Qualidade da Comunicação,Volume da Câmara,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,2.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,3.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,4.0
+6,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,4.0
+6,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+6,Sucesso do Lançamento,Documentação de Projeto,0.0
+6,Sucesso do Lançamento,Experiência da Equipe,0.0
+6,Sucesso do Lançamento,Massa de Parafina,0.0
+6,Sucesso do Lançamento,Orçamento Disponível,0.0
+6,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+6,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+6,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+6,Sucesso do Lançamento,Temperatura Ambiente,0.0
+6,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+6,Sucesso do Lançamento,Volume da Câmara,0.0
+6,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+6,Temperatura Ambiente,Documentação de Projeto,0.0
+6,Temperatura Ambiente,Experiência da Equipe,0.0
+6,Temperatura Ambiente,Massa de Parafina,2.0
+6,Temperatura Ambiente,Orçamento Disponível,0.0
+6,Temperatura Ambiente,Qualidade da Comunicação,0.0
+6,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+6,Temperatura Ambiente,Sucesso do Lançamento,3.0
+6,Temperatura Ambiente,Temperatura Ambiente,0.0
+6,Temperatura Ambiente,Temperatura do Oxigênio,4.0
+6,Temperatura Ambiente,Volume da Câmara,4.0
+6,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+6,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+6,Temperatura do Oxigênio,Documentação de Projeto,0.0
+6,Temperatura do Oxigênio,Experiência da Equipe,0.0
+6,Temperatura do Oxigênio,Massa de Parafina,1.0
+6,Temperatura do Oxigênio,Orçamento Disponível,0.0
+6,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+6,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+6,Temperatura do Oxigênio,Sucesso do Lançamento,2.0
+6,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+6,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+6,Temperatura do Oxigênio,Volume da Câmara,0.0
+6,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+6,Volume da Câmara,Disponibilidade de Tempo,0.0
+6,Volume da Câmara,Documentação de Projeto,0.0
+6,Volume da Câmara,Experiência da Equipe,0.0
+6,Volume da Câmara,Massa de Parafina,0.0
+6,Volume da Câmara,Orçamento Disponível,0.0
+6,Volume da Câmara,Qualidade da Comunicação,0.0
+6,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,
+6,Volume da Câmara,Sucesso do Lançamento,0.0
+6,Volume da Câmara,Temperatura Ambiente,0.0
+6,Volume da Câmara,Temperatura do Oxigênio,0.0
+6,Volume da Câmara,Volume da Câmara,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,2.0
+7,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+7,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,
+7,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+7,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+7,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,3.0
+7,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+7,Disponibilidade de Tempo,Documentação de Projeto,0.0
+7,Disponibilidade de Tempo,Experiência da Equipe,0.0
+7,Disponibilidade de Tempo,Massa de Parafina,0.0
+7,Disponibilidade de Tempo,Orçamento Disponível,0.0
+7,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+7,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+7,Disponibilidade de Tempo,Sucesso do Lançamento,
+7,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+7,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+7,Disponibilidade de Tempo,Volume da Câmara,0.0
+7,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,0.0
+7,Documentação de Projeto,Disponibilidade de Tempo,0.0
+7,Documentação de Projeto,Documentação de Projeto,0.0
+7,Documentação de Projeto,Experiência da Equipe,0.0
+7,Documentação de Projeto,Massa de Parafina,2.0
+7,Documentação de Projeto,Orçamento Disponível,0.0
+7,Documentação de Projeto,Qualidade da Comunicação,0.0
+7,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+7,Documentação de Projeto,Sucesso do Lançamento,
+7,Documentação de Projeto,Temperatura Ambiente,0.0
+7,Documentação de Projeto,Temperatura do Oxigênio,0.0
+7,Documentação de Projeto,Volume da Câmara,4.0
+7,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,4.0
+7,Experiência da Equipe,Disponibilidade de Tempo,0.0
+7,Experiência da Equipe,Documentação de Projeto,0.0
+7,Experiência da Equipe,Experiência da Equipe,0.0
+7,Experiência da Equipe,Massa de Parafina,3.0
+7,Experiência da Equipe,Orçamento Disponível,0.0
+7,Experiência da Equipe,Qualidade da Comunicação,0.0
+7,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+7,Experiência da Equipe,Sucesso do Lançamento,
+7,Experiência da Equipe,Temperatura Ambiente,0.0
+7,Experiência da Equipe,Temperatura do Oxigênio,0.0
+7,Experiência da Equipe,Volume da Câmara,1.0
+7,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,2.0
+7,Massa de Parafina,Disponibilidade de Tempo,0.0
+7,Massa de Parafina,Documentação de Projeto,0.0
+7,Massa de Parafina,Experiência da Equipe,0.0
+7,Massa de Parafina,Massa de Parafina,0.0
+7,Massa de Parafina,Orçamento Disponível,0.0
+7,Massa de Parafina,Qualidade da Comunicação,0.0
+7,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+7,Massa de Parafina,Sucesso do Lançamento,
+7,Massa de Parafina,Temperatura Ambiente,0.0
+7,Massa de Parafina,Temperatura do Oxigênio,0.0
+7,Massa de Parafina,Volume da Câmara,3.0
+7,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,2.0
+7,Orçamento Disponível,Disponibilidade de Tempo,0.0
+7,Orçamento Disponível,Documentação de Projeto,0.0
+7,Orçamento Disponível,Experiência da Equipe,0.0
+7,Orçamento Disponível,Massa de Parafina,2.0
+7,Orçamento Disponível,Orçamento Disponível,0.0
+7,Orçamento Disponível,Qualidade da Comunicação,0.0
+7,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+7,Orçamento Disponível,Sucesso do Lançamento,
+7,Orçamento Disponível,Temperatura Ambiente,0.0
+7,Orçamento Disponível,Temperatura do Oxigênio,0.0
+7,Orçamento Disponível,Volume da Câmara,0.0
+7,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,4.0
+7,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+7,Qualidade da Comunicação,Documentação de Projeto,0.0
+7,Qualidade da Comunicação,Experiência da Equipe,0.0
+7,Qualidade da Comunicação,Massa de Parafina,0.0
+7,Qualidade da Comunicação,Orçamento Disponível,0.0
+7,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+7,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+7,Qualidade da Comunicação,Sucesso do Lançamento,
+7,Qualidade da Comunicação,Temperatura Ambiente,0.0
+7,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+7,Qualidade da Comunicação,Volume da Câmara,4.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,2.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,
+7,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+7,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,
+7,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,3.0
+7,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+7,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+7,Sucesso do Lançamento,Documentação de Projeto,0.0
+7,Sucesso do Lançamento,Experiência da Equipe,0.0
+7,Sucesso do Lançamento,Massa de Parafina,0.0
+7,Sucesso do Lançamento,Orçamento Disponível,0.0
+7,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+7,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+7,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+7,Sucesso do Lançamento,Temperatura Ambiente,0.0
+7,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+7,Sucesso do Lançamento,Volume da Câmara,0.0
+7,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,2.0
+7,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+7,Temperatura Ambiente,Documentação de Projeto,0.0
+7,Temperatura Ambiente,Experiência da Equipe,0.0
+7,Temperatura Ambiente,Massa de Parafina,0.0
+7,Temperatura Ambiente,Orçamento Disponível,0.0
+7,Temperatura Ambiente,Qualidade da Comunicação,0.0
+7,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+7,Temperatura Ambiente,Sucesso do Lançamento,
+7,Temperatura Ambiente,Temperatura Ambiente,0.0
+7,Temperatura Ambiente,Temperatura do Oxigênio,
+7,Temperatura Ambiente,Volume da Câmara,0.0
+7,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+7,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+7,Temperatura do Oxigênio,Documentação de Projeto,0.0
+7,Temperatura do Oxigênio,Experiência da Equipe,0.0
+7,Temperatura do Oxigênio,Massa de Parafina,
+7,Temperatura do Oxigênio,Orçamento Disponível,0.0
+7,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+7,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,
+7,Temperatura do Oxigênio,Sucesso do Lançamento,
+7,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+7,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+7,Temperatura do Oxigênio,Volume da Câmara,0.0
+7,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+7,Volume da Câmara,Disponibilidade de Tempo,0.0
+7,Volume da Câmara,Documentação de Projeto,0.0
+7,Volume da Câmara,Experiência da Equipe,0.0
+7,Volume da Câmara,Massa de Parafina,2.0
+7,Volume da Câmara,Orçamento Disponível,0.0
+7,Volume da Câmara,Qualidade da Comunicação,0.0
+7,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+7,Volume da Câmara,Sucesso do Lançamento,
+7,Volume da Câmara,Temperatura Ambiente,0.0
+7,Volume da Câmara,Temperatura do Oxigênio,0.0
+7,Volume da Câmara,Volume da Câmara,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,4.0
+8,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+8,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,3.0
+8,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+8,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,3.0
+8,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+8,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,
+8,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+8,Disponibilidade de Tempo,Documentação de Projeto,0.0
+8,Disponibilidade de Tempo,Experiência da Equipe,0.0
+8,Disponibilidade de Tempo,Massa de Parafina,0.0
+8,Disponibilidade de Tempo,Orçamento Disponível,0.0
+8,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+8,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+8,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+8,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+8,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+8,Disponibilidade de Tempo,Volume da Câmara,
+8,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,0.0
+8,Documentação de Projeto,Disponibilidade de Tempo,0.0
+8,Documentação de Projeto,Documentação de Projeto,0.0
+8,Documentação de Projeto,Experiência da Equipe,0.0
+8,Documentação de Projeto,Massa de Parafina,0.0
+8,Documentação de Projeto,Orçamento Disponível,0.0
+8,Documentação de Projeto,Qualidade da Comunicação,0.0
+8,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+8,Documentação de Projeto,Sucesso do Lançamento,4.0
+8,Documentação de Projeto,Temperatura Ambiente,0.0
+8,Documentação de Projeto,Temperatura do Oxigênio,0.0
+8,Documentação de Projeto,Volume da Câmara,0.0
+8,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+8,Experiência da Equipe,Disponibilidade de Tempo,0.0
+8,Experiência da Equipe,Documentação de Projeto,0.0
+8,Experiência da Equipe,Experiência da Equipe,0.0
+8,Experiência da Equipe,Massa de Parafina,2.0
+8,Experiência da Equipe,Orçamento Disponível,0.0
+8,Experiência da Equipe,Qualidade da Comunicação,0.0
+8,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+8,Experiência da Equipe,Sucesso do Lançamento,4.0
+8,Experiência da Equipe,Temperatura Ambiente,0.0
+8,Experiência da Equipe,Temperatura do Oxigênio,2.0
+8,Experiência da Equipe,Volume da Câmara,2.0
+8,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,3.0
+8,Massa de Parafina,Disponibilidade de Tempo,0.0
+8,Massa de Parafina,Documentação de Projeto,0.0
+8,Massa de Parafina,Experiência da Equipe,0.0
+8,Massa de Parafina,Massa de Parafina,0.0
+8,Massa de Parafina,Orçamento Disponível,0.0
+8,Massa de Parafina,Qualidade da Comunicação,0.0
+8,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+8,Massa de Parafina,Sucesso do Lançamento,1.0
+8,Massa de Parafina,Temperatura Ambiente,0.0
+8,Massa de Parafina,Temperatura do Oxigênio,
+8,Massa de Parafina,Volume da Câmara,4.0
+8,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,2.0
+8,Orçamento Disponível,Disponibilidade de Tempo,0.0
+8,Orçamento Disponível,Documentação de Projeto,0.0
+8,Orçamento Disponível,Experiência da Equipe,0.0
+8,Orçamento Disponível,Massa de Parafina,1.0
+8,Orçamento Disponível,Orçamento Disponível,0.0
+8,Orçamento Disponível,Qualidade da Comunicação,0.0
+8,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+8,Orçamento Disponível,Sucesso do Lançamento,4.0
+8,Orçamento Disponível,Temperatura Ambiente,0.0
+8,Orçamento Disponível,Temperatura do Oxigênio,2.0
+8,Orçamento Disponível,Volume da Câmara,0.0
+8,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,4.0
+8,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+8,Qualidade da Comunicação,Documentação de Projeto,0.0
+8,Qualidade da Comunicação,Experiência da Equipe,0.0
+8,Qualidade da Comunicação,Massa de Parafina,0.0
+8,Qualidade da Comunicação,Orçamento Disponível,0.0
+8,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+8,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+8,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+8,Qualidade da Comunicação,Temperatura Ambiente,0.0
+8,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+8,Qualidade da Comunicação,Volume da Câmara,3.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,3.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,3.0
+8,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+8,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+8,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+8,Sucesso do Lançamento,Documentação de Projeto,0.0
+8,Sucesso do Lançamento,Experiência da Equipe,0.0
+8,Sucesso do Lançamento,Massa de Parafina,0.0
+8,Sucesso do Lançamento,Orçamento Disponível,0.0
+8,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+8,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+8,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+8,Sucesso do Lançamento,Temperatura Ambiente,0.0
+8,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+8,Sucesso do Lançamento,Volume da Câmara,0.0
+8,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,2.0
+8,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+8,Temperatura Ambiente,Documentação de Projeto,0.0
+8,Temperatura Ambiente,Experiência da Equipe,0.0
+8,Temperatura Ambiente,Massa de Parafina,0.0
+8,Temperatura Ambiente,Orçamento Disponível,0.0
+8,Temperatura Ambiente,Qualidade da Comunicação,0.0
+8,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+8,Temperatura Ambiente,Sucesso do Lançamento,4.0
+8,Temperatura Ambiente,Temperatura Ambiente,0.0
+8,Temperatura Ambiente,Temperatura do Oxigênio,3.0
+8,Temperatura Ambiente,Volume da Câmara,
+8,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,2.0
+8,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+8,Temperatura do Oxigênio,Documentação de Projeto,0.0
+8,Temperatura do Oxigênio,Experiência da Equipe,0.0
+8,Temperatura do Oxigênio,Massa de Parafina,0.0
+8,Temperatura do Oxigênio,Orçamento Disponível,0.0
+8,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+8,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,
+8,Temperatura do Oxigênio,Sucesso do Lançamento,1.0
+8,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+8,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+8,Temperatura do Oxigênio,Volume da Câmara,0.0
+8,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+8,Volume da Câmara,Disponibilidade de Tempo,0.0
+8,Volume da Câmara,Documentação de Projeto,0.0
+8,Volume da Câmara,Experiência da Equipe,0.0
+8,Volume da Câmara,Massa de Parafina,3.0
+8,Volume da Câmara,Orçamento Disponível,0.0
+8,Volume da Câmara,Qualidade da Comunicação,0.0
+8,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+8,Volume da Câmara,Sucesso do Lançamento,1.0
+8,Volume da Câmara,Temperatura Ambiente,0.0
+8,Volume da Câmara,Temperatura do Oxigênio,0.0
+8,Volume da Câmara,Volume da Câmara,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,2.0
+9,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+9,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,
+9,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+9,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+9,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,3.0
+9,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+9,Disponibilidade de Tempo,Documentação de Projeto,0.0
+9,Disponibilidade de Tempo,Experiência da Equipe,0.0
+9,Disponibilidade de Tempo,Massa de Parafina,0.0
+9,Disponibilidade de Tempo,Orçamento Disponível,0.0
+9,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+9,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+9,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+9,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+9,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+9,Disponibilidade de Tempo,Volume da Câmara,2.0
+9,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+9,Documentação de Projeto,Disponibilidade de Tempo,0.0
+9,Documentação de Projeto,Documentação de Projeto,0.0
+9,Documentação de Projeto,Experiência da Equipe,0.0
+9,Documentação de Projeto,Massa de Parafina,1.0
+9,Documentação de Projeto,Orçamento Disponível,0.0
+9,Documentação de Projeto,Qualidade da Comunicação,0.0
+9,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+9,Documentação de Projeto,Sucesso do Lançamento,3.0
+9,Documentação de Projeto,Temperatura Ambiente,0.0
+9,Documentação de Projeto,Temperatura do Oxigênio,1.0
+9,Documentação de Projeto,Volume da Câmara,1.0
+9,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,4.0
+9,Experiência da Equipe,Disponibilidade de Tempo,0.0
+9,Experiência da Equipe,Documentação de Projeto,0.0
+9,Experiência da Equipe,Experiência da Equipe,0.0
+9,Experiência da Equipe,Massa de Parafina,2.0
+9,Experiência da Equipe,Orçamento Disponível,0.0
+9,Experiência da Equipe,Qualidade da Comunicação,0.0
+9,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+9,Experiência da Equipe,Sucesso do Lançamento,3.0
+9,Experiência da Equipe,Temperatura Ambiente,0.0
+9,Experiência da Equipe,Temperatura do Oxigênio,2.0
+9,Experiência da Equipe,Volume da Câmara,2.0
+9,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Massa de Parafina,Disponibilidade de Tempo,0.0
+9,Massa de Parafina,Documentação de Projeto,0.0
+9,Massa de Parafina,Experiência da Equipe,0.0
+9,Massa de Parafina,Massa de Parafina,0.0
+9,Massa de Parafina,Orçamento Disponível,0.0
+9,Massa de Parafina,Qualidade da Comunicação,0.0
+9,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+9,Massa de Parafina,Sucesso do Lançamento,3.0
+9,Massa de Parafina,Temperatura Ambiente,0.0
+9,Massa de Parafina,Temperatura do Oxigênio,0.0
+9,Massa de Parafina,Volume da Câmara,3.0
+9,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+9,Orçamento Disponível,Disponibilidade de Tempo,0.0
+9,Orçamento Disponível,Documentação de Projeto,0.0
+9,Orçamento Disponível,Experiência da Equipe,0.0
+9,Orçamento Disponível,Massa de Parafina,2.0
+9,Orçamento Disponível,Orçamento Disponível,0.0
+9,Orçamento Disponível,Qualidade da Comunicação,0.0
+9,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+9,Orçamento Disponível,Sucesso do Lançamento,2.0
+9,Orçamento Disponível,Temperatura Ambiente,0.0
+9,Orçamento Disponível,Temperatura do Oxigênio,3.0
+9,Orçamento Disponível,Volume da Câmara,0.0
+9,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,1.0
+9,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+9,Qualidade da Comunicação,Documentação de Projeto,0.0
+9,Qualidade da Comunicação,Experiência da Equipe,0.0
+9,Qualidade da Comunicação,Massa de Parafina,0.0
+9,Qualidade da Comunicação,Orçamento Disponível,0.0
+9,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+9,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+9,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+9,Qualidade da Comunicação,Temperatura Ambiente,0.0
+9,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+9,Qualidade da Comunicação,Volume da Câmara,2.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,4.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,0.0
+9,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+9,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+9,Sucesso do Lançamento,Documentação de Projeto,0.0
+9,Sucesso do Lançamento,Experiência da Equipe,0.0
+9,Sucesso do Lançamento,Massa de Parafina,0.0
+9,Sucesso do Lançamento,Orçamento Disponível,0.0
+9,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+9,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+9,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+9,Sucesso do Lançamento,Temperatura Ambiente,0.0
+9,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+9,Sucesso do Lançamento,Volume da Câmara,0.0
+9,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+9,Temperatura Ambiente,Documentação de Projeto,0.0
+9,Temperatura Ambiente,Experiência da Equipe,0.0
+9,Temperatura Ambiente,Massa de Parafina,0.0
+9,Temperatura Ambiente,Orçamento Disponível,0.0
+9,Temperatura Ambiente,Qualidade da Comunicação,0.0
+9,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+9,Temperatura Ambiente,Sucesso do Lançamento,1.0
+9,Temperatura Ambiente,Temperatura Ambiente,0.0
+9,Temperatura Ambiente,Temperatura do Oxigênio,4.0
+9,Temperatura Ambiente,Volume da Câmara,1.0
+9,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+9,Temperatura do Oxigênio,Documentação de Projeto,0.0
+9,Temperatura do Oxigênio,Experiência da Equipe,0.0
+9,Temperatura do Oxigênio,Massa de Parafina,1.0
+9,Temperatura do Oxigênio,Orçamento Disponível,0.0
+9,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+9,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+9,Temperatura do Oxigênio,Sucesso do Lançamento,1.0
+9,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+9,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+9,Temperatura do Oxigênio,Volume da Câmara,0.0
+9,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+9,Volume da Câmara,Disponibilidade de Tempo,0.0
+9,Volume da Câmara,Documentação de Projeto,0.0
+9,Volume da Câmara,Experiência da Equipe,0.0
+9,Volume da Câmara,Massa de Parafina,4.0
+9,Volume da Câmara,Orçamento Disponível,0.0
+9,Volume da Câmara,Qualidade da Comunicação,0.0
+9,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,
+9,Volume da Câmara,Sucesso do Lançamento,1.0
+9,Volume da Câmara,Temperatura Ambiente,0.0
+9,Volume da Câmara,Temperatura do Oxigênio,0.0
+9,Volume da Câmara,Volume da Câmara,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,
+10,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,4.0
+10,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+10,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+10,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,1.0
+10,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+10,Disponibilidade de Tempo,Documentação de Projeto,0.0
+10,Disponibilidade de Tempo,Experiência da Equipe,0.0
+10,Disponibilidade de Tempo,Massa de Parafina,0.0
+10,Disponibilidade de Tempo,Orçamento Disponível,0.0
+10,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+10,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Disponibilidade de Tempo,Sucesso do Lançamento,1.0
+10,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+10,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+10,Disponibilidade de Tempo,Volume da Câmara,0.0
+10,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Documentação de Projeto,Disponibilidade de Tempo,0.0
+10,Documentação de Projeto,Documentação de Projeto,0.0
+10,Documentação de Projeto,Experiência da Equipe,0.0
+10,Documentação de Projeto,Massa de Parafina,1.0
+10,Documentação de Projeto,Orçamento Disponível,0.0
+10,Documentação de Projeto,Qualidade da Comunicação,0.0
+10,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Documentação de Projeto,Sucesso do Lançamento,3.0
+10,Documentação de Projeto,Temperatura Ambiente,0.0
+10,Documentação de Projeto,Temperatura do Oxigênio,0.0
+10,Documentação de Projeto,Volume da Câmara,4.0
+10,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Experiência da Equipe,Disponibilidade de Tempo,0.0
+10,Experiência da Equipe,Documentação de Projeto,0.0
+10,Experiência da Equipe,Experiência da Equipe,0.0
+10,Experiência da Equipe,Massa de Parafina,1.0
+10,Experiência da Equipe,Orçamento Disponível,0.0
+10,Experiência da Equipe,Qualidade da Comunicação,0.0
+10,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+10,Experiência da Equipe,Sucesso do Lançamento,4.0
+10,Experiência da Equipe,Temperatura Ambiente,0.0
+10,Experiência da Equipe,Temperatura do Oxigênio,0.0
+10,Experiência da Equipe,Volume da Câmara,1.0
+10,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,3.0
+10,Massa de Parafina,Disponibilidade de Tempo,0.0
+10,Massa de Parafina,Documentação de Projeto,0.0
+10,Massa de Parafina,Experiência da Equipe,0.0
+10,Massa de Parafina,Massa de Parafina,0.0
+10,Massa de Parafina,Orçamento Disponível,0.0
+10,Massa de Parafina,Qualidade da Comunicação,0.0
+10,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+10,Massa de Parafina,Sucesso do Lançamento,4.0
+10,Massa de Parafina,Temperatura Ambiente,0.0
+10,Massa de Parafina,Temperatura do Oxigênio,1.0
+10,Massa de Parafina,Volume da Câmara,0.0
+10,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+10,Orçamento Disponível,Disponibilidade de Tempo,0.0
+10,Orçamento Disponível,Documentação de Projeto,0.0
+10,Orçamento Disponível,Experiência da Equipe,0.0
+10,Orçamento Disponível,Massa de Parafina,3.0
+10,Orçamento Disponível,Orçamento Disponível,0.0
+10,Orçamento Disponível,Qualidade da Comunicação,0.0
+10,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+10,Orçamento Disponível,Sucesso do Lançamento,4.0
+10,Orçamento Disponível,Temperatura Ambiente,0.0
+10,Orçamento Disponível,Temperatura do Oxigênio,3.0
+10,Orçamento Disponível,Volume da Câmara,0.0
+10,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,1.0
+10,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+10,Qualidade da Comunicação,Documentação de Projeto,0.0
+10,Qualidade da Comunicação,Experiência da Equipe,0.0
+10,Qualidade da Comunicação,Massa de Parafina,0.0
+10,Qualidade da Comunicação,Orçamento Disponível,0.0
+10,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+10,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+10,Qualidade da Comunicação,Temperatura Ambiente,0.0
+10,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+10,Qualidade da Comunicação,Volume da Câmara,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,
+10,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,4.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,2.0
+10,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+10,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+10,Sucesso do Lançamento,Documentação de Projeto,0.0
+10,Sucesso do Lançamento,Experiência da Equipe,0.0
+10,Sucesso do Lançamento,Massa de Parafina,0.0
+10,Sucesso do Lançamento,Orçamento Disponível,0.0
+10,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+10,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+10,Sucesso do Lançamento,Temperatura Ambiente,0.0
+10,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+10,Sucesso do Lançamento,Volume da Câmara,0.0
+10,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+10,Temperatura Ambiente,Documentação de Projeto,0.0
+10,Temperatura Ambiente,Experiência da Equipe,0.0
+10,Temperatura Ambiente,Massa de Parafina,0.0
+10,Temperatura Ambiente,Orçamento Disponível,0.0
+10,Temperatura Ambiente,Qualidade da Comunicação,0.0
+10,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+10,Temperatura Ambiente,Sucesso do Lançamento,4.0
+10,Temperatura Ambiente,Temperatura Ambiente,0.0
+10,Temperatura Ambiente,Temperatura do Oxigênio,0.0
+10,Temperatura Ambiente,Volume da Câmara,1.0
+10,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,3.0
+10,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+10,Temperatura do Oxigênio,Documentação de Projeto,0.0
+10,Temperatura do Oxigênio,Experiência da Equipe,0.0
+10,Temperatura do Oxigênio,Massa de Parafina,4.0
+10,Temperatura do Oxigênio,Orçamento Disponível,0.0
+10,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+10,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+10,Temperatura do Oxigênio,Sucesso do Lançamento,4.0
+10,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+10,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+10,Temperatura do Oxigênio,Volume da Câmara,0.0
+10,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+10,Volume da Câmara,Disponibilidade de Tempo,0.0
+10,Volume da Câmara,Documentação de Projeto,0.0
+10,Volume da Câmara,Experiência da Equipe,0.0
+10,Volume da Câmara,Massa de Parafina,1.0
+10,Volume da Câmara,Orçamento Disponível,0.0
+10,Volume da Câmara,Qualidade da Comunicação,0.0
+10,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+10,Volume da Câmara,Sucesso do Lançamento,4.0
+10,Volume da Câmara,Temperatura Ambiente,0.0
+10,Volume da Câmara,Temperatura do Oxigênio,0.0
+10,Volume da Câmara,Volume da Câmara,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,3.0
+11,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+11,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+11,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+11,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+11,Disponibilidade de Tempo,Documentação de Projeto,0.0
+11,Disponibilidade de Tempo,Experiência da Equipe,0.0
+11,Disponibilidade de Tempo,Massa de Parafina,0.0
+11,Disponibilidade de Tempo,Orçamento Disponível,0.0
+11,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+11,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Disponibilidade de Tempo,Sucesso do Lançamento,4.0
+11,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+11,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+11,Disponibilidade de Tempo,Volume da Câmara,2.0
+11,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+11,Documentação de Projeto,Disponibilidade de Tempo,0.0
+11,Documentação de Projeto,Documentação de Projeto,0.0
+11,Documentação de Projeto,Experiência da Equipe,0.0
+11,Documentação de Projeto,Massa de Parafina,4.0
+11,Documentação de Projeto,Orçamento Disponível,0.0
+11,Documentação de Projeto,Qualidade da Comunicação,0.0
+11,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+11,Documentação de Projeto,Sucesso do Lançamento,2.0
+11,Documentação de Projeto,Temperatura Ambiente,0.0
+11,Documentação de Projeto,Temperatura do Oxigênio,
+11,Documentação de Projeto,Volume da Câmara,3.0
+11,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,4.0
+11,Experiência da Equipe,Disponibilidade de Tempo,0.0
+11,Experiência da Equipe,Documentação de Projeto,0.0
+11,Experiência da Equipe,Experiência da Equipe,0.0
+11,Experiência da Equipe,Massa de Parafina,2.0
+11,Experiência da Equipe,Orçamento Disponível,0.0
+11,Experiência da Equipe,Qualidade da Comunicação,0.0
+11,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+11,Experiência da Equipe,Sucesso do Lançamento,3.0
+11,Experiência da Equipe,Temperatura Ambiente,0.0
+11,Experiência da Equipe,Temperatura do Oxigênio,0.0
+11,Experiência da Equipe,Volume da Câmara,2.0
+11,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Massa de Parafina,Disponibilidade de Tempo,0.0
+11,Massa de Parafina,Documentação de Projeto,0.0
+11,Massa de Parafina,Experiência da Equipe,0.0
+11,Massa de Parafina,Massa de Parafina,0.0
+11,Massa de Parafina,Orçamento Disponível,0.0
+11,Massa de Parafina,Qualidade da Comunicação,0.0
+11,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+11,Massa de Parafina,Sucesso do Lançamento,1.0
+11,Massa de Parafina,Temperatura Ambiente,0.0
+11,Massa de Parafina,Temperatura do Oxigênio,
+11,Massa de Parafina,Volume da Câmara,3.0
+11,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+11,Orçamento Disponível,Disponibilidade de Tempo,0.0
+11,Orçamento Disponível,Documentação de Projeto,0.0
+11,Orçamento Disponível,Experiência da Equipe,0.0
+11,Orçamento Disponível,Massa de Parafina,1.0
+11,Orçamento Disponível,Orçamento Disponível,0.0
+11,Orçamento Disponível,Qualidade da Comunicação,0.0
+11,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+11,Orçamento Disponível,Sucesso do Lançamento,2.0
+11,Orçamento Disponível,Temperatura Ambiente,0.0
+11,Orçamento Disponível,Temperatura do Oxigênio,
+11,Orçamento Disponível,Volume da Câmara,0.0
+11,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,3.0
+11,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+11,Qualidade da Comunicação,Documentação de Projeto,0.0
+11,Qualidade da Comunicação,Experiência da Equipe,0.0
+11,Qualidade da Comunicação,Massa de Parafina,0.0
+11,Qualidade da Comunicação,Orçamento Disponível,0.0
+11,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+11,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+11,Qualidade da Comunicação,Temperatura Ambiente,0.0
+11,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+11,Qualidade da Comunicação,Volume da Câmara,3.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,3.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,3.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+11,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,
+11,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,0.0
+11,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+11,Sucesso do Lançamento,Documentação de Projeto,0.0
+11,Sucesso do Lançamento,Experiência da Equipe,0.0
+11,Sucesso do Lançamento,Massa de Parafina,0.0
+11,Sucesso do Lançamento,Orçamento Disponível,0.0
+11,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+11,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+11,Sucesso do Lançamento,Temperatura Ambiente,0.0
+11,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+11,Sucesso do Lançamento,Volume da Câmara,0.0
+11,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+11,Temperatura Ambiente,Documentação de Projeto,0.0
+11,Temperatura Ambiente,Experiência da Equipe,0.0
+11,Temperatura Ambiente,Massa de Parafina,0.0
+11,Temperatura Ambiente,Orçamento Disponível,0.0
+11,Temperatura Ambiente,Qualidade da Comunicação,0.0
+11,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+11,Temperatura Ambiente,Sucesso do Lançamento,0.0
+11,Temperatura Ambiente,Temperatura Ambiente,0.0
+11,Temperatura Ambiente,Temperatura do Oxigênio,
+11,Temperatura Ambiente,Volume da Câmara,0.0
+11,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+11,Temperatura do Oxigênio,Documentação de Projeto,0.0
+11,Temperatura do Oxigênio,Experiência da Equipe,0.0
+11,Temperatura do Oxigênio,Massa de Parafina,0.0
+11,Temperatura do Oxigênio,Orçamento Disponível,0.0
+11,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+11,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,
+11,Temperatura do Oxigênio,Sucesso do Lançamento,0.0
+11,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+11,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+11,Temperatura do Oxigênio,Volume da Câmara,0.0
+11,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+11,Volume da Câmara,Disponibilidade de Tempo,0.0
+11,Volume da Câmara,Documentação de Projeto,0.0
+11,Volume da Câmara,Experiência da Equipe,0.0
+11,Volume da Câmara,Massa de Parafina,3.0
+11,Volume da Câmara,Orçamento Disponível,0.0
+11,Volume da Câmara,Qualidade da Comunicação,0.0
+11,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,
+11,Volume da Câmara,Sucesso do Lançamento,0.0
+11,Volume da Câmara,Temperatura Ambiente,0.0
+11,Volume da Câmara,Temperatura do Oxigênio,0.0
+11,Volume da Câmara,Volume da Câmara,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,4.0
+12,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,
+12,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+12,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+12,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,
+12,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+12,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,2.0
+12,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+12,Disponibilidade de Tempo,Documentação de Projeto,0.0
+12,Disponibilidade de Tempo,Experiência da Equipe,0.0
+12,Disponibilidade de Tempo,Massa de Parafina,0.0
+12,Disponibilidade de Tempo,Orçamento Disponível,0.0
+12,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+12,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+12,Disponibilidade de Tempo,Sucesso do Lançamento,4.0
+12,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+12,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+12,Disponibilidade de Tempo,Volume da Câmara,4.0
+12,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+12,Documentação de Projeto,Disponibilidade de Tempo,0.0
+12,Documentação de Projeto,Documentação de Projeto,0.0
+12,Documentação de Projeto,Experiência da Equipe,0.0
+12,Documentação de Projeto,Massa de Parafina,1.0
+12,Documentação de Projeto,Orçamento Disponível,0.0
+12,Documentação de Projeto,Qualidade da Comunicação,0.0
+12,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+12,Documentação de Projeto,Sucesso do Lançamento,3.0
+12,Documentação de Projeto,Temperatura Ambiente,0.0
+12,Documentação de Projeto,Temperatura do Oxigênio,1.0
+12,Documentação de Projeto,Volume da Câmara,2.0
+12,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,4.0
+12,Experiência da Equipe,Disponibilidade de Tempo,0.0
+12,Experiência da Equipe,Documentação de Projeto,0.0
+12,Experiência da Equipe,Experiência da Equipe,0.0
+12,Experiência da Equipe,Massa de Parafina,2.0
+12,Experiência da Equipe,Orçamento Disponível,0.0
+12,Experiência da Equipe,Qualidade da Comunicação,0.0
+12,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+12,Experiência da Equipe,Sucesso do Lançamento,4.0
+12,Experiência da Equipe,Temperatura Ambiente,0.0
+12,Experiência da Equipe,Temperatura do Oxigênio,2.0
+12,Experiência da Equipe,Volume da Câmara,3.0
+12,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,
+12,Massa de Parafina,Disponibilidade de Tempo,0.0
+12,Massa de Parafina,Documentação de Projeto,0.0
+12,Massa de Parafina,Experiência da Equipe,0.0
+12,Massa de Parafina,Massa de Parafina,0.0
+12,Massa de Parafina,Orçamento Disponível,0.0
+12,Massa de Parafina,Qualidade da Comunicação,0.0
+12,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+12,Massa de Parafina,Sucesso do Lançamento,3.0
+12,Massa de Parafina,Temperatura Ambiente,0.0
+12,Massa de Parafina,Temperatura do Oxigênio,
+12,Massa de Parafina,Volume da Câmara,3.0
+12,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+12,Orçamento Disponível,Disponibilidade de Tempo,0.0
+12,Orçamento Disponível,Documentação de Projeto,0.0
+12,Orçamento Disponível,Experiência da Equipe,0.0
+12,Orçamento Disponível,Massa de Parafina,3.0
+12,Orçamento Disponível,Orçamento Disponível,0.0
+12,Orçamento Disponível,Qualidade da Comunicação,0.0
+12,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+12,Orçamento Disponível,Sucesso do Lançamento,3.0
+12,Orçamento Disponível,Temperatura Ambiente,0.0
+12,Orçamento Disponível,Temperatura do Oxigênio,1.0
+12,Orçamento Disponível,Volume da Câmara,0.0
+12,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,1.0
+12,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+12,Qualidade da Comunicação,Documentação de Projeto,0.0
+12,Qualidade da Comunicação,Experiência da Equipe,0.0
+12,Qualidade da Comunicação,Massa de Parafina,0.0
+12,Qualidade da Comunicação,Orçamento Disponível,0.0
+12,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+12,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+12,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+12,Qualidade da Comunicação,Temperatura Ambiente,0.0
+12,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+12,Qualidade da Comunicação,Volume da Câmara,3.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,4.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,4.0
+12,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,3.0
+12,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+12,Sucesso do Lançamento,Documentação de Projeto,0.0
+12,Sucesso do Lançamento,Experiência da Equipe,0.0
+12,Sucesso do Lançamento,Massa de Parafina,0.0
+12,Sucesso do Lançamento,Orçamento Disponível,0.0
+12,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+12,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+12,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+12,Sucesso do Lançamento,Temperatura Ambiente,0.0
+12,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+12,Sucesso do Lançamento,Volume da Câmara,0.0
+12,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+12,Temperatura Ambiente,Documentação de Projeto,0.0
+12,Temperatura Ambiente,Experiência da Equipe,0.0
+12,Temperatura Ambiente,Massa de Parafina,
+12,Temperatura Ambiente,Orçamento Disponível,0.0
+12,Temperatura Ambiente,Qualidade da Comunicação,0.0
+12,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,
+12,Temperatura Ambiente,Sucesso do Lançamento,2.0
+12,Temperatura Ambiente,Temperatura Ambiente,0.0
+12,Temperatura Ambiente,Temperatura do Oxigênio,
+12,Temperatura Ambiente,Volume da Câmara,
+12,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+12,Temperatura do Oxigênio,Documentação de Projeto,0.0
+12,Temperatura do Oxigênio,Experiência da Equipe,0.0
+12,Temperatura do Oxigênio,Massa de Parafina,1.0
+12,Temperatura do Oxigênio,Orçamento Disponível,0.0
+12,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+12,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,
+12,Temperatura do Oxigênio,Sucesso do Lançamento,
+12,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+12,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+12,Temperatura do Oxigênio,Volume da Câmara,0.0
+12,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+12,Volume da Câmara,Disponibilidade de Tempo,0.0
+12,Volume da Câmara,Documentação de Projeto,0.0
+12,Volume da Câmara,Experiência da Equipe,0.0
+12,Volume da Câmara,Massa de Parafina,1.0
+12,Volume da Câmara,Orçamento Disponível,0.0
+12,Volume da Câmara,Qualidade da Comunicação,0.0
+12,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+12,Volume da Câmara,Sucesso do Lançamento,2.0
+12,Volume da Câmara,Temperatura Ambiente,0.0
+12,Volume da Câmara,Temperatura do Oxigênio,0.0
+12,Volume da Câmara,Volume da Câmara,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,1.0
+13,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+13,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+13,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,2.0
+13,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+13,Disponibilidade de Tempo,Documentação de Projeto,0.0
+13,Disponibilidade de Tempo,Experiência da Equipe,0.0
+13,Disponibilidade de Tempo,Massa de Parafina,0.0
+13,Disponibilidade de Tempo,Orçamento Disponível,0.0
+13,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+13,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Disponibilidade de Tempo,Sucesso do Lançamento,4.0
+13,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+13,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+13,Disponibilidade de Tempo,Volume da Câmara,2.0
+13,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+13,Documentação de Projeto,Disponibilidade de Tempo,0.0
+13,Documentação de Projeto,Documentação de Projeto,0.0
+13,Documentação de Projeto,Experiência da Equipe,0.0
+13,Documentação de Projeto,Massa de Parafina,4.0
+13,Documentação de Projeto,Orçamento Disponível,0.0
+13,Documentação de Projeto,Qualidade da Comunicação,0.0
+13,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+13,Documentação de Projeto,Sucesso do Lançamento,4.0
+13,Documentação de Projeto,Temperatura Ambiente,0.0
+13,Documentação de Projeto,Temperatura do Oxigênio,0.0
+13,Documentação de Projeto,Volume da Câmara,4.0
+13,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+13,Experiência da Equipe,Disponibilidade de Tempo,0.0
+13,Experiência da Equipe,Documentação de Projeto,0.0
+13,Experiência da Equipe,Experiência da Equipe,0.0
+13,Experiência da Equipe,Massa de Parafina,0.0
+13,Experiência da Equipe,Orçamento Disponível,0.0
+13,Experiência da Equipe,Qualidade da Comunicação,0.0
+13,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+13,Experiência da Equipe,Sucesso do Lançamento,4.0
+13,Experiência da Equipe,Temperatura Ambiente,0.0
+13,Experiência da Equipe,Temperatura do Oxigênio,0.0
+13,Experiência da Equipe,Volume da Câmara,4.0
+13,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,1.0
+13,Massa de Parafina,Disponibilidade de Tempo,0.0
+13,Massa de Parafina,Documentação de Projeto,0.0
+13,Massa de Parafina,Experiência da Equipe,0.0
+13,Massa de Parafina,Massa de Parafina,0.0
+13,Massa de Parafina,Orçamento Disponível,0.0
+13,Massa de Parafina,Qualidade da Comunicação,0.0
+13,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Massa de Parafina,Sucesso do Lançamento,4.0
+13,Massa de Parafina,Temperatura Ambiente,0.0
+13,Massa de Parafina,Temperatura do Oxigênio,0.0
+13,Massa de Parafina,Volume da Câmara,4.0
+13,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,1.0
+13,Orçamento Disponível,Disponibilidade de Tempo,0.0
+13,Orçamento Disponível,Documentação de Projeto,0.0
+13,Orçamento Disponível,Experiência da Equipe,0.0
+13,Orçamento Disponível,Massa de Parafina,1.0
+13,Orçamento Disponível,Orçamento Disponível,0.0
+13,Orçamento Disponível,Qualidade da Comunicação,0.0
+13,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+13,Orçamento Disponível,Sucesso do Lançamento,2.0
+13,Orçamento Disponível,Temperatura Ambiente,0.0
+13,Orçamento Disponível,Temperatura do Oxigênio,2.0
+13,Orçamento Disponível,Volume da Câmara,0.0
+13,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+13,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+13,Qualidade da Comunicação,Documentação de Projeto,0.0
+13,Qualidade da Comunicação,Experiência da Equipe,0.0
+13,Qualidade da Comunicação,Massa de Parafina,0.0
+13,Qualidade da Comunicação,Orçamento Disponível,0.0
+13,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+13,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Qualidade da Comunicação,Sucesso do Lançamento,2.0
+13,Qualidade da Comunicação,Temperatura Ambiente,0.0
+13,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+13,Qualidade da Comunicação,Volume da Câmara,2.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,4.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,0.0
+13,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,4.0
+13,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+13,Sucesso do Lançamento,Documentação de Projeto,0.0
+13,Sucesso do Lançamento,Experiência da Equipe,0.0
+13,Sucesso do Lançamento,Massa de Parafina,0.0
+13,Sucesso do Lançamento,Orçamento Disponível,0.0
+13,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+13,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+13,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+13,Sucesso do Lançamento,Temperatura Ambiente,0.0
+13,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+13,Sucesso do Lançamento,Volume da Câmara,0.0
+13,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+13,Temperatura Ambiente,Documentação de Projeto,0.0
+13,Temperatura Ambiente,Experiência da Equipe,0.0
+13,Temperatura Ambiente,Massa de Parafina,1.0
+13,Temperatura Ambiente,Orçamento Disponível,0.0
+13,Temperatura Ambiente,Qualidade da Comunicação,0.0
+13,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+13,Temperatura Ambiente,Sucesso do Lançamento,1.0
+13,Temperatura Ambiente,Temperatura Ambiente,0.0
+13,Temperatura Ambiente,Temperatura do Oxigênio,4.0
+13,Temperatura Ambiente,Volume da Câmara,1.0
+13,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+13,Temperatura do Oxigênio,Documentação de Projeto,0.0
+13,Temperatura do Oxigênio,Experiência da Equipe,0.0
+13,Temperatura do Oxigênio,Massa de Parafina,1.0
+13,Temperatura do Oxigênio,Orçamento Disponível,0.0
+13,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+13,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+13,Temperatura do Oxigênio,Sucesso do Lançamento,2.0
+13,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+13,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+13,Temperatura do Oxigênio,Volume da Câmara,0.0
+13,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+13,Volume da Câmara,Disponibilidade de Tempo,0.0
+13,Volume da Câmara,Documentação de Projeto,0.0
+13,Volume da Câmara,Experiência da Equipe,0.0
+13,Volume da Câmara,Massa de Parafina,4.0
+13,Volume da Câmara,Orçamento Disponível,0.0
+13,Volume da Câmara,Qualidade da Comunicação,0.0
+13,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+13,Volume da Câmara,Sucesso do Lançamento,4.0
+13,Volume da Câmara,Temperatura Ambiente,0.0
+13,Volume da Câmara,Temperatura do Oxigênio,0.0
+13,Volume da Câmara,Volume da Câmara,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,3.0
+14,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+14,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+14,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+14,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,1.0
+14,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+14,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+14,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+14,Disponibilidade de Tempo,Documentação de Projeto,0.0
+14,Disponibilidade de Tempo,Experiência da Equipe,0.0
+14,Disponibilidade de Tempo,Massa de Parafina,0.0
+14,Disponibilidade de Tempo,Orçamento Disponível,0.0
+14,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+14,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+14,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+14,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+14,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+14,Disponibilidade de Tempo,Volume da Câmara,2.0
+14,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,4.0
+14,Documentação de Projeto,Disponibilidade de Tempo,0.0
+14,Documentação de Projeto,Documentação de Projeto,0.0
+14,Documentação de Projeto,Experiência da Equipe,0.0
+14,Documentação de Projeto,Massa de Parafina,2.0
+14,Documentação de Projeto,Orçamento Disponível,0.0
+14,Documentação de Projeto,Qualidade da Comunicação,0.0
+14,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+14,Documentação de Projeto,Sucesso do Lançamento,3.0
+14,Documentação de Projeto,Temperatura Ambiente,0.0
+14,Documentação de Projeto,Temperatura do Oxigênio,3.0
+14,Documentação de Projeto,Volume da Câmara,3.0
+14,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+14,Experiência da Equipe,Disponibilidade de Tempo,0.0
+14,Experiência da Equipe,Documentação de Projeto,0.0
+14,Experiência da Equipe,Experiência da Equipe,0.0
+14,Experiência da Equipe,Massa de Parafina,2.0
+14,Experiência da Equipe,Orçamento Disponível,0.0
+14,Experiência da Equipe,Qualidade da Comunicação,0.0
+14,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+14,Experiência da Equipe,Sucesso do Lançamento,4.0
+14,Experiência da Equipe,Temperatura Ambiente,0.0
+14,Experiência da Equipe,Temperatura do Oxigênio,1.0
+14,Experiência da Equipe,Volume da Câmara,1.0
+14,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+14,Massa de Parafina,Disponibilidade de Tempo,0.0
+14,Massa de Parafina,Documentação de Projeto,0.0
+14,Massa de Parafina,Experiência da Equipe,0.0
+14,Massa de Parafina,Massa de Parafina,0.0
+14,Massa de Parafina,Orçamento Disponível,0.0
+14,Massa de Parafina,Qualidade da Comunicação,0.0
+14,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+14,Massa de Parafina,Sucesso do Lançamento,1.0
+14,Massa de Parafina,Temperatura Ambiente,0.0
+14,Massa de Parafina,Temperatura do Oxigênio,0.0
+14,Massa de Parafina,Volume da Câmara,2.0
+14,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,4.0
+14,Orçamento Disponível,Disponibilidade de Tempo,0.0
+14,Orçamento Disponível,Documentação de Projeto,0.0
+14,Orçamento Disponível,Experiência da Equipe,0.0
+14,Orçamento Disponível,Massa de Parafina,4.0
+14,Orçamento Disponível,Orçamento Disponível,0.0
+14,Orçamento Disponível,Qualidade da Comunicação,0.0
+14,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,4.0
+14,Orçamento Disponível,Sucesso do Lançamento,4.0
+14,Orçamento Disponível,Temperatura Ambiente,0.0
+14,Orçamento Disponível,Temperatura do Oxigênio,2.0
+14,Orçamento Disponível,Volume da Câmara,0.0
+14,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,1.0
+14,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+14,Qualidade da Comunicação,Documentação de Projeto,0.0
+14,Qualidade da Comunicação,Experiência da Equipe,0.0
+14,Qualidade da Comunicação,Massa de Parafina,0.0
+14,Qualidade da Comunicação,Orçamento Disponível,0.0
+14,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+14,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+14,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+14,Qualidade da Comunicação,Temperatura Ambiente,0.0
+14,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+14,Qualidade da Comunicação,Volume da Câmara,1.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,1.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,4.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,1.0
+14,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+14,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+14,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+14,Sucesso do Lançamento,Documentação de Projeto,0.0
+14,Sucesso do Lançamento,Experiência da Equipe,0.0
+14,Sucesso do Lançamento,Massa de Parafina,0.0
+14,Sucesso do Lançamento,Orçamento Disponível,0.0
+14,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+14,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+14,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+14,Sucesso do Lançamento,Temperatura Ambiente,0.0
+14,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+14,Sucesso do Lançamento,Volume da Câmara,0.0
+14,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,2.0
+14,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+14,Temperatura Ambiente,Documentação de Projeto,0.0
+14,Temperatura Ambiente,Experiência da Equipe,0.0
+14,Temperatura Ambiente,Massa de Parafina,0.0
+14,Temperatura Ambiente,Orçamento Disponível,0.0
+14,Temperatura Ambiente,Qualidade da Comunicação,0.0
+14,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+14,Temperatura Ambiente,Sucesso do Lançamento,2.0
+14,Temperatura Ambiente,Temperatura Ambiente,0.0
+14,Temperatura Ambiente,Temperatura do Oxigênio,2.0
+14,Temperatura Ambiente,Volume da Câmara,0.0
+14,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,1.0
+14,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+14,Temperatura do Oxigênio,Documentação de Projeto,0.0
+14,Temperatura do Oxigênio,Experiência da Equipe,0.0
+14,Temperatura do Oxigênio,Massa de Parafina,1.0
+14,Temperatura do Oxigênio,Orçamento Disponível,0.0
+14,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+14,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+14,Temperatura do Oxigênio,Sucesso do Lançamento,0.0
+14,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+14,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+14,Temperatura do Oxigênio,Volume da Câmara,0.0
+14,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+14,Volume da Câmara,Disponibilidade de Tempo,0.0
+14,Volume da Câmara,Documentação de Projeto,0.0
+14,Volume da Câmara,Experiência da Equipe,0.0
+14,Volume da Câmara,Massa de Parafina,3.0
+14,Volume da Câmara,Orçamento Disponível,0.0
+14,Volume da Câmara,Qualidade da Comunicação,0.0
+14,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+14,Volume da Câmara,Sucesso do Lançamento,0.0
+14,Volume da Câmara,Temperatura Ambiente,0.0
+14,Volume da Câmara,Temperatura do Oxigênio,0.0
+14,Volume da Câmara,Volume da Câmara,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,1.0
+15,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+15,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,1.0
+15,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+15,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+15,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,3.0
+15,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+15,Disponibilidade de Tempo,Documentação de Projeto,0.0
+15,Disponibilidade de Tempo,Experiência da Equipe,0.0
+15,Disponibilidade de Tempo,Massa de Parafina,0.0
+15,Disponibilidade de Tempo,Orçamento Disponível,0.0
+15,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+15,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+15,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+15,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+15,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+15,Disponibilidade de Tempo,Volume da Câmara,1.0
+15,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+15,Documentação de Projeto,Disponibilidade de Tempo,0.0
+15,Documentação de Projeto,Documentação de Projeto,0.0
+15,Documentação de Projeto,Experiência da Equipe,0.0
+15,Documentação de Projeto,Massa de Parafina,2.0
+15,Documentação de Projeto,Orçamento Disponível,0.0
+15,Documentação de Projeto,Qualidade da Comunicação,0.0
+15,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+15,Documentação de Projeto,Sucesso do Lançamento,1.0
+15,Documentação de Projeto,Temperatura Ambiente,0.0
+15,Documentação de Projeto,Temperatura do Oxigênio,1.0
+15,Documentação de Projeto,Volume da Câmara,0.0
+15,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+15,Experiência da Equipe,Disponibilidade de Tempo,0.0
+15,Experiência da Equipe,Documentação de Projeto,0.0
+15,Experiência da Equipe,Experiência da Equipe,0.0
+15,Experiência da Equipe,Massa de Parafina,2.0
+15,Experiência da Equipe,Orçamento Disponível,0.0
+15,Experiência da Equipe,Qualidade da Comunicação,0.0
+15,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+15,Experiência da Equipe,Sucesso do Lançamento,4.0
+15,Experiência da Equipe,Temperatura Ambiente,0.0
+15,Experiência da Equipe,Temperatura do Oxigênio,2.0
+15,Experiência da Equipe,Volume da Câmara,2.0
+15,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,3.0
+15,Massa de Parafina,Disponibilidade de Tempo,0.0
+15,Massa de Parafina,Documentação de Projeto,0.0
+15,Massa de Parafina,Experiência da Equipe,0.0
+15,Massa de Parafina,Massa de Parafina,0.0
+15,Massa de Parafina,Orçamento Disponível,0.0
+15,Massa de Parafina,Qualidade da Comunicação,0.0
+15,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+15,Massa de Parafina,Sucesso do Lançamento,2.0
+15,Massa de Parafina,Temperatura Ambiente,0.0
+15,Massa de Parafina,Temperatura do Oxigênio,0.0
+15,Massa de Parafina,Volume da Câmara,2.0
+15,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+15,Orçamento Disponível,Disponibilidade de Tempo,0.0
+15,Orçamento Disponível,Documentação de Projeto,0.0
+15,Orçamento Disponível,Experiência da Equipe,0.0
+15,Orçamento Disponível,Massa de Parafina,2.0
+15,Orçamento Disponível,Orçamento Disponível,0.0
+15,Orçamento Disponível,Qualidade da Comunicação,0.0
+15,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+15,Orçamento Disponível,Sucesso do Lançamento,2.0
+15,Orçamento Disponível,Temperatura Ambiente,0.0
+15,Orçamento Disponível,Temperatura do Oxigênio,3.0
+15,Orçamento Disponível,Volume da Câmara,0.0
+15,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+15,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+15,Qualidade da Comunicação,Documentação de Projeto,0.0
+15,Qualidade da Comunicação,Experiência da Equipe,0.0
+15,Qualidade da Comunicação,Massa de Parafina,0.0
+15,Qualidade da Comunicação,Orçamento Disponível,0.0
+15,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+15,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+15,Qualidade da Comunicação,Sucesso do Lançamento,3.0
+15,Qualidade da Comunicação,Temperatura Ambiente,0.0
+15,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+15,Qualidade da Comunicação,Volume da Câmara,1.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,2.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,2.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,1.0
+15,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,2.0
+15,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+15,Sucesso do Lançamento,Documentação de Projeto,0.0
+15,Sucesso do Lançamento,Experiência da Equipe,0.0
+15,Sucesso do Lançamento,Massa de Parafina,0.0
+15,Sucesso do Lançamento,Orçamento Disponível,0.0
+15,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+15,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+15,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+15,Sucesso do Lançamento,Temperatura Ambiente,0.0
+15,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+15,Sucesso do Lançamento,Volume da Câmara,0.0
+15,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+15,Temperatura Ambiente,Documentação de Projeto,0.0
+15,Temperatura Ambiente,Experiência da Equipe,0.0
+15,Temperatura Ambiente,Massa de Parafina,1.0
+15,Temperatura Ambiente,Orçamento Disponível,0.0
+15,Temperatura Ambiente,Qualidade da Comunicação,0.0
+15,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+15,Temperatura Ambiente,Sucesso do Lançamento,1.0
+15,Temperatura Ambiente,Temperatura Ambiente,0.0
+15,Temperatura Ambiente,Temperatura do Oxigênio,2.0
+15,Temperatura Ambiente,Volume da Câmara,1.0
+15,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+15,Temperatura do Oxigênio,Documentação de Projeto,0.0
+15,Temperatura do Oxigênio,Experiência da Equipe,0.0
+15,Temperatura do Oxigênio,Massa de Parafina,0.0
+15,Temperatura do Oxigênio,Orçamento Disponível,0.0
+15,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+15,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+15,Temperatura do Oxigênio,Sucesso do Lançamento,1.0
+15,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+15,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+15,Temperatura do Oxigênio,Volume da Câmara,0.0
+15,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+15,Volume da Câmara,Disponibilidade de Tempo,0.0
+15,Volume da Câmara,Documentação de Projeto,0.0
+15,Volume da Câmara,Experiência da Equipe,0.0
+15,Volume da Câmara,Massa de Parafina,3.0
+15,Volume da Câmara,Orçamento Disponível,0.0
+15,Volume da Câmara,Qualidade da Comunicação,0.0
+15,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+15,Volume da Câmara,Sucesso do Lançamento,3.0
+15,Volume da Câmara,Temperatura Ambiente,0.0
+15,Volume da Câmara,Temperatura do Oxigênio,0.0
+15,Volume da Câmara,Volume da Câmara,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Acabamento Superficial do Grão e pureza da parafina,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Disponibilidade de Tempo,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Documentação de Projeto,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Experiência da Equipe,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Massa de Parafina,2.0
+16,Acabamento Superficial do Grão e pureza da parafina,Orçamento Disponível,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Qualidade da Comunicação,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Razão de mistura O/F e controle de vazão do oxigênio,1.0
+16,Acabamento Superficial do Grão e pureza da parafina,Sucesso do Lançamento,2.0
+16,Acabamento Superficial do Grão e pureza da parafina,Temperatura Ambiente,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Temperatura do Oxigênio,0.0
+16,Acabamento Superficial do Grão e pureza da parafina,Volume da Câmara,0.0
+16,Disponibilidade de Tempo,Acabamento Superficial do Grão e pureza da parafina,4.0
+16,Disponibilidade de Tempo,Disponibilidade de Tempo,0.0
+16,Disponibilidade de Tempo,Documentação de Projeto,0.0
+16,Disponibilidade de Tempo,Experiência da Equipe,0.0
+16,Disponibilidade de Tempo,Massa de Parafina,0.0
+16,Disponibilidade de Tempo,Orçamento Disponível,0.0
+16,Disponibilidade de Tempo,Qualidade da Comunicação,0.0
+16,Disponibilidade de Tempo,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+16,Disponibilidade de Tempo,Sucesso do Lançamento,3.0
+16,Disponibilidade de Tempo,Temperatura Ambiente,0.0
+16,Disponibilidade de Tempo,Temperatura do Oxigênio,0.0
+16,Disponibilidade de Tempo,Volume da Câmara,0.0
+16,Documentação de Projeto,Acabamento Superficial do Grão e pureza da parafina,1.0
+16,Documentação de Projeto,Disponibilidade de Tempo,0.0
+16,Documentação de Projeto,Documentação de Projeto,0.0
+16,Documentação de Projeto,Experiência da Equipe,0.0
+16,Documentação de Projeto,Massa de Parafina,1.0
+16,Documentação de Projeto,Orçamento Disponível,0.0
+16,Documentação de Projeto,Qualidade da Comunicação,0.0
+16,Documentação de Projeto,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+16,Documentação de Projeto,Sucesso do Lançamento,4.0
+16,Documentação de Projeto,Temperatura Ambiente,0.0
+16,Documentação de Projeto,Temperatura do Oxigênio,2.0
+16,Documentação de Projeto,Volume da Câmara,3.0
+16,Experiência da Equipe,Acabamento Superficial do Grão e pureza da parafina,3.0
+16,Experiência da Equipe,Disponibilidade de Tempo,0.0
+16,Experiência da Equipe,Documentação de Projeto,0.0
+16,Experiência da Equipe,Experiência da Equipe,0.0
+16,Experiência da Equipe,Massa de Parafina,1.0
+16,Experiência da Equipe,Orçamento Disponível,0.0
+16,Experiência da Equipe,Qualidade da Comunicação,0.0
+16,Experiência da Equipe,Razão de mistura O/F e controle de vazão do oxigênio,3.0
+16,Experiência da Equipe,Sucesso do Lançamento,3.0
+16,Experiência da Equipe,Temperatura Ambiente,0.0
+16,Experiência da Equipe,Temperatura do Oxigênio,1.0
+16,Experiência da Equipe,Volume da Câmara,2.0
+16,Massa de Parafina,Acabamento Superficial do Grão e pureza da parafina,3.0
+16,Massa de Parafina,Disponibilidade de Tempo,0.0
+16,Massa de Parafina,Documentação de Projeto,0.0
+16,Massa de Parafina,Experiência da Equipe,0.0
+16,Massa de Parafina,Massa de Parafina,0.0
+16,Massa de Parafina,Orçamento Disponível,0.0
+16,Massa de Parafina,Qualidade da Comunicação,0.0
+16,Massa de Parafina,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+16,Massa de Parafina,Sucesso do Lançamento,1.0
+16,Massa de Parafina,Temperatura Ambiente,0.0
+16,Massa de Parafina,Temperatura do Oxigênio,0.0
+16,Massa de Parafina,Volume da Câmara,3.0
+16,Orçamento Disponível,Acabamento Superficial do Grão e pureza da parafina,3.0
+16,Orçamento Disponível,Disponibilidade de Tempo,0.0
+16,Orçamento Disponível,Documentação de Projeto,0.0
+16,Orçamento Disponível,Experiência da Equipe,0.0
+16,Orçamento Disponível,Massa de Parafina,0.0
+16,Orçamento Disponível,Orçamento Disponível,0.0
+16,Orçamento Disponível,Qualidade da Comunicação,0.0
+16,Orçamento Disponível,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+16,Orçamento Disponível,Sucesso do Lançamento,2.0
+16,Orçamento Disponível,Temperatura Ambiente,0.0
+16,Orçamento Disponível,Temperatura do Oxigênio,2.0
+16,Orçamento Disponível,Volume da Câmara,0.0
+16,Qualidade da Comunicação,Acabamento Superficial do Grão e pureza da parafina,2.0
+16,Qualidade da Comunicação,Disponibilidade de Tempo,0.0
+16,Qualidade da Comunicação,Documentação de Projeto,0.0
+16,Qualidade da Comunicação,Experiência da Equipe,0.0
+16,Qualidade da Comunicação,Massa de Parafina,0.0
+16,Qualidade da Comunicação,Orçamento Disponível,0.0
+16,Qualidade da Comunicação,Qualidade da Comunicação,0.0
+16,Qualidade da Comunicação,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+16,Qualidade da Comunicação,Sucesso do Lançamento,4.0
+16,Qualidade da Comunicação,Temperatura Ambiente,0.0
+16,Qualidade da Comunicação,Temperatura do Oxigênio,0.0
+16,Qualidade da Comunicação,Volume da Câmara,1.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Acabamento Superficial do Grão e pureza da parafina,1.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Disponibilidade de Tempo,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Documentação de Projeto,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Experiência da Equipe,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Massa de Parafina,2.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Orçamento Disponível,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Qualidade da Comunicação,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Sucesso do Lançamento,3.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura Ambiente,0.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Temperatura do Oxigênio,2.0
+16,Razão de mistura O/F e controle de vazão do oxigênio,Volume da Câmara,
+16,Sucesso do Lançamento,Acabamento Superficial do Grão e pureza da parafina,0.0
+16,Sucesso do Lançamento,Disponibilidade de Tempo,0.0
+16,Sucesso do Lançamento,Documentação de Projeto,0.0
+16,Sucesso do Lançamento,Experiência da Equipe,0.0
+16,Sucesso do Lançamento,Massa de Parafina,0.0
+16,Sucesso do Lançamento,Orçamento Disponível,0.0
+16,Sucesso do Lançamento,Qualidade da Comunicação,0.0
+16,Sucesso do Lançamento,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+16,Sucesso do Lançamento,Sucesso do Lançamento,0.0
+16,Sucesso do Lançamento,Temperatura Ambiente,0.0
+16,Sucesso do Lançamento,Temperatura do Oxigênio,0.0
+16,Sucesso do Lançamento,Volume da Câmara,0.0
+16,Temperatura Ambiente,Acabamento Superficial do Grão e pureza da parafina,
+16,Temperatura Ambiente,Disponibilidade de Tempo,0.0
+16,Temperatura Ambiente,Documentação de Projeto,0.0
+16,Temperatura Ambiente,Experiência da Equipe,0.0
+16,Temperatura Ambiente,Massa de Parafina,0.0
+16,Temperatura Ambiente,Orçamento Disponível,0.0
+16,Temperatura Ambiente,Qualidade da Comunicação,0.0
+16,Temperatura Ambiente,Razão de mistura O/F e controle de vazão do oxigênio,2.0
+16,Temperatura Ambiente,Sucesso do Lançamento,1.0
+16,Temperatura Ambiente,Temperatura Ambiente,0.0
+16,Temperatura Ambiente,Temperatura do Oxigênio,3.0
+16,Temperatura Ambiente,Volume da Câmara,0.0
+16,Temperatura do Oxigênio,Acabamento Superficial do Grão e pureza da parafina,0.0
+16,Temperatura do Oxigênio,Disponibilidade de Tempo,0.0
+16,Temperatura do Oxigênio,Documentação de Projeto,0.0
+16,Temperatura do Oxigênio,Experiência da Equipe,0.0
+16,Temperatura do Oxigênio,Massa de Parafina,1.0
+16,Temperatura do Oxigênio,Orçamento Disponível,0.0
+16,Temperatura do Oxigênio,Qualidade da Comunicação,0.0
+16,Temperatura do Oxigênio,Razão de mistura O/F e controle de vazão do oxigênio,0.0
+16,Temperatura do Oxigênio,Sucesso do Lançamento,2.0
+16,Temperatura do Oxigênio,Temperatura Ambiente,0.0
+16,Temperatura do Oxigênio,Temperatura do Oxigênio,0.0
+16,Temperatura do Oxigênio,Volume da Câmara,0.0
+16,Volume da Câmara,Acabamento Superficial do Grão e pureza da parafina,0.0
+16,Volume da Câmara,Disponibilidade de Tempo,0.0
+16,Volume da Câmara,Documentação de Projeto,0.0
+16,Volume da Câmara,Experiência da Equipe,0.0
+16,Volume da Câmara,Massa de Parafina,4.0
+16,Volume da Câmara,Orçamento Disponível,0.0
+16,Volume da Câmara,Qualidade da Comunicação,0.0
+16,Volume da Câmara,Razão de mistura O/F e controle de vazão do oxigênio,
+16,Volume da Câmara,Sucesso do Lançamento,2.0
+16,Volume da Câmara,Temperatura Ambiente,0.0
+16,Volume da Câmara,Temperatura do Oxigênio,0.0
+16,Volume da Câmara,Volume da Câmara,0.0
