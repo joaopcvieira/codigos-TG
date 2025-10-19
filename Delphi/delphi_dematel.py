@@ -152,7 +152,59 @@ class ExpertAggregator:
     """
     Agrega e analisa respostas de múltiplos especialistas.
     Calcula estatísticas descritivas para comparação com o LLM.
+    
+    IMPORTANTE: Converte automaticamente escalas de especialistas (0-4) para escala LLM (0-9)
+    para garantir comparabilidade nas análises Delphi.
     """
+    
+    @staticmethod
+    def convert_expert_scale_to_llm(expert_score: float) -> float:
+        """
+        Converte escala de especialistas (0-4) para escala LLM (0-9).
+        
+        Usa mapeamento linear: novo_valor = (valor_original / 4) * 9
+        
+        Parameters
+        ----------
+        expert_score : float
+            Pontuação na escala original dos especialistas (0-4)
+            
+        Returns
+        -------
+        float
+            Pontuação convertida para escala LLM (0-9)
+        """
+        if expert_score < 0 or expert_score > 4:
+            logger.warning(f"Valor de especialista fora da escala esperada (0-4): {expert_score}")
+        
+        # Mapeamento linear de 0-4 para 0-9
+        converted = (expert_score / 4.0) * 9.0
+        
+        # Garante que está dentro dos limites
+        converted = max(0.0, min(9.0, converted))
+        
+        return converted
+    
+    @staticmethod
+    def test_scale_conversion():
+        """
+        Testa e demonstra a conversão de escalas.
+        Útil para validar que a conversão está funcionando corretamente.
+        """
+        print("Teste de Conversão de Escalas:")
+        print("Especialistas (0-4) → LLM (0-9)")
+        print("-" * 35)
+        
+        test_values = [0, 1, 2, 3, 4, 2.5, 3.5]
+        for original in test_values:
+            converted = ExpertAggregator.convert_expert_scale_to_llm(original)
+            print(f"{original:4.1f} → {converted:4.1f}")
+        
+        print("\nMapeamento completo:")
+        print("0 (nenhuma) → 0.0 | 1 (baixa) → 2.25 | 2 (média) → 4.5")
+        print("3 (alta) → 6.75 | 4 (muito alta) → 9.0")
+        
+        return True
     
     @staticmethod
     def load_expert_matrix(filepath: str) -> np.ndarray:
