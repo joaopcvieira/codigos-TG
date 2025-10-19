@@ -21,6 +21,8 @@ from scipy import stats
 from datetime import datetime
 import logging
 
+from functions.main import plot_network, plot_influence_diagram, check_pergunta_valida
+
 # Importações serão feitas dinamicamente para evitar problemas circulares
 # from main import DematelLLM
 
@@ -97,7 +99,7 @@ class DelphiMemory:
         """Define as estatísticas dos especialistas para um par de fatores"""
         key = (factor_i, factor_j)
         self.expert_stats[key] = stats
-        logger.info(f"Estatísticas de especialistas definidas para {factor_i} -> {factor_j}: median={stats.median}, IQR={stats.iqr}")
+        # logger.info(f"Estatísticas de especialistas definidas para {factor_i} -> {factor_j}: median={stats.median}, IQR={stats.iqr}")
     
     def get_expert_stats(self, factor_i: str, factor_j: str) -> Optional[ExpertStatistics]:
         """Retorna as estatísticas dos especialistas para um par de fatores"""
@@ -146,6 +148,31 @@ class DelphiMemory:
             self.expert_stats[key] = ExpertStatistics(**stats_data)
         
         logger.info(f"Memória carregada de {filepath}")
+    
+    def get_all_justifications(self) -> Dict[str, str]:
+        """
+        Retorna todas as justificativas mais recentes por par de fatores
+        """
+        justifications = {}
+        for (factor_i, factor_j), responses in self.responses.items():
+            if responses:
+                latest_response = responses[-1]
+                key = f"{factor_i}->{factor_j}"
+                justifications[key] = latest_response.rationale
+        return justifications
+    
+    def get_justifications_by_round(self, round_number: int) -> Dict[str, str]:
+        """
+        Retorna justificativas de uma rodada específica
+        round_number: 1 = primeira rodada, 2 = segunda rodada, etc.
+        """
+        justifications = {}
+        for (factor_i, factor_j), responses in self.responses.items():
+            if len(responses) >= round_number:
+                response = responses[round_number - 1]  # -1 porque lista é 0-indexed
+                key = f"{factor_i}->{factor_j}"
+                justifications[key] = response.rationale
+        return justifications
 
 
 class ExpertAggregator:
@@ -231,15 +258,19 @@ class ExpertAggregator:
         """
         Agrega respostas de múltiplos especialistas.
         
+        IMPORTANTE: Converte automaticamente as escalas dos especialistas (0-4) 
+        para a escala do LLM (0-9) antes de calcular estatísticas, garantindo 
+        comparabilidade nas análises Delphi.
+        
         Parameters
         ----------
         expert_matrices : List[np.ndarray]
-            Lista de matrizes NxN de cada especialista
+            Lista de matrizes NxN de cada especialista (escala original 0-4)
         
         Returns
         -------
         Dict[Tuple[int, int], ExpertStatistics]
-            Estatísticas agregadas para cada par (i, j)
+            Estatísticas agregadas para cada par (i, j) na escala convertida (0-9)
         """
         if not expert_matrices:
             raise ValueError("Lista de matrizes de especialistas está vazia")
@@ -258,14 +289,20 @@ class ExpertAggregator:
                     continue
                 
                 # Coleta todas as respostas dos especialistas para o par (i, j)
-                responses = [matrix[i, j] for matrix in expert_matrices if not np.isnan(matrix[i, j])]
+                raw_responses = [matrix[i, j] for matrix in expert_matrices if not np.isnan(matrix[i, j])]
                 
-                if not responses:
+                if not raw_responses:
                     continue
                 
-                responses = np.array(responses)
+                # Converte escala de especialistas (0-4) para escala LLM (0-9)
+                converted_responses = [ExpertAggregator.convert_expert_scale_to_llm(score) for score in raw_responses]
+                responses = np.array(converted_responses)
                 
-                # Calcula estatísticas
+                # Log da conversão para auditoria
+                if logger.isEnabledFor(logging.DEBUG):
+                    logger.debug(f"Conversão escala ({i},{j}): {raw_responses} -> {converted_responses}")
+                
+                # Calcula estatísticas (agora na escala 0-9)
                 stats = ExpertStatistics(
                     median=float(np.median(responses)),
                     q1=float(np.percentile(responses, 25)),
@@ -274,7 +311,7 @@ class ExpertAggregator:
                     mean=float(np.mean(responses)),
                     std=float(np.std(responses)),
                     count=len(responses),
-                    responses=responses.tolist()
+                    responses=responses.tolist()  # Armazena valores convertidos
                 )
                 
                 aggregated[(i, j)] = stats
@@ -284,26 +321,104 @@ class ExpertAggregator:
     @staticmethod
     def load_and_aggregate_from_file(filepath: str, factors: List[str]) -> Dict[Tuple[str, str], ExpertStatistics]:
         """
-        Carrega matrizes de especialistas de um arquivo e agrega as respostas.
+        Carrega dados de especialistas de um arquivo e agrega as respostas.
+        Suporta dois formatos de arquivo CSV:
+        
+        FORMATO 1 (Linha por linha - RECOMENDADO):
+        expert_id,factor_source,factor_target,influence_score
+        1,Fator A,Fator B,2
+        1,Fator A,Fator C,3
+        2,Fator A,Fator B,1
+        ...
+        
+        FORMATO 2 (Matrizes empilhadas):
+        factor,Fator A,Fator B,Fator C
+        Fator A,0,2,3
+        Fator B,1,0,2
+        Fator C,2,1,0
+        Fator A,0,1,4
+        ...
+        
+        IMPORTANTE: As respostas dos especialistas são automaticamente convertidas 
+        da escala original (0-4) para a escala do LLM (0-9) para garantir 
+        comparabilidade nas análises Delphi.
         
         Parameters
         ----------
         filepath : str
-            Caminho para o arquivo contendo as matrizes dos especialistas
+            Caminho para o arquivo contendo as avaliações dos especialistas (escala 0-4)
         factors : List[str]
             Lista dos nomes dos fatores
         
         Returns
         -------
         Dict[Tuple[str, str], ExpertStatistics]
-            Estatísticas agregadas mapeadas por nomes dos fatores
+            Estatísticas agregadas mapeadas por nomes dos fatores (escala convertida 0-9)
         """
-        # Para este exemplo, vamos assumir um formato específico
-        # Na prática, isso dependeria do formato real dos dados dos especialistas
-        
-        # Exemplo: arquivo CSV com múltiplas matrizes empilhadas
         df = pd.read_csv(filepath)
         
+        # Detecta formato do arquivo
+        columns = df.columns.tolist()
+        
+        if 'expert_id' in columns and 'factor_source' in columns and 'factor_target' in columns and 'influence_score' in columns:
+            # FORMATO 1: Linha por linha
+            return ExpertAggregator._load_rowwise_format(df, factors)
+        else:
+            # FORMATO 2: Matrizes empilhadas
+            return ExpertAggregator._load_matrix_format(df, factors)
+    
+    @staticmethod
+    def _load_rowwise_format(df: pd.DataFrame, factors: List[str]) -> Dict[Tuple[str, str], ExpertStatistics]:
+        """
+        Processa formato linha por linha:
+        expert_id,factor_source,factor_target,influence_score
+        """
+        # Agrupa por par de fatores
+        factor_pairs = {}
+        
+        for _, row in df.iterrows():
+            factor_src = row['factor_source']
+            factor_tgt = row['factor_target']
+            score = float(row['influence_score'])
+            
+            # Valida que os fatores existem na lista
+            if factor_src not in factors or factor_tgt not in factors:
+                continue
+            
+            pair_key = (factor_src, factor_tgt)
+            if pair_key not in factor_pairs:
+                factor_pairs[pair_key] = []
+            
+            factor_pairs[pair_key].append(score)
+        
+        # Calcula estatísticas para cada par
+        aggregated = {}
+        for pair_key, scores in factor_pairs.items():
+            if scores:  # Se há pelo menos uma avaliação
+                # Converte escala de especialistas (0-4) para LLM (0-9)
+                converted_scores = [ExpertAggregator.convert_expert_scale_to_llm(score) for score in scores]
+                
+                # Calcula estatísticas
+                stats = ExpertStatistics(
+                    mean=np.mean(converted_scores),
+                    median=np.median(converted_scores),
+                    std=np.std(converted_scores),
+                    q1=np.percentile(converted_scores, 25),
+                    q3=np.percentile(converted_scores, 75),
+                    iqr=np.percentile(converted_scores, 75) - np.percentile(converted_scores, 25),
+                    count=len(converted_scores),
+                    responses=converted_scores
+                )
+                
+                aggregated[pair_key] = stats
+        
+        return aggregated
+    
+    @staticmethod
+    def _load_matrix_format(df: pd.DataFrame, factors: List[str]) -> Dict[Tuple[str, str], ExpertStatistics]:
+        """
+        Processa formato de matrizes empilhadas (formato legado)
+        """
         # Identifica quantos especialistas existem baseado na estrutura do arquivo
         n_factors = len(factors)
         n_experts = len(df) // n_factors
@@ -452,6 +567,73 @@ class DelphiDematel:
         self.rc_sum = self.R + self.C
         self.rc_diff= self.R - self.C
     
+    def _ensure_dag(self, G) -> 'nx.DiGraph':
+        """
+        Remove arestas até que o grafo fique acíclico.
+        Estratégia: enquanto houver ciclo, encontra um deles e
+        remove a aresta de menor peso no ciclo.
+        """
+        import networkx as nx
+        G = G.copy()
+        try:
+            find_cycle = nx.find_cycle  # networkx ≥ 3
+        except AttributeError:
+            from networkx.algorithms.cycles import find_cycle  # retro‑compat
+
+        while True:
+            try:
+                cycle_edges = find_cycle(G, orientation="original")
+            except nx.exception.NetworkXNoCycle:
+                break  # já é DAG
+            # menor peso dentro do ciclo
+            min_edge = min(
+                cycle_edges,
+                key=lambda e: G.get_edge_data(e[0], e[1]).get("weight", 1)
+            )
+            G.remove_edge(*min_edge[:2])
+        return G
+    
+    def _build_graph(self,
+                 threshold: float | None = None,
+                 include_weights: bool = True,
+                 enforce_dag: bool = True,
+                 numeric_filter: bool = False) -> 'nx.DiGraph':
+        """
+        Constrói grafo usando threshold baseado na matriz T do DEMATEL.
+        """
+        import networkx as nx
+        import itertools
+        
+        if threshold is None:
+            threshold = self.T.mean()          # heurística simples
+        G = nx.DiGraph()
+        G.add_nodes_from(self.factors)
+        
+        # --- Filtro DEMATEL numérico opcional ---------------------------
+        if numeric_filter:
+            prom_threshold = np.percentile(self.rc_sum, 50)
+            # mantém arestas cujo peso esteja acima de (μ + 0.5·σ)
+            edge_threshold = self.T.mean() + 0.5 * self.T.std()
+        else:
+            prom_threshold = None
+            edge_threshold = None
+            
+        for i, j in itertools.product(range(self.n), repeat=2):
+            if i == j:
+                continue
+            if self.T[i, j] <= threshold:
+                continue
+            if numeric_filter:
+                # só mantém se nó de origem é proeminente E peso é alto
+                if not (self.rc_sum[i] > prom_threshold and self.T[i, j] > edge_threshold):
+                    continue
+            # passou em todos os filtros → adiciona aresta
+            w = round(self.T[i, j], 3) if include_weights else 1
+            G.add_edge(self.factors[i], self.factors[j], weight=w)
+        if enforce_dag:
+            G = self._ensure_dag(G)
+        return G
+    
     def load_expert_data(self, filepath: str):
         """Carrega e processa dados dos especialistas"""
         try:
@@ -468,46 +650,46 @@ class DelphiDematel:
         """Cria template de prompt para processo de auditoria Delphi"""
         return """Você é um engenheiro Aeroespacial especialista em propulsão de foguetes realizando uma REAVALIAÇÃO de sua análise anterior no contexto do método DEMATEL.
 
-CONTEXTO DO PROJETO: Desenvolvimento de motor foguete híbrido com foco no empuxo gerado.
+        CONTEXTO DO PROJETO: Desenvolvimento de motor foguete híbrido com foco no empuxo gerado.
 
-SUA AVALIAÇÃO ANTERIOR:
-- Fator origem: {src} ({description_src})
-- Fator destino: {tgt} ({description_tgt})
-- Sua nota anterior: {previous_score}/9
-- Sua justificativa anterior: {previous_rationale}
-- Seu nível de confiança anterior: {previous_confidence}/5
+        SUA AVALIAÇÃO ANTERIOR:
+        - Fator origem: {src} ({description_src})
+        - Fator destino: {tgt} ({description_tgt})
+        - Sua nota anterior: {previous_score}/9
+        - Sua justificativa anterior: {previous_rationale}
+        - Seu nível de confiança anterior: {previous_confidence}/5
 
-CONSENSO DOS ESPECIALISTAS:
-- Mediana das avaliações: {expert_median}
-- Intervalo interquartil (Q1-Q3): {expert_q1} - {expert_q3}
-- Número de especialistas: {expert_count}
-- Desvio padrão: {expert_std:.2f}
+        CONSENSO DOS ESPECIALISTAS (escala 0-9, normalizada):
+        - Mediana das avaliações: {expert_median:.1f}/9
+        - Intervalo interquartil (Q1-Q3): {expert_q1:.1f} - {expert_q3:.1f}
+        - Número de especialistas: {expert_count}
+        - Desvio padrão: {expert_std:.2f}
 
-INSTRUÇÃO PARA REAVALIAÇÃO:
-Analise cuidadosamente sua avaliação anterior E o consenso dos especialistas. Mantenha sua AUTONOMIA TÉCNICA - não mude simplesmente para seguir a maioria. Altere sua avaliação APENAS se houver motivo técnico substantivo.
+        INSTRUÇÃO PARA REAVALIAÇÃO:
+        Analise cuidadosamente sua avaliação anterior E o consenso dos especialistas. Mantenha sua AUTONOMIA TÉCNICA - não mude simplesmente para seguir a maioria. Altere sua avaliação APENAS se houver motivo técnico substantivo.
 
-Considere:
-1. Sua justificativa técnica original ainda é válida?
-2. O consenso dos especialistas revela algum aspecto técnico que você não considerou?
-3. Há evidências técnicas suficientes para alterar sua posição?
+        Considere:
+        1. Sua justificativa técnica original ainda é válida?
+        2. O consenso dos especialistas revela algum aspecto técnico que você não considerou?
+        3. Há evidências técnicas suficientes para alterar sua posição?
 
-RESPOSTA REQUERIDA (formato exato):
-NOTA: [0-9]
-JUSTIFICATIVA: [Explique detalhadamente seu raciocínio técnico, mencionando se e por que mantém ou altera sua avaliação]
-CONFIANÇA: [1-5]
-MUDANÇA: [SIM/NÃO - se alterou a nota original]
+        RESPOSTA REQUERIDA (formato exato):
+        NOTA: [0-9]
+        JUSTIFICATIVA: [Explique detalhadamente seu raciocínio técnico, mencionando se e por que mantém ou altera sua avaliação]
+        CONFIANÇA: [1-5]
+        MUDANÇA: [SIM/NÃO - se alterou a nota original]
 
-Baseie sua decisão exclusivamente em argumentos técnicos de engenharia aeroespacial e propulsão."""
+        Baseie sua decisão exclusivamente em argumentos técnicos de engenharia aeroespacial e propulsão."""
     
     def _ask_llm_with_memory(self, src: str, tgt: str, description_src: str, description_tgt: str) -> ResponseRecord:
         """
         Faz pergunta ao LLM e armazena resposta completa com justificativa e confiança.
         Estende o método _ask_llm original para capturar informações adicionais.
         """
-        # Verifica cache primeiro
-        cached_response = self.memory.get_latest_response(src, tgt)
-        if cached_response and self.current_round == 1:
-            return cached_response
+        # # Verifica cache primeiro
+        # cached_response = self.memory.get_latest_response(src, tgt)
+        # if use_initial_cache and cached_response and self.current_round == 1:
+        #     return cached_response
         
         # Monta prompt estendido para capturar justificativa e confiança
         from config import SCALE_DESC
@@ -517,14 +699,14 @@ Baseie sua decisão exclusivamente em argumentos técnicos de engenharia aeroesp
             scale=SCALE_DESC
         )}
 
-Além da nota, forneça também:
-1. Uma justificativa técnica detalhada para sua avaliação
-2. Seu nível de confiança nesta avaliação (1=muito baixa, 5=muito alta)
+        Além da nota, forneça também:
+        1. Uma justificativa técnica detalhada para sua avaliação
+        2. Seu nível de confiança nesta avaliação (1=muito baixa, 5=muito alta)
 
-FORMATO DA RESPOSTA:
-NOTA: [0-9]
-JUSTIFICATIVA: [Explique detalhadamente o raciocínio técnico]
-CONFIANÇA: [1-5]"""
+        FORMATO DA RESPOSTA:
+        NOTA: [0-9]
+        JUSTIFICATIVA: [Explique detalhadamente o raciocínio técnico]
+        CONFIANÇA: [1-5]"""
         
         # Chama LLM
         from config import _OPENAI_V0
@@ -559,7 +741,7 @@ CONFIANÇA: [1-5]"""
         
         print(f'{"-"*80}\n')
         print(f'RODADA {self.current_round} - {src} -> {tgt}')
-        print('Pergunta:', extended_prompt)
+        # print('Pergunta:', extended_prompt)
         print('Resposta:', txt)
         print(f'Parsed: score={response_record.score}, confidence={response_record.confidence}')
         print(f'{"-"*80}\n')
@@ -605,15 +787,13 @@ CONFIANÇA: [1-5]"""
                     continue
                 
                 # Verifica se pergunta é válida (usando função original se existir)
-                try:
-                    from main import check_pergunta_valida
-                    if not check_pergunta_valida(src, tgt):
-                        self.A[i, j] = 0
-                        continue
-                except (ImportError, NameError):
-                    # Função check_pergunta_valida não existe, continua normalmente
-                    pass
                 
+                if not check_pergunta_valida(src, tgt):
+                    print("Pergunta intencionalmente deixada de fora, eliminada na triagem inicial")
+                    print(f'\t"{src}" não tem influência significativa em "{tgt}"\n\n')
+                    self.A[i, j] = 0
+                    continue
+
                 # Obtém resposta com memória
                 response = self._ask_llm_with_memory(
                     src, tgt, 
@@ -626,7 +806,7 @@ CONFIANÇA: [1-5]"""
         print('Matriz inicial formada:', self.A)
         
         # Salva matriz
-        np.savetxt('Agente AI/matriz_dematel_inicial.txt', self.A, fmt='%d', delimiter=', ')
+        np.savetxt('matriz_dematel_inicial.txt', self.A, fmt='%d', delimiter=', ')
         
         # Salva memória
         self.memory.export_to_json(self.memory_path)
@@ -715,7 +895,7 @@ CONFIANÇA: [1-5]"""
         }
         
         # Salva resultados
-        np.savetxt(f'Agente AI/matriz_dematel_round_{self.current_round}.txt', 
+        np.savetxt(f'matriz_dematel_round_{self.current_round}.txt', 
                    self.A, fmt='%d', delimiter=', ')
         self.memory.export_to_json(self.memory_path)
         
@@ -750,8 +930,10 @@ CONFIANÇA: [1-5]"""
         else:
             raise RuntimeError("Provider não suportado.")
         
+        # mostra tanto a resposta dada pelo LLM como a resposta dos experts
         print(f'AUDITORIA - Rodada {self.current_round}')
         print('Resposta LLM:', txt)
+        print(f'')
         print('-' * 50)
         
         return self._parse_audit_response(txt)
@@ -783,6 +965,9 @@ CONFIANÇA: [1-5]"""
     def compute_agreement_metrics(self) -> Dict[str, float]:
         """
         Calcula métricas de concordância entre a matriz final do LLM e a mediana dos especialistas.
+        
+        NOTA: As comparações são realizadas na escala comum 0-9, onde os dados dos 
+        especialistas foram automaticamente convertidos de sua escala original (0-4).
         
         Returns
         -------
@@ -921,6 +1106,7 @@ CONFIANÇA: [1-5]"""
         return report
     
     def run_full_delphi_process(self, max_rounds: int = 2) -> Dict[str, Any]:
+        
         """
         Executa o processo completo Delphi: matriz inicial + rondas de auditoria.
         
@@ -942,6 +1128,9 @@ CONFIANÇA: [1-5]"""
         # Executa DEMATEL na matriz inicial
         self._dematel()
         
+        # Constrói grafo inicial
+        self.G = self._build_graph(numeric_filter=True)
+        
         results = {
             'initial_matrix': self.A.copy(),
             'rounds': [],
@@ -958,6 +1147,9 @@ CONFIANÇA: [1-5]"""
             
             # Recalcula DEMATEL com nova matriz
             self._dematel()
+            
+            # Reconstrói grafo com nova matriz
+            self.G = self._build_graph(numeric_filter=True)
             
             results['rounds'].append({
                 'round_number': round_num + 2,  # +2 porque rodada 1 é inicial
@@ -976,3 +1168,24 @@ CONFIANÇA: [1-5]"""
         logger.info("Processo Delphi concluído com sucesso")
         
         return results
+
+
+# Importa e adiciona funções de plot à classe
+try:
+    from functions.main import plot_network, plot_influence_diagram
+    DelphiDematel.plot_network = plot_network
+    DelphiDematel.plot_influence_diagram = plot_influence_diagram
+except ImportError as e:
+    logger.warning(f"Não foi possível importar funções de plot: {e}")
+    
+    # Método de fallback simples para plot_network
+    def simple_plot_network(self, title="Network Plot"):
+        """Método simples de fallback para visualização"""
+        print(f"Plotando rede: {title}")
+        print(f"Nós: {len(self.factors)}")
+        if hasattr(self, 'G'):
+            print(f"Arestas: {self.G.number_of_edges()}")
+        else:
+            print("Grafo não disponível")
+    
+    DelphiDematel.plot_network = simple_plot_network
