@@ -353,9 +353,20 @@ DematelLLM.plot_influence_diagram = plot_influence_diagram
 
 
 def check_pergunta_valida(fator1, fator2):
+        # Verifica se src pode ser causa de algo:
+        categoria_fator_1 = df_fatores.loc[df_fatores['fator'] == fator1, 'categoria'].values[0]
+        if categoria_fator_1 == 'Sucesso':
+            return False # Sucesso não causa nada
+        
+        # Verifica se tgt pode ser efeito de algo:
+        categoria_fator_2 = df_fatores.loc[df_fatores['fator'] == fator2, 'categoria'].values[0]
+        if categoria_fator_2 == 'Fator Externo':
+            return False # Fator Externo não é efeito de nada
+        
+        # Verifica se há restrição externa de não influência
         df_check = df_relacao_fatores.loc[
             (df_relacao_fatores['Fator1'] == fator1) & (df_relacao_fatores['Fator2'] == fator2)
-        ]
+        ]        
         if not df_check.empty:
             return False
         else:
