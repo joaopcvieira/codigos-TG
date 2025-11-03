@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-19 18:52:19",
+  "timestamp": "2025-11-02 12:46:57",
   "rounds": [
     {
       "round_number": 0,
@@ -252,7 +252,7 @@
     {
       "round_number": 1,
       "description": "Rodada 2 - Auditoria",
-      "timestamp": "2025-10-19 18:51:22",
+      "timestamp": "2025-11-02 12:36:40",
       "matrix": [
         [
           0.0,
@@ -260,11 +260,11 @@
           7.0,
           0.0,
           0.0,
-          4.0,
+          6.0,
           6.0,
           2.0,
           4.0,
-          4.0,
+          3.0,
           0.0,
           7.0
         ],
@@ -306,7 +306,7 @@
           0.0,
           0.0,
           0.0,
-          5.0,
+          7.0,
           0.0,
           7.0
         ],
@@ -368,11 +368,11 @@
         ],
         [
           0.0,
+          2.0,
           0.0,
           0.0,
           0.0,
-          0.0,
-          5.0,
+          6.0,
           6.0,
           0.0,
           0.0,
@@ -389,7 +389,7 @@
           0.0,
           4.0,
           2.0,
-          2.0,
+          3.0,
           0.0,
           0.0,
           6.0
@@ -397,12 +397,12 @@
         [
           0.0,
           0.0,
-          0.0,
+          2.0,
           2.0,
           0.0,
           2.0,
           4.0,
-          3.0,
+          5.0,
           0.0,
           4.0,
           0.0,
@@ -498,14 +498,8 @@
       },
       "audit_metrics": {
         "round_number": 2,
-        "changes_made": 4,
+        "changes_made": 6,
         "disagreements": [
-          {
-            "pair": "Documentação de Projeto -> Experiência da Equipe",
-            "llm_score": 4,
-            "expert_median": 0.0,
-            "difference": 4.0
-          },
           {
             "pair": "Documentação de Projeto -> Qualidade da Comunicação",
             "llm_score": 7,
@@ -597,7 +591,7 @@
     {
       "round_number": 2,
       "description": "Rodada 3 - Auditoria",
-      "timestamp": "2025-10-19 18:52:19",
+      "timestamp": "2025-11-02 12:46:57",
       "matrix": [
         [
           0.0,
@@ -605,11 +599,11 @@
           7.0,
           0.0,
           0.0,
-          4.0,
+          6.0,
           6.0,
           2.0,
           4.0,
-          4.0,
+          3.0,
           0.0,
           7.0
         ],
@@ -651,7 +645,7 @@
           0.0,
           0.0,
           0.0,
-          5.0,
+          7.0,
           0.0,
           7.0
         ],
@@ -663,8 +657,8 @@
           0.0,
           0.0,
           6.0,
-          5.0,
           6.0,
+          4.0,
           6.0,
           0.0,
           7.0
@@ -713,11 +707,11 @@
         ],
         [
           0.0,
+          2.0,
           0.0,
           0.0,
           0.0,
-          0.0,
-          5.0,
+          6.0,
           6.0,
           0.0,
           0.0,
@@ -734,7 +728,7 @@
           0.0,
           4.0,
           2.0,
-          2.0,
+          3.0,
           0.0,
           0.0,
           6.0
@@ -742,12 +736,12 @@
         [
           0.0,
           0.0,
-          0.0,
+          2.0,
           2.0,
           0.0,
           2.0,
           4.0,
-          3.0,
+          5.0,
           0.0,
           4.0,
           0.0,
@@ -843,14 +837,8 @@
       },
       "audit_metrics": {
         "round_number": 4,
-        "changes_made": 0,
+        "changes_made": 2,
         "disagreements": [
-          {
-            "pair": "Documentação de Projeto -> Experiência da Equipe",
-            "llm_score": 4,
-            "expert_median": 0.0,
-            "difference": 4.0
-          },
           {
             "pair": "Documentação de Projeto -> Qualidade da Comunicação",
             "llm_score": 7,

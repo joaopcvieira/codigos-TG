@@ -651,7 +651,15 @@ class DelphiDematel:
         return """Você é um engenheiro Aeroespacial especialista em propulsão de foguetes realizando uma REAVALIAÇÃO de sua análise anterior no contexto do método DEMATEL.
 
         CONTEXTO DO PROJETO: Desenvolvimento de motor foguete híbrido com foco no empuxo gerado.
+        
+        Avalie diferentes cenários em que é possível se ter {src} e como variações (pequenas ou grandes) em {src} pode influenciar {tgt}. Atente-se à magnitude dessa influência, e não à sua direção (positiva ou negativa).
 
+        Para a definição de influência, considere também, se {tgt} é um fator que pode ser afetado por {src} considerando a lógica do projeto e a sua participação. Antes de responder, pense na origem dos fatores (por exemplo, se são aspectos externos, se são aspectos de projetos, se referem apenas a atributos de propelente ou atributos estruturais) para definir se o aspecto target é realmente passível de ser alterado.
+
+        Entenda que o resultado deve ser interpretado no contexto do projeto e a influência é uma relação unidirecional. Associe com o contexto de causalidade de A em B.
+        
+        Para fatores em que há um consenso claro dos especialistas (intervalo interquartil pequeno), sua reavaliação deve ser mais crítica. Para fatores com grande variação entre especialistas, você tem mais liberdade para manter sua avaliação original.
+        
         SUA AVALIAÇÃO ANTERIOR:
         - Fator origem: {src} ({description_src})
         - Fator destino: {tgt} ({description_tgt})
@@ -667,6 +675,10 @@ class DelphiDematel:
 
         INSTRUÇÃO PARA REAVALIAÇÃO:
         Analise cuidadosamente sua avaliação anterior E o consenso dos especialistas. Mantenha sua AUTONOMIA TÉCNICA - não mude simplesmente para seguir a maioria. Altere sua avaliação APENAS se houver motivo técnico substantivo.
+        
+        Exemplo:
+            * Dados que recebe - Correlação e Causalidade 
+            * Análise requerida 
 
         Considere:
         1. Sua justificativa técnica original ainda é válida?
@@ -674,8 +686,8 @@ class DelphiDematel:
         3. Há evidências técnicas suficientes para alterar sua posição?
 
         RESPOSTA REQUERIDA (formato exato):
-        NOTA: [0-9]
         JUSTIFICATIVA: [Explique detalhadamente seu raciocínio técnico, mencionando se e por que mantém ou altera sua avaliação]
+        NOTA: [0-9]
         CONFIANÇA: [1-5]
         MUDANÇA: [SIM/NÃO - se alterou a nota original]
 
@@ -700,8 +712,8 @@ class DelphiDematel:
             2. Seu nível de confiança nesta avaliação (1=muito baixa, 5=muito alta)
 
             FORMATO DA RESPOSTA:
-            NOTA: [0-9]
             JUSTIFICATIVA: [Explique detalhadamente o raciocínio técnico]
+            NOTA: [0-9]
             CONFIANÇA: [1-5]
         """
         
@@ -860,9 +872,10 @@ class DelphiDematel:
                 )
                 
                 # Se a resposta do LLM já está alinhada com especialistas, pula reavaliação
-                if abs(previous_response.score - expert_stats.median) <=  expert_stats.std + 1:
+                if abs(previous_response.score - expert_stats.median) <=  0.5 * expert_stats.std:
                     # informa que não houve mudança
                     logger.info(f"Sem mudança necessária (LLM alinhado com especialistas): '{src}' -> '{tgt}' ")
+                    logger.info(f"\t\tResposta LLM: {previous_response.score}, Especialistas: {expert_stats.median:.1f} ± {expert_stats.std:.1f}")
                     continue
 
                 print('-' * 50)
