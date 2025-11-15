@@ -1,0 +1,401 @@
+# Sistema DEMATEL-Delphi com LLM 🚀
+
+Sistema avançado que combina a metodologia **DEMATEL** (Decision Making Trial and Evaluation Laboratory) com o processo de auditoria **Delphi** para análise de influência entre fatores em projetos de engenharia aeroespacial. Utiliza **Large Language Models (LLM)** para automatizar a construção de matrizes de influência e implementa um processo de validação baseado no consenso de especialistas.
+
+## 🎯 Objetivo
+
+O sistema foi desenvolvido para analisar as relações de influência entre fatores críticos no desenvolvimento de **motores de foguetes a propelente híbrido**, automatizando o processo tradicionalmente manual de construção de matrizes DEMATEL através de LLMs e validando os resultados com dados de especialistas.
+
+## ✨ Funcionalidades Principais
+
+### 🧠 Avaliação Inteligente com LLM
+- **Avaliações automatizadas**: LLM avalia influência entre pares de fatores (escala 0-9)
+- **Justificativas detalhadas**: Cada avaliação inclui fundamentação técnica
+- **Níveis de confiança**: Sistema registra confiança do LLM (escala 1-5)
+- **Múltiplos provedores**: Suporte para OpenAI GPT-4 e Google Gemini
+
+### 🔍 Processo de Auditoria Delphi
+- **Consenso de especialistas**: Agrega avaliações de múltiplos especialistas
+- **Rodadas de reavaliação**: LLM pode revisar suas avaliações considerando o consenso
+- **Controle de viés**: Prompts especializados previnem conformidade cega
+- **Transparência total**: Histórico completo de mudanças e justificativas
+
+### 📊 Análise DEMATEL Completa
+- **Matriz de relação direta**: Construção automatizada da matriz A
+- **Matriz de relação total**: Cálculo da matriz T considerando efeitos indiretos
+- **Índices de centralidade**: Cálculo de R (influência exercida) e C (influência recebida)
+- **Visualizações**: Grafos de rede e diagramas de influência interativos
+
+### 🎛️ Sistema de Cache Inteligente
+- **Cache granular**: Controle por rodada para economizar custos de API
+- **Gestão flexível**: Opção de usar cache ou fazer novas consultas
+- **Persistência**: Armazenamento automático de resultados para auditoria posterior
+
+## 📁 Estrutura do Projeto
+
+```
+Delphi/
+├── 🔧 Arquivos Principais
+│   ├── delphi_dematel.py      # Implementação principal do sistema
+│   ├── config.py              # Configurações centralizadas
+│   ├── example_delphi_usage.py # Exemplo completo de uso
+│   └── main.py                # Sistema DEMATEL básico original
+│
+├── 📊 Dados de Entrada
+│   ├── inputs/
+│   │   ├── Fatores.csv           # Lista de fatores e descrições
+│   │   ├── expert_responses.csv  # Avaliações dos especialistas
+│   │   └── relacao_fatores.csv   # Restrições de influência
+│
+├── 📈 Resultados
+│   ├── Matrizes/                 # Matrizes DEMATEL de cada rodada
+│   ├── delphi_memory.json        # Histórico completo do processo
+│   ├── audit_report.json         # Relatório de auditoria detalhado
+│   └── llm_results_cache.json    # Cache de resultados LLM
+│
+├── 🧪 Testes e Notebooks
+│   ├── Test/                     # Testes unitários
+│   └── Notebooks/                # Análises exploratórias
+│
+└── 📚 Documentação
+    ├── README_Delphi.md         # Documentação técnica detalhada
+    ├── FORMATO_ESPECIALISTAS.md # Formato dos dados de entrada
+    └── RESUMO_IMPLEMENTACAO.md  # Resumo das implementações
+```
+
+## 🚀 Instalação e Configuração
+
+### 1. Pré-requisitos
+
+```bash
+# Python 3.8+
+pip install openai numpy pandas networkx plotly scipy python-dotenv matplotlib
+
+# Opcional: Google Gemini
+pip install google-generativeai
+```
+
+### 2. Configuração das APIs
+
+Crie um arquivo `.env` na pasta `Delphi/`:
+
+```bash
+# OpenAI (obrigatório)
+OPENAI_API_KEY=sua_chave_openai_aqui
+OPENAI_ORG_ID=sua_organizacao_openai  # opcional
+
+# Google Gemini (opcional)
+GEMINI_API_KEY=sua_chave_gemini_aqui
+
+# Configurações gerais
+LLM_PROVIDER=openai  # ou "gemini"
+```
+
+### 3. Preparação dos Dados
+
+#### Arquivo de Fatores (`inputs/Fatores.csv`):
+```csv
+fator,descricao
+Documentação de Projeto,Grau de detalhamento dos registros técnicos
+Experiência da Equipe,Conhecimento prático da equipe em foguetes híbridos
+Volume da Câmara,Dimensões da câmara de combustão
+...
+```
+
+#### Arquivo de Especialistas (`inputs/expert_responses.csv`):
+```csv
+expert_id,factor_source,factor_target,influence_score
+1,Documentação de Projeto,Experiência da Equipe,2
+1,Experiência da Equipe,Volume da Câmara,3
+2,Documentação de Projeto,Experiência da Equipe,1
+...
+```
+
+> **📝 Nota**: A escala dos especialistas (0-4) é automaticamente convertida para a escala do LLM (0-9)
+
+## 💻 Como Usar
+
+### Execução Rápida - Exemplo Completo
+
+```bash
+cd Delphi/
+python example_delphi_usage.py
+```
+
+### Uso Programático
+
+```python
+from delphi_dematel import DelphiDematel
+import pandas as pd
+
+# 1. Carrega fatores e descrições
+df_fatores = pd.read_csv('inputs/Fatores.csv')
+fatores = df_fatores['fator'].tolist()
+descricoes = df_fatores['descricao'].tolist()
+
+# 2. Inicializa o sistema Delphi
+delphi_system = DelphiDematel(
+    factors=fatores,
+    descriptions=descricoes,
+    expert_data_path='inputs/expert_responses.csv',
+    memory_path='delphi_memory.json',
+    provider='openai'  # ou 'gemini'
+)
+
+# 3. Executa processo completo (2-3 rodadas)
+results = delphi_system.run_full_delphi_process(max_rounds=2)
+
+# 4. Gera visualizações
+delphi_system.plot_network(title="Rede de Influência - Processo Delphi")
+
+# 5. Analisa métricas de concordância
+print(f"Correlação com especialistas: {results['final_metrics']['spearman_correlation']:.3f}")
+print(f"Taxa de acordo: {results['final_metrics']['exact_agreement_rate']*100:.1f}%")
+```
+
+### Controle Granular de Cache
+
+O sistema oferece controle detalhado sobre o uso de cache para economizar custos de API:
+
+```python
+from example_delphi_usage import run_granular_delphi_process, load_global_cache
+
+# Carrega cache existente
+global_cache = load_global_cache()
+
+# Executa com controle granular
+results = run_granular_delphi_process(
+    delphi_system, 
+    global_cache, 
+    max_rounds=2
+)
+```
+
+Durante a execução, você pode escolher para cada rodada:
+- **Opção 1**: 📂 Usar cache salvo (RECOMENDADO - economiza API)
+- **Opção 2**: 🆕 Fazer novas consultas ao LLM
+
+## 📊 Resultados e Análises
+
+### Arquivos de Saída
+
+1. **`delphi_memory.json`**: Histórico completo com justificativas
+2. **`audit_report.json`**: Métricas detalhadas de concordância
+3. **`matriz_dematel_inicial.txt`**: Matriz da rodada inicial
+4. **`matriz_dematel_round_N.txt`**: Matrizes das rodadas subsequentes
+
+### Métricas de Qualidade
+
+```
+RESULTADOS DO PROCESSO DELPHI
+==================================================
+Rodadas executadas: 3
+
+Métricas de concordância com especialistas:
+- Diferença absoluta média: 1.234
+- Correlação de Spearman: 0.756
+- Taxa de acordo exato: 23.4%
+- Taxa de acordo próximo (±1): 67.8%
+
+Resumo das mudanças:
+- Pares que mudaram: 12/132 (9.1%)
+- Desacordos significativos: 5
+
+Maiores desacordos (diferença > 2 pontos):
+- Temperatura → Pressão: LLM=8, Especialistas=5.5
+- Geometria → Empuxo: LLM=3, Especialistas=6.0
+```
+
+### Visualizações Geradas
+
+- **Grafo de rede**: Visualização das relações de influência
+- **Diagrama de dispersão**: R vs C (causador vs receptor)
+- **Matriz de calor**: Intensidades das relações
+- **Análise temporal**: Evolução das avaliações por rodada
+
+## 🔬 Processo Delphi Detalhado
+
+### Rodada Inicial
+1. **Avaliação primária**: LLM avalia cada par (i,j) com justificativa
+2. **Registro de confiança**: Sistema armazena nível de confiança (1-5)
+3. **Construção da matriz**: Matriz DEMATEL inicial é formada
+
+### Rodadas de Auditoria
+1. **Apresentação do consenso**: LLM vê estatísticas dos especialistas
+2. **Prompt de autonomia**: Instruções explícitas para manter independência
+3. **Reavaliação fundamentada**: LLM pode alterar apenas com justificativa técnica
+4. **Registro de mudanças**: Sistema documenta alterações e motivos
+
+### Template do Prompt de Auditoria
+
+```
+🔍 AUDITORIA DELPHI - REAVALIAÇÃO
+
+SUA AVALIAÇÃO ANTERIOR:
+- Nota: 7/9
+- Justificativa: "Temperatura afeta diretamente a pressão..."
+- Confiança: 4/5
+
+📊 CONSENSO DOS ESPECIALISTAS:
+- Mediana: 5.0/9
+- Intervalo Q1-Q3: 4.0 - 6.5
+- Baseado em 15 especialistas
+
+⚖️ INSTRUÇÃO CRÍTICA:
+Mantenha sua AUTONOMIA TÉCNICA. Não mude apenas para 
+seguir a maioria. Altere SOMENTE se houver motivo 
+técnico substantivo baseado em evidências.
+```
+
+## 🛡️ Controle de Viés e Qualidade
+
+### Medidas Anti-Viés Implementadas
+
+1. **Prompts de autonomia**: Instruções explícitas contra conformidade
+2. **Justificativas obrigatórias**: Mudanças requerem fundamentação técnica
+3. **Registro de divergências**: Sistema identifica e documenta desacordos
+4. **Análise de confiança**: Correlação entre confiança e mudanças
+
+### Validação de Qualidade
+
+- **Testes unitários**: Cobertura completa das funcionalidades
+- **Validação cruzada**: Comparação com dados reais de especialistas
+- **Reprodutibilidade**: Pipeline determinístico e auditável
+- **Documentação**: Processo completamente transparente
+
+## 🧪 Testes e Desenvolvimento
+
+### Executar Testes
+
+```bash
+# Testes básicos
+python Test/test_delphi_basic.py
+
+# Testes de conversão de escala
+python Test/test_scale_conversion.py
+
+# Análise completa (requer dados)
+python example_delphi_usage.py
+```
+
+### Estrutura de Testes
+
+```python
+# Exemplo de teste unitário
+def test_expert_aggregation():
+    # Testa agregação de dados de especialistas
+    expert_data = [[1,2,3], [2,3,4], [1,3,4]]
+    stats = ExpertAggregator.aggregate_expert_responses(expert_data)
+    assert stats[(0,1)].median == 2.0
+    assert stats[(0,1)].iqr == 1.0
+```
+
+## ⚙️ Configurações Avançadas
+
+### Personalização de Prompts
+
+```python
+# Prompt customizado para domínio específico
+custom_prompt = """
+Você é um especialista em {domain}.
+Considere o contexto de {context}.
+Avalie a influência de {src} em {tgt}...
+"""
+
+delphi_system = DelphiDematel(
+    factors=fatores,
+    descriptions=descricoes,
+    prompt_tmpl=custom_prompt
+)
+```
+
+### Configurações de Provider
+
+```python
+# OpenAI com configurações específicas
+delphi_system = DelphiDematel(
+    factors=fatores,
+    descriptions=descricoes,
+    provider='openai',
+    model='gpt-4',  # Modelo específico
+    api_key='sk-...'  # Chave específica
+)
+
+# Gemini como alternativa
+delphi_system = DelphiDematel(
+    factors=fatores,
+    descriptions=descricoes,
+    provider='gemini',
+    model='gemini-pro'
+)
+```
+
+## 📈 Casos de Uso
+
+### 1. Engenharia Aeroespacial
+- Análise de fatores críticos em motores de foguete
+- Identificação de dependências em sistemas propulsivos
+- Otimização de parâmetros de projeto
+
+### 2. Gestão de Projetos
+- Análise de riscos e dependências
+- Identificação de fatores críticos de sucesso
+- Planejamento de recursos e cronograma
+
+### 3. Análise de Sistemas Complexos
+- Estudos de causa-efeito em sistemas industriais
+- Análise de impacto em processos organizacionais
+- Identificação de gargalos e oportunidades
+
+## 🔮 Desenvolvimentos Futuros
+
+### Funcionalidades Planejadas
+- **Múltiplos LLMs**: Comparação entre diferentes modelos
+- **Pesos adaptativos**: Especialistas com maior concordância têm mais peso
+- **Interface gráfica**: Dashboard web para execução e análise
+- **API REST**: Endpoint para integração com outros sistemas
+
+### Melhorias de Algoritmo
+- **Convergência automática**: Parada quando consenso é atingido
+- **Análise de sensibilidade**: Impacto de mudanças individuais
+- **Bootstrap estatístico**: Intervalos de confiança para métricas
+- **Análise temporal**: Evolução de consenso ao longo do tempo
+
+## 🤝 Contribuições
+
+Este projeto faz parte de um Trabalho de Graduação em Engenharia Aeroespacial. Contribuições são bem-vindas!
+
+### Como Contribuir
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
+
+### Áreas de Contribuição
+- 🧪 Novos casos de teste
+- 📊 Algoritmos de visualização
+- 🔧 Otimizações de performance
+- 📚 Documentação e exemplos
+- 🌐 Suporte a novos provedores LLM
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 📞 Contato e Suporte
+
+- **Desenvolvedor**: João Paulo Vieira
+- **Instituição**: Engenharia Aeroespacial
+- **Projeto**: Trabalho de Graduação - Análise DEMATEL com LLM
+
+Para questões técnicas, abra uma issue no repositório GitHub.
+
+---
+
+**📚 Documentação Adicional:**
+- [`README_Delphi.md`](README_Delphi.md) - Documentação técnica detalhada
+- [`FORMATO_ESPECIALISTAS.md`](FORMATO_ESPECIALISTAS.md) - Formato dos dados
+- [`RESUMO_IMPLEMENTACAO.md`](RESUMO_IMPLEMENTACAO.md) - Detalhes de implementação
+
+**🎯 Status do Projeto:** ✅ **Totalmente funcional e pronto para produção**

@@ -16,9 +16,9 @@ def check_pergunta_valida(fator1, fator2):
     df_fatores = pd.read_csv("inputs/Fatores.csv", sep=",", header=0)
 
     # Verifica se src pode ser causa de algo:
-    categoria_fator_1 = df_fatores.loc[df_fatores['fator'] == fator1, 'categoria'].values[0]
-    if categoria_fator_1 == 'Sucesso':
-        return False # Sucesso não causa nada
+    # categoria_fator_1 = df_fatores.loc[df_fatores['fator'] == fator1, 'categoria'].values[0]
+    # if categoria_fator_1 == 'Sucesso':
+    #     return False # Sucesso não causa nada
     
     # Verifica se tgt pode ser efeito de algo:
     categoria_fator_2 = df_fatores.loc[df_fatores['fator'] == fator2, 'categoria'].values[0]
